@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/Contact.css';
 import { Container } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 

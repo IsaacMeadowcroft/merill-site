@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/ShopItem.css';
 import { Card, Button} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from '../assets/LandingPage.jpg'
