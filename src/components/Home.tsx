@@ -7,7 +7,7 @@ import LandingPage from '../assets/LandingPage.jpg'
 
 function Home() {
   return (
-    <Container fluid style={{backgroundColor: 'black', padding: '0px'}}>
+    <Container fluid style={{backgroundColor: 'black', padding: '0px'}} id="Home">
       <Row xs={1} sm={1} md={3}>
         <Col md={4}>
           <Image src={LandingPage} fluid />
@@ -51,19 +51,19 @@ function MenuItems() {
   return (
     <Stack gap={3}>
       <Container>
-        <a href="#link" className="sidebar-button">Home</a>
+        <a href="#Home" className="sidebar-button">Home</a>
       </Container>
       <Container>
-        <a href="#link" className="sidebar-button">Prints</a>
+        <a href="#Prints" className="sidebar-button">Prints</a>
       </Container>
       <Container>
-        <a href="#link" className="sidebar-button">Portfolio</a>
+        <a href="#Portfolio" className="sidebar-button">Portfolio</a>
       </Container>
       <Container>
-        <a href="#link" className="sidebar-button">About</a>
+        <a href="#About" className="sidebar-button">About</a>
       </Container>
       <Container>
-        <a href="#link" className="sidebar-button">Contact</a>
+        <a href="#Contact" className="sidebar-button">Contact</a>
       </Container>
     </Stack>
   );

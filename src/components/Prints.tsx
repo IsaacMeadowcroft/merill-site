@@ -1,12 +1,30 @@
 import React from 'react';
 import '../css/Prints.css';
-import {Container} from 'react-bootstrap'
+import ShopItem from './ShopItem';
+import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Prints() {
   return (
-    <Container fluid style={{backgroundColor: 'black', padding: '0px'}}>
-      
+    <Container fluid style={{backgroundColor: 'black', padding: '0px'}} id="Prints">
+        <Row>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+        </Row>
+        <Row>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+        </Row>
+        <Row>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+            <Col><ShopItem /></Col>
+        </Row>
     </Container>
   );
 }
