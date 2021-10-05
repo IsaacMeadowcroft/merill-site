@@ -1,89 +1,27 @@
-.App {
-    text-align: center;
-}
-
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-}
-
-.App-link {
-    color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.v75_413 {
-    color: white;
-    font-size: 14px;
-    width: 473px;
-    height: 339px;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 1;
-    position: relative;
-    top: 0px;
-    left: 0px;
-    overflow: hidden;
-}
-
-.v75_414 {
-    width: 188px;
-    color: rgba(255, 255, 255, 1);
-    position: absolute;
-    top: 289px;
-    left: 144px;
-    font-family: Cormorant Garamond;
-    font-weight: Light Italic;
-    font-size: 35px;
-    opacity: 1;
-    text-align: left;
-}
-
-.v75_415 {
-    width: 418px;
-    color: rgba(255, 255, 255, 1);
-    position: absolute;
-    top: 6px;
-    left: 29px;
-    font-family: Cormorant Garamond;
-    font-weight: Light;
-    font-size: 100px;
-    opacity: 1;
-    text-align: left;
-}
-
 .name {
-    background-color: #fff;
-    height: 2px;
+    color: white;
+    font-family: Cormorant Garamond;
+    font-size: 6vw;
+}
+
+.bar {
     width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.profession {
+    color: white;
+    font-family: Cormorant Garamond;
+    font-size: 2vw;
+    opacity: 1;
+}
+
+.sidebar-button {
+    background-color: black;
+    color: white;
+}
+
+.sidebar-toggle {
+    background-color: 'black';
 }
