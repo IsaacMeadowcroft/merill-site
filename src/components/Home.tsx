@@ -5,23 +5,23 @@ import SideBar from "./SideBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "../assets/LandingPage.jpg";
 
-function Home(): JSX.Element{
-  const [dimensions, setDimensions] = React.useState({ 
+function Home(): JSX.Element {
+  const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
-    width: window.innerWidth
+    width: window.innerWidth,
   });
 
   function handleResize() {
     setDimensions({
       height: window.innerHeight,
-      width: window.innerWidth
-    })
+      width: window.innerWidth,
+    });
   }
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
   }, []);
-    
+
   if (dimensions.width >= 768) {
     return (
       <Container
@@ -61,6 +61,15 @@ function Home(): JSX.Element{
         id="Home"
       >
         <Image src={LandingPage} fluid />
+        <Row className="name name-mobile" style={{ margin: "0px" }}>
+          <p className="text-center">MERILL BOBOTIS</p>
+        </Row>
+        <Row className="bar-wrapper" style={{ margin: "0px" }}>
+          <div className="bar-mobile"></div>
+        </Row>
+        <Row className="name" style={{ margin: "0px" }}>
+          <p className="profession-mobile text-center">Visual Artist</p>
+        </Row>
       </Container>
     );
   }
