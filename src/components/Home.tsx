@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../css/Home.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import SideBar from "./SideBar";
+import NavBar from "./NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "../assets/LandingPage.jpg";
 
@@ -55,22 +56,25 @@ function Home(): JSX.Element {
     );
   } else {
     return (
-      <Container
-        fluid
-        style={{ backgroundColor: "black", padding: "0px" }}
-        id="Home"
-      >
-        <Image src={LandingPage} fluid />
-        <Row className="name name-mobile" style={{ margin: "0px" }}>
-          <p className="text-center">MERILL BOBOTIS</p>
-        </Row>
-        <Row className="bar-wrapper" style={{ margin: "0px" }}>
-          <div className="bar-mobile"></div>
-        </Row>
-        <Row className="name" style={{ margin: "0px" }}>
-          <p className="profession-mobile text-center">Visual Artist</p>
-        </Row>
-      </Container>
+      <>
+        <NavBar />
+        <Container
+          fluid
+          style={{ backgroundColor: "black", padding: "0px" }}
+          id="Home"
+        >
+          <Image src={LandingPage} fluid />
+          <Row className="name name-mobile" style={{ margin: "0px" }}>
+            <p className="text-center">MERILL BOBOTIS</p>
+          </Row>
+          <Row className="bar-wrapper" style={{ margin: "0px" }}>
+            <div className="bar-mobile"></div>
+          </Row>
+          <Row className="name" style={{ margin: "0px" }}>
+            <p className="profession-mobile text-center">Visual Artist</p>
+          </Row>
+        </Container>
+      </>
     );
   }
 }
