@@ -5,7 +5,7 @@ import { Button, Container, Offcanvas, Stack } from 'react-bootstrap'
 import { BsList, BsX } from "react-icons/bs";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function SideBar() {
+function SideBar(): JSX.Element {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -29,7 +29,7 @@ function SideBar() {
     );
   }
   
-  function MenuItems() {
+  function MenuItems(): JSX.Element {
     return (
       <Stack gap={3}>
         <Container className="sidebar-container">

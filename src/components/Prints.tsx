@@ -4,7 +4,7 @@ import ShopItem from './ShopItem';
 import {Container, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function Prints() {
+function Prints(): JSX.Element {
   return (
     <Container fluid style={{backgroundColor: 'black', padding: '0px'}} id="Prints">
         <Row>

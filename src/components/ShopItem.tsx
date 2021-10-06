@@ -4,7 +4,7 @@ import { Card, Button} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from '../assets/LandingPage.jpg'
 
-function ShopItem() {
+function ShopItem(): JSX.Element {
   return (
     <Card style={{ width: "18rem", backgroundColor: "black", borderWidth: "1px", borderColor: "white", color: "white" }}>
       <Card.Img variant="top" src={LandingPage} />

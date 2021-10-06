@@ -3,7 +3,7 @@ import '../css/About.css';
 import { Container } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function About() {
+function About(): JSX.Element {
   return (
     <Container fluid style={{backgroundColor: 'black', padding: '0px'}} id="About">
     </Container>
