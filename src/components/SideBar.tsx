@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import '../css/SideBar.css';
 import { Button, Container, Offcanvas, Stack } from 'react-bootstrap'
+import { BsList, BsX } from "react-icons/bs";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function SideBar() {
@@ -11,9 +12,15 @@ function SideBar() {
   
     return (
       <>
-        <Button onClick={handleShow} variant="outline-dark" className="sidebar-toggle"/>
+        <Button onClick={handleShow} variant="outline-dark" className="sidebar-toggle">
+          <BsList style={{color: "white", fontSize: "3vh"}} />
+        </Button>
         <Offcanvas show={show} onHide={handleClose} placement={"end"} style={{backgroundColor: "black", borderColor: "white", borderRight: "1px"}}>
-          <Offcanvas.Header closeButton />
+          <Offcanvas.Header >
+          <Button onClick={handleClose} variant="outline-dark" className="sidebar-toggle">
+            <BsX style={{color: "white", fontSize: "3vh"}} />
+          </Button>
+          </Offcanvas.Header>
           <Offcanvas.Body style={{padding: "0px", backgroundColor: "black"}}>
             <MenuItems />
           </Offcanvas.Body>
@@ -25,20 +32,20 @@ function SideBar() {
   function MenuItems() {
     return (
       <Stack gap={3}>
-        <Container>
-          <a href="#Home" className="sidebar-button">Home</a>
+        <Container className="sidebar-container">
+          <a href="#Home" className="sidebar-button">HOME</a>
         </Container>
-        <Container>
-          <a href="#Prints" className="sidebar-button">Prints</a>
+        <Container className="sidebar-container">
+          <a href="#Prints" className="sidebar-button">PRINTS</a>
         </Container>
-        <Container>
-          <a href="#Portfolio" className="sidebar-button">Portfolio</a>
+        <Container className="sidebar-container">
+          <a href="#Portfolio" className="sidebar-button">PORTFOLIO</a>
         </Container>
-        <Container>
-          <a href="#About" className="sidebar-button">About</a>
+        <Container className="sidebar-container">
+          <a href="#About" className="sidebar-button">ABOUT</a>
         </Container>
-        <Container>
-          <a href="#Contact" className="sidebar-button">Contact</a>
+        <Container className="sidebar-container">
+          <a href="#Contact" className="sidebar-button">CONTACT</a>
         </Container>
       </Stack>
     );

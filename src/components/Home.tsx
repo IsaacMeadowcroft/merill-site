@@ -7,27 +7,35 @@ import LandingPage from '../assets/LandingPage.jpg'
 
 
 function Home() {
+  const width = window.innerWidth;
+  if (width >= 768) {
   return (
     <Container fluid style={{backgroundColor: 'black', padding: '0px'}} id="Home">
-      <Row xs={1} sm={1} md={3}>
-        <Col md={4}>
+      <Row md={3} style={{margin: "0px"}}>
+        <Col md={5} style={{padding: "0px"}}>
           <Image src={LandingPage} fluid />
         </Col>
-        <Col md={4}>
-          <Col className="name">
-            MERILL BOBOTIS
-          </Col>
-          <Col className="bar" />
-          <Col className="profession">
+        <Col md={4} style={{paddingTop: "4vw"}}>
+          <Row className="name">
+            MERILL
+          </Row>
+          <Row className="name">
+            BOBOTIS
+          </Row>
+          <Row className="bar" />
+          <Row className="profession">
             Visual Artist
-          </Col>
+          </Row>
         </Col>
-        <Col md={1}>
+        <Col md={3} style={{paddingLeft: '17vw', paddingTop: '2vw', paddingRight: '1vw'}} id="Home">
           <SideBar/>
         </Col>
       </Row>
     </Container>
   );
+  } else {
+    return (<></>);
+  }
 }
 
 export default Home;

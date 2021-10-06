@@ -1,8 +1,24 @@
 .sidebar-button {
     background-color: black;
     color: white;
+    text-decoration: none;
+    font-size: 2vh;
+    padding-left: 3vw;
+}
+
+.sidebar-container {
+    font-family: Cormorant Garamond;
+    height: 5vh;
+    padding: 1vh;
+}
+
+.sidebar-button:hover {
+    color: grey;
+    text-decoration: none;
+    text-decoration: underline;
 }
 
 .sidebar-toggle {
-    background-color: 'black';
+    background-color: black;
+    color: white;
 }

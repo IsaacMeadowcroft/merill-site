@@ -6,10 +6,10 @@ function App() {
   return (
     <>
       <Home />
-      <Prints />
+      { /* <Prints />
       <Portfolio />
       <About />
-      <Contact />
+      <Contact /> */}
     </>
   )
 }
