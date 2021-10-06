@@ -10,12 +10,12 @@
     background-color: rgb(48, 48, 48);
 }
 
-.nav-styles-sm,
+.nav-styles-sm>a,
 .nav-styles-md>a {
     color: white;
 }
 
-.nav-styles-sm,
+.nav-styles-sm>a:hover,
 .nav-styles-md>a:hover {
     color: rgb(182, 182, 182);
 }
