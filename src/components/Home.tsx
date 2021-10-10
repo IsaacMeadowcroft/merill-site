@@ -18,7 +18,7 @@ function Home(): JSX.Element {
       width: window.innerWidth,
     });
   }
-  
+
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -64,6 +64,7 @@ function Home(): JSX.Element {
           style={{ backgroundColor: "black", padding: "0px" }}
           id="Home"
         >
+          <Row style={{height: "3vh", width: "100%", backgroundColor: "black"}} > </Row>
           <Image src={LandingPage} fluid />
           <Row className="name name-mobile" style={{ margin: "0px" }}>
             <p className="text-center">MERILL BOBOTIS</p>
