@@ -6,7 +6,8 @@ function App(): JSX.Element {
   return (
     <>
       <Home />
-      { /* <Prints />
+      <Prints />
+      { /*}
       <Portfolio />
       <About />
       <Contact /> */}

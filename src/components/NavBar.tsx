@@ -1,34 +1,51 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../css/NavBar.css";
-import { Nav} from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function NavBar(): JSX.Element {
-  const [dimensions, setDimensions] = React.useState({
+  const [dimensions, setDimensions] = useState({
     height: window.innerHeight,
     width: window.innerWidth,
   });
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   function handleResize() {
     setDimensions({
       height: window.innerHeight,
       width: window.innerWidth,
     });
-    console.log(dimensions.width);
+  }
+
+  function handleScroll() {
+    setScrollPosition(window.pageYOffset)
   }
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", handleScroll);
   }, []);
-  
+
   return (
-        <Nav fill justify className={ dimensions.width <= 429? "me-auto nav-styles-sm" : "me-auto nav-styles-md" }>
-          <Nav.Link  href="#Home">HOME</Nav.Link>
-          <Nav.Link  href="#Prints">PRINTS</Nav.Link>
-          <Nav.Link  href="#Portfolio">PORTFOLIO</Nav.Link>
-          <Nav.Link  href="#About">ABOUT</Nav.Link>
-          <Nav.Link  href="#Contact">CONTACT</Nav.Link>
-        </Nav>
+    <Navbar fixed="top" variant="dark" style={{padding: "0px"}}>
+      <Nav
+        navbar
+        fill
+        justify
+        className={
+          dimensions.width <= 429
+            ? "nav-styles-sm"
+            : "nav-styles-md"
+        }
+        style={scrollPosition > 200 ? {backgroundColor: "rgb(53, 53, 53)"} : {backgroundColor: "none"}}
+      >
+        <Nav.Link href="#Home">HOME</Nav.Link>
+        <Nav.Link href="#Prints">PRINTS</Nav.Link>
+        <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
+        <Nav.Link href="#About">ABOUT</Nav.Link>
+        <Nav.Link href="#Contact">CONTACT</Nav.Link>
+      </Nav>
+    </Navbar>
   );
 }
 

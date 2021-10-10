@@ -18,6 +18,7 @@ function Home(): JSX.Element {
       width: window.innerWidth,
     });
   }
+  
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

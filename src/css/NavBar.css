@@ -1,13 +1,13 @@
 .nav-styles-md {
     font-family: "Cormorant Garamond";
     font-size: 2vh;
-    background-color: rgb(48, 48, 48);
+    width: 100%;
 }
 
 .nav-styles-sm {
     font-family: "Cormorant Garamond";
     font-size: 1.5vh;
-    background-color: rgb(48, 48, 48);
+    width: 100%;
 }
 
 .nav-styles-sm>a,
