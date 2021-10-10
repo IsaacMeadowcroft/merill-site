@@ -19,12 +19,16 @@ function NavBar(): JSX.Element {
 
   function handleScroll() {
     setScrollPosition(window.pageYOffset)
+    console.log(scrollPosition)
   }
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+  })
+
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-  }, []);
+  });
 
   return (
     <Navbar fixed="top" variant="dark" style={{padding: "0px"}}>
@@ -37,7 +41,7 @@ function NavBar(): JSX.Element {
             ? "nav-styles-sm"
             : "nav-styles-md"
         }
-        style={scrollPosition > 200 ? {backgroundColor: "rgb(53, 53, 53)"} : {backgroundColor: "none"}}
+        style={scrollPosition > 100 ? {backgroundColor: "rgb(53, 53, 53)"} : {backgroundColor: "transparent"}}
       >
         <Nav.Link href="#Home">HOME</Nav.Link>
         <Nav.Link href="#Prints">PRINTS</Nav.Link>
