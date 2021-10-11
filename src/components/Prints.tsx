@@ -38,9 +38,9 @@ function Prints(): JSX.Element {
         style={{ backgroundColor: "black", padding: "0px" }}
         id="Prints"
       >
-        <Row style={{ width: "100%" }}>
+        <Row style={{ width: "100%", margin: "0px" }}>
           {data?.map((item) => (
-            <Col md={4}>
+            <Col md={4} style={{padding: "0px"}}>
               <ShopItem {...item} />
             </Col>
           ))}

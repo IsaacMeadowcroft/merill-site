@@ -1,7 +1,7 @@
 .card-styles {
-    width: 18rem;
+    width: 100%;
     background-color: black;
     border-width: 1px;
-    border-color: white;
     color: white;
+    border-radius: 0%;
 }
