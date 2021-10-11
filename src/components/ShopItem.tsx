@@ -8,18 +8,14 @@ import LandingPage from "../assets/LandingPage.jpg";
 function ShopItem(itemData: CartItemType): JSX.Element {
   const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseOver = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseOut = () => {
-    setIsHovering(false);
-  };
-
   return (
-    <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+    <div onMouseOver={() => {
+      setIsHovering(true);
+    }} onMouseOut={() => {
+      setIsHovering(false);
+    }}>
       <Card className="card-styles">
-          <Card.Img variant="top"  src={LandingPage} style={isHovering? {opacity: "20%"} : {opacity: "100%"}}/>
+          <Card.Img variant="top"  src={LandingPage} style={isHovering? {filter: "brightness(20%)"} : {filter: "brightness(100%)"}}/>
         {isHovering ? (
           <Card.ImgOverlay>
             <Card.Title>{itemData.title}</Card.Title>
