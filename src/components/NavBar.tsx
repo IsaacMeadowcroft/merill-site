@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../css/NavBar.css";
-import { BsCart2 } from "react-icons/bs";
-import { Nav, Navbar } from "react-bootstrap";
+import { BsFillBagFill } from "react-icons/bs";
+import { Badge, Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IconContext } from "react-icons";
 
@@ -49,10 +49,32 @@ function NavBar(): JSX.Element {
         <Nav.Link href="#Prints">PRINTS</Nav.Link>
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
-        <Nav.Item className="nav-icon">
-            <IconContext.Provider value={{ style: { verticalAlign: 'middle', height: "100%" } }}>
-              <BsCart2 />
-            </IconContext.Provider>
+        <Nav.Item style={{ verticalAlign: "middle", position: "relative", }}>
+          <IconContext.Provider
+            value={{
+              style: {
+                verticalAlign: "middle",
+                height: "100%",
+                overflow: "visible"
+              },
+            }}
+          >
+            <BsFillBagFill />
+            <h6>
+            <Badge
+              pill
+              bg="warning"
+              text="dark"
+              style={{
+                position: "absolute",
+                top: "3px",
+                left: "52%"
+              }}
+            >
+              {cartCount}
+            </Badge>
+            </h6>
+          </IconContext.Provider>
         </Nav.Item>
       </Nav>
     </Navbar>
