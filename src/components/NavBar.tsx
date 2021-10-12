@@ -41,7 +41,7 @@ function NavBar(): JSX.Element {
         className={dimensions.width <= 429 ? "nav-styles-sm" : "nav-styles-md"}
         style={
           scrollPosition > 100
-            ? { backgroundColor: "rgb(53, 53, 53)" }
+            ? { backgroundColor: "rgb(39, 39, 39)" }
             : { backgroundColor: "transparent" }
         }
       >

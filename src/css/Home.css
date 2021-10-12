@@ -29,14 +29,14 @@
 
 .profession {
     color: white;
-    font-family: Cormorant Garamond;
+    font-family: 'Judson', serif;
     font-size: 2vw;
     opacity: 1;
 }
 
 .profession-mobile {
     color: white;
-    font-family: Cormorant Garamond;
+    font-family: 'Judson', serif;
     font-size: 3vw;
     opacity: 1;
 }
