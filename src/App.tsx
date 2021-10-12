@@ -10,10 +10,9 @@ function App(): JSX.Element {
     <QueryClientProvider client={client}>
       <Home />
       <Prints />
-      { /*}
       <Portfolio />
       <About />
-      <Contact /> */}
+      <Contact />
     </QueryClientProvider>
   )
 }

@@ -1,21 +1,18 @@
 .nav-styles-md {
     font-family: "Cormorant Garamond";
     font-size: 2vh;
+    color: rgb(182, 182, 182);
     width: 100%;
 }
 
 .nav-styles-sm {
     font-family: "Cormorant Garamond";
     font-size: 1.5vh;
+    color: rgb(182, 182, 182);
     width: 100%;
 }
 
-.nav-styles-sm>a,
-.nav-styles-md>a {
+.nav-styles-sm:hover,
+.nav-styles-md:hover {
     color: white;
-}
-
-.nav-styles-sm>a:hover,
-.nav-styles-md>a:hover {
-    color: rgb(182, 182, 182);
 }
