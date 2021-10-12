@@ -1,4 +1,5 @@
 .card-styles {
+    cursor: pointer;
     width: 100%;
     background-color: black;
     border-width: 1px;
