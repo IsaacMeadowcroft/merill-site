@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "../css/Home.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
-import SideBar from "./SideBar";
 import NavBar from "./NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "../assets/LandingPage.jpg";
@@ -26,9 +25,11 @@ function Home(): JSX.Element {
 
   if (dimensions.width >= 768) {
     return (
+      <>
+      <NavBar />
       <Container
         fluid
-        style={{ backgroundColor: "black", padding: "0px" }}
+        style={{ backgroundColor: "black", padding: "0px", paddingTop: "4vh" }}
         id="Home"
       >
         <Row md={3} style={{ margin: "0px" }}>
@@ -50,10 +51,10 @@ function Home(): JSX.Element {
             }}
             id="Home"
           >
-            <SideBar />
           </Col>
         </Row>
       </Container>
+      </>
     );
   } else {
     return (
@@ -61,10 +62,9 @@ function Home(): JSX.Element {
         <NavBar />
         <Container
           fluid
-          style={{ backgroundColor: "black", padding: "0px" }}
+          style={{ backgroundColor: "black", padding: "0px", paddingTop: "4vh" }}
           id="Home"
         >
-          <Row style={{height: "3vh", width: "100%", backgroundColor: "black"}} > </Row>
           <Image src={LandingPage} fluid />
           <Row className="name name-mobile" style={{ margin: "0px" }}>
             <p className="text-center">MERILL BOBOTIS</p>

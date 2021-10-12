@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/NavBar.css";
 import { Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import ShopItem from "./ShopItem";
 
 function NavBar(): JSX.Element {
   const [dimensions, setDimensions] = useState({
@@ -36,7 +37,6 @@ function NavBar(): JSX.Element {
       <Nav
         navbar
         fill
-        justify
         className={
           dimensions.width <= 429
             ? "nav-styles-sm"
@@ -44,6 +44,7 @@ function NavBar(): JSX.Element {
         }
         style={scrollPosition > 100 ? {backgroundColor: "rgb(53, 53, 53)"} : {backgroundColor: "transparent"}}
       >
+        <Nav.Link href="#Home">HOME</Nav.Link>
         <Nav.Link href="#Prints">PRINTS</Nav.Link>
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
