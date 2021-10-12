@@ -33,9 +33,6 @@ function SideBar(): JSX.Element {
     return (
       <Stack gap={3}>
         <Container className="sidebar-container">
-          <a href="#Home" className="sidebar-button">HOME</a>
-        </Container>
-        <Container className="sidebar-container">
           <a href="#Prints" className="sidebar-button">PRINTS</a>
         </Container>
         <Container className="sidebar-container">

@@ -30,6 +30,8 @@ function NavBar(): JSX.Element {
     window.addEventListener("scroll", handleScroll);
   });
 
+  const cartCount=3;
+
   return (
     <Navbar fixed="top" variant="dark" style={{padding: "0px"}}>
       <Nav
@@ -43,11 +45,15 @@ function NavBar(): JSX.Element {
         }
         style={scrollPosition > 100 ? {backgroundColor: "rgb(53, 53, 53)"} : {backgroundColor: "transparent"}}
       >
-        <Nav.Link href="#Home">HOME</Nav.Link>
         <Nav.Link href="#Prints">PRINTS</Nav.Link>
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
         <Nav.Link href="#Contact">CONTACT</Nav.Link>
+<span
+            className="bag bag--float-cart-closed"
+          >
+            <span className="bag__quantity">{cartCount}</span>
+          </span>
       </Nav>
     </Navbar>
   );

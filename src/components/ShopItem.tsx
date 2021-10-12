@@ -9,12 +9,11 @@ function ShopItem(itemData: CartItemType): JSX.Element {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div onMouseOver={() => {
+      <Card className="card-styles" onMouseOver={() => {
       setIsHovering(true);
-    }} onMouseOut={() => {
+    }} onMouseLeave={() => {
       setIsHovering(false);
     }}>
-      <Card className="card-styles">
           <Card.Img variant="top"  src={LandingPage} style={isHovering? {filter: "brightness(20%)"} : {filter: "brightness(100%)"}}/>
         {isHovering ? (
           <Card.ImgOverlay>
@@ -26,7 +25,6 @@ function ShopItem(itemData: CartItemType): JSX.Element {
           <></>
         )}
       </Card>
-    </div>
   );
 }
 
