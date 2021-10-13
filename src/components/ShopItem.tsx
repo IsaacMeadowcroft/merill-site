@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "../css/ShopItem.css";
 import {
   Row,
-  Image,
   Card,
   Button,
   Modal,
   ModalProps,
+  Carousel,
   Col,
   Form,
 } from "react-bootstrap";
@@ -36,6 +36,20 @@ function MyVerticallyCenteredModal(
     BsPrefixProps<"div"> &
     ModalProps & { children?: React.ReactNode }
 ) {
+  const [currentItemPrice, setItemPrice] = useState(props.itemData.price);
+
+  const handleSubmitSmall = () => {
+    setItemPrice(props.itemData.price);
+  };
+
+  const handleSubmitMedium = () => {
+    setItemPrice(props.itemData.price * 2);
+  };
+
+  const handleSubmitLarge = () => {
+    setItemPrice(props.itemData.price * 3);
+  };
+
   return (
     <Modal
       {...props}
@@ -51,7 +65,29 @@ function MyVerticallyCenteredModal(
       <Modal.Body>
         <Row>
           <Col sm={12} md={5}>
-            <Image src={LandingPage} fluid />
+            <Carousel fade>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={LandingPage}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={LandingPage}
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={LandingPage}
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+            </Carousel>
           </Col>
           <Col sm={12} md={7}>
             <Row>
@@ -60,16 +96,35 @@ function MyVerticallyCenteredModal(
             <Row>
               <Form>
                 <div className="mb-3">
-                  <Form.Check inline label="Small" name="group1" type="radio" />
-                  <Form.Check inline label="Medium" name="group1" type="radio" />
-                  <Form.Check inline label="Large" name="group1" type="radio" />
+                  <Form.Check
+                    inline
+                    label="Small"
+                    name="group1"
+                    type="radio"
+                    onChange={handleSubmitSmall}
+                  />
+                  <Form.Check
+                    inline
+                    label="Medium"
+                    name="group1"
+                    type="radio"
+                    onChange={handleSubmitMedium}
+                  />
+                  <Form.Check
+                    inline
+                    label="Large"
+                    name="group1"
+                    type="radio"
+                    onChange={handleSubmitLarge}
+                  />
                 </div>
               </Form>
             </Row>
+            <h3>${currentItemPrice}</h3>
             <Row>
               <Col sm={12} md={6}>
                 <Button variant="warning" style={{ width: "100%" }}>
-                  Add to Cart: ${props.itemData.price}
+                  Add to Cart:
                 </Button>
               </Col>
               <Col sm={12} md={6}>
@@ -108,9 +163,9 @@ function ShopItem(itemData: CartItemType): JSX.Element {
         />
         {isHovering ? (
           <Card.ImgOverlay>
-            <Card.Title>{itemData.title}</Card.Title>
-            <Card.Text>{itemData.description}</Card.Text>
-            <Button variant="dark">{itemData.price}</Button>
+            <Card.Title>{itemData.title.substring(0, 35)}...</Card.Title>
+            <Card.Text>{itemData.description.substring(0, 100)}...</Card.Text>
+            <Button variant="dark">${itemData.price}</Button>
           </Card.ImgOverlay>
         ) : (
           <></>
