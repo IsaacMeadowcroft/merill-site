@@ -49,16 +49,17 @@ function MyVerticallyCenteredModal(
       </Modal.Header>
       <Modal.Body>
         <Row>
-          <Col xs={6} md={6}>
+          <Col sm={12} md={5}>
             <Image src={LandingPage} fluid/>
           </Col>
-          <Col xs={6} md={6}>
-            <p>{props.itemData.description}</p>
+          <Col sm={12} md={7}>
+            <Row><p>{props.itemData.description}</p></Row>
+            <Row><Button variant="warning">Add to Cart: ${props.itemData.price}</Button></Row>
           </Col>
         </Row>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide} >Close</Button>
       </Modal.Footer>
     </Modal>
   );
