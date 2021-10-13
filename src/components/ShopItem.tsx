@@ -8,6 +8,7 @@ import {
   Modal,
   ModalProps,
   Col,
+  Form,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartItemType } from "./Prints";
@@ -50,17 +51,36 @@ function MyVerticallyCenteredModal(
       <Modal.Body>
         <Row>
           <Col sm={12} md={5}>
-            <Image src={LandingPage} fluid/>
+            <Image src={LandingPage} fluid />
           </Col>
           <Col sm={12} md={7}>
-            <Row><p>{props.itemData.description}</p></Row>
-            <Row><Button variant="warning">Add to Cart: ${props.itemData.price}</Button></Row>
+            <Row>
+              <p>{props.itemData.description}</p>
+            </Row>
+            <Row>
+              <Form>
+                <div className="mb-3">
+                  <Form.Check inline label="1" name="group1" type="radio" />
+                  <Form.Check inline label="2" name="group1" type="radio" />
+                  <Form.Check inline label="3" name="group1" type="radio" />
+                </div>
+              </Form>
+            </Row>
+            <Row>
+              <Col sm={12} md={6}>
+                <Button variant="warning" style={{ width: "100%" }}>
+                  Add to Cart: ${props.itemData.price}
+                </Button>
+              </Col>
+              <Col sm={12} md={6}>
+                <Button variant="dark" style={{ width: "100%" }}>
+                  Checkout
+                </Button>
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide} >Close</Button>
-      </Modal.Footer>
     </Modal>
   );
 }
