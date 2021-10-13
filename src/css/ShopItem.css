@@ -6,3 +6,7 @@
     color: white;
     border-radius: 0%;
 }
+
+.modal-90w {
+    min-width: 90%;
+}

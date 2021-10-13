@@ -53,7 +53,7 @@ function MyVerticallyCenteredModal(
   return (
     <Modal
       {...props}
-      size="lg"
+      dialogClassName="modal-90w"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -97,6 +97,7 @@ function MyVerticallyCenteredModal(
               <Form>
                 <div className="mb-3">
                   <Form.Check
+                    defaultChecked={true}
                     inline
                     label="Small"
                     name="group1"
@@ -122,12 +123,12 @@ function MyVerticallyCenteredModal(
             </Row>
             <h3>${currentItemPrice}</h3>
             <Row>
-              <Col sm={12} md={6}>
+              <Col sm={6}>
                 <Button variant="warning" style={{ width: "100%" }}>
-                  Add to Cart:
+                  Add to Cart
                 </Button>
               </Col>
-              <Col sm={12} md={6}>
+              <Col sm={6}>
                 <Button variant="dark" style={{ width: "100%" }}>
                   Checkout
                 </Button>
