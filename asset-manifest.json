@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/merill-site/static/css/main.82bbfb8b.chunk.css",
+    "main.css": "/merill-site/static/css/main.2e9ca371.chunk.css",
     "main.js": "/merill-site/static/js/main.4612b6b3.chunk.js",
     "main.js.map": "/merill-site/static/js/main.4612b6b3.chunk.js.map",
     "runtime-main.js": "/merill-site/static/js/runtime-main.34475c27.js",
@@ -12,7 +12,7 @@
     "static/js/3.300813a0.chunk.js.map": "/merill-site/static/js/3.300813a0.chunk.js.map",
     "index.html": "/merill-site/index.html",
     "static/css/2.f2512455.chunk.css.map": "/merill-site/static/css/2.f2512455.chunk.css.map",
-    "static/css/main.82bbfb8b.chunk.css.map": "/merill-site/static/css/main.82bbfb8b.chunk.css.map",
+    "static/css/main.2e9ca371.chunk.css.map": "/merill-site/static/css/main.2e9ca371.chunk.css.map",
     "static/js/2.2e4f9a53.chunk.js.LICENSE.txt": "/merill-site/static/js/2.2e4f9a53.chunk.js.LICENSE.txt",
     "static/media/LandingPage.ba31465c.jpg": "/merill-site/static/media/LandingPage.ba31465c.jpg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.34475c27.js",
     "static/css/2.f2512455.chunk.css",
     "static/js/2.2e4f9a53.chunk.js",
-    "static/css/main.82bbfb8b.chunk.css",
+    "static/css/main.2e9ca371.chunk.css",
     "static/js/main.4612b6b3.chunk.js"
   ]
 }
