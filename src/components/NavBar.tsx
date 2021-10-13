@@ -25,11 +25,11 @@ function NavBar(): JSX.Element {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-  });
+  }, [dimensions]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-  });
+  }, [scrollPosition]);
 
   const cartCount = 3;
 
@@ -66,6 +66,7 @@ function NavBar(): JSX.Element {
               bg="warning"
               text="dark"
               style={{
+                fontFamily: "Helvetica Neue",
                 position: "absolute",
                 top: "3px",
                 left: "52%"

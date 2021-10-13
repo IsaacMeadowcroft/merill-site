@@ -18,42 +18,44 @@ function Home(): JSX.Element {
     });
   }
 
-
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-  }, []);
+  }, [dimensions]);
 
   if (dimensions.width >= 768) {
     return (
       <>
-      <NavBar />
-      <Container
-        fluid
-        style={{ backgroundColor: "black", padding: "0px", paddingTop: "4vh" }}
-        id="Home"
-      >
-        <Row md={3} style={{ margin: "0px" }}>
-          <Col md={5} style={{ padding: "0px" }}>
-            <Image src={LandingPage} fluid />
-          </Col>
-          <Col md={4} style={{ paddingTop: "4vw" }}>
-            <Row className="name">MERILL</Row>
-            <Row className="name">BOBOTIS</Row>
-            <Row className="bar" />
-            <Row className="profession">Visual Artist</Row>
-          </Col>
-          <Col
-            md={3}
-            style={{
-              paddingLeft: "17vw",
-              paddingTop: "2vw",
-              paddingRight: "1vw",
-            }}
-            id="Home"
-          >
-          </Col>
-        </Row>
-      </Container>
+        <NavBar />
+        <Container
+          fluid
+          style={{
+            backgroundColor: "black",
+            padding: "0px",
+            paddingTop: "4vh",
+          }}
+          id="Home"
+        >
+          <Row md={3} style={{ margin: "0px" }}>
+            <Col md={5} style={{ padding: "0px" }}>
+              <Image src={LandingPage} fluid />
+            </Col>
+            <Col md={4} style={{ paddingTop: "4vw" }}>
+              <Row className="name">MERILL</Row>
+              <Row className="name">BOBOTIS</Row>
+              <Row className="bar" />
+              <Row className="profession">Visual Artist</Row>
+            </Col>
+            <Col
+              md={3}
+              style={{
+                paddingLeft: "17vw",
+                paddingTop: "2vw",
+                paddingRight: "1vw",
+              }}
+              id="Home"
+            ></Col>
+          </Row>
+        </Container>
       </>
     );
   } else {
@@ -62,7 +64,11 @@ function Home(): JSX.Element {
         <NavBar />
         <Container
           fluid
-          style={{ backgroundColor: "black", padding: "0px", paddingTop: "4vh" }}
+          style={{
+            backgroundColor: "black",
+            padding: "0px",
+            paddingTop: "4vh",
+          }}
           id="Home"
         >
           <Image src={LandingPage} fluid />
