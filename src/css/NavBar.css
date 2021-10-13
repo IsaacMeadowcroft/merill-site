@@ -14,6 +14,9 @@
 
 .nav-styles-sm:hover,
 .nav-styles-md:hover {
-    color: white;
     cursor: pointer;
+}
+
+.nav-bag:hover {
+    color: white;
 }

@@ -49,7 +49,7 @@ function NavBar(): JSX.Element {
         <Nav.Link href="#Prints">PRINTS</Nav.Link>
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
-        <Nav.Item style={{ verticalAlign: "middle", position: "relative", }}>
+        <Nav.Item className="nav-bag" style={{ verticalAlign: "middle", position: "relative", }}>
           <IconContext.Provider
             value={{
               style: {
