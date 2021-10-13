@@ -60,9 +60,9 @@ function MyVerticallyCenteredModal(
             <Row>
               <Form>
                 <div className="mb-3">
-                  <Form.Check inline label="1" name="group1" type="radio" />
-                  <Form.Check inline label="2" name="group1" type="radio" />
-                  <Form.Check inline label="3" name="group1" type="radio" />
+                  <Form.Check inline label="Small" name="group1" type="radio" />
+                  <Form.Check inline label="Medium" name="group1" type="radio" />
+                  <Form.Check inline label="Large" name="group1" type="radio" />
                 </div>
               </Form>
             </Row>
