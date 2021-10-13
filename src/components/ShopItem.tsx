@@ -1,12 +1,40 @@
 import React, { useState } from "react";
 import "../css/ShopItem.css";
-import { Card, Button, Modal, ModalProps } from "react-bootstrap";
+import {
+  Row,
+  Image,
+  Card,
+  Button,
+  Modal,
+  ModalProps,
+  Col,
+} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { CartItemType } from "./Prints";
 import LandingPage from "../assets/LandingPage.jpg";
 import { Omit, BsPrefixProps } from "react-bootstrap/esm/helpers";
 
-function MyVerticallyCenteredModal(props: JSX.IntrinsicAttributes & Omit<Pick<React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "key" | keyof React.HTMLAttributes<HTMLDivElement>> & { ref?: ((instance: HTMLDivElement | null) => void) | React.RefObject<HTMLDivElement> | null | undefined; }, BsPrefixProps<"div"> & ModalProps> & BsPrefixProps<"div"> & ModalProps & { children?: React.ReactNode; }) {
+function MyVerticallyCenteredModal(
+  props: JSX.IntrinsicAttributes &
+    Omit<
+      Pick<
+        React.DetailedHTMLProps<
+          React.HTMLAttributes<HTMLDivElement>,
+          HTMLDivElement
+        >,
+        "key" | keyof React.HTMLAttributes<HTMLDivElement>
+      > & {
+        ref?:
+          | ((instance: HTMLDivElement | null) => void)
+          | React.RefObject<HTMLDivElement>
+          | null
+          | undefined;
+      },
+      BsPrefixProps<"div"> & ModalProps
+    > &
+    BsPrefixProps<"div"> &
+    ModalProps & { children?: React.ReactNode }
+) {
   return (
     <Modal
       {...props}
@@ -16,16 +44,18 @@ function MyVerticallyCenteredModal(props: JSX.IntrinsicAttributes & Omit<Pick<Re
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
+          {props.itemData.title}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+        <Row>
+          <Col xs={6} md={6}>
+            <Image src={LandingPage} fluid/>
+          </Col>
+          <Col xs={6} md={6}>
+            <p>{props.itemData.description}</p>
+          </Col>
+        </Row>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
@@ -58,7 +88,7 @@ function ShopItem(itemData: CartItemType): JSX.Element {
         {isHovering ? (
           <Card.ImgOverlay>
             <Card.Title>{itemData.title}</Card.Title>
-            <Card.Text>{itemData.description.substring(0, 50)}</Card.Text>
+            <Card.Text>{itemData.description}</Card.Text>
             <Button variant="dark">{itemData.price}</Button>
           </Card.ImgOverlay>
         ) : (
@@ -67,6 +97,7 @@ function ShopItem(itemData: CartItemType): JSX.Element {
       </Card>
 
       <MyVerticallyCenteredModal
+        itemData={itemData}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
