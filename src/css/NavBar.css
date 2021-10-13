@@ -15,4 +15,5 @@
 .nav-styles-sm:hover,
 .nav-styles-md:hover {
     color: white;
+    cursor: pointer;
 }
