@@ -4,21 +4,13 @@ import ShopItem from "./ShopItem";
 import { Spinner, Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useQuery } from "react-query";
+import { CartItemType, IWindowProps } from "./Interfaces";
 
-export type CartItemType = {
-  id: number;
-  category: string;
-  description: string;
-  image: string;
-  price: number;
-  title: string;
-  amount: number;
-};
 
 const getProducts = async (): Promise<CartItemType[]> =>
   await (await fetch("https://fakestoreapi.com/products")).json();
 
-function Prints(): JSX.Element {
+function Prints(props: IWindowProps): JSX.Element {
   const { data, isLoading, error } = useQuery<CartItemType[]>(
     "products",
     getProducts
@@ -41,7 +33,7 @@ function Prints(): JSX.Element {
         <Row style={{ width: "100%", margin: "0px" }}>
           {data?.map((item) => (
             <Col md={4} style={{padding: "0px"}}>
-              <ShopItem {...item} />
+              <ShopItem item={item} dimensions={props.dimensions} scrollPosition={props.scrollPosition}/>
             </Col>
           ))}
         </Row>

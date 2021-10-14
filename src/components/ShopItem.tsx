@@ -1,149 +1,15 @@
 import React, { useState } from "react";
 import "../css/ShopItem.css";
-import {
-  Row,
-  Card,
-  Button,
-  Modal,
-  ModalProps,
-  Carousel,
-  Col,
-  Form,
-} from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CartItemType } from "./Prints";
+import ItemModal from "./ItemModal";
 import LandingPage from "../assets/LandingPage.jpg";
-import { Omit, BsPrefixProps } from "react-bootstrap/esm/helpers";
+import { IShopItemProps } from "./Interfaces";
 
-function MyVerticallyCenteredModal(
-  props: JSX.IntrinsicAttributes &
-    Omit<
-      Pick<
-        React.DetailedHTMLProps<
-          React.HTMLAttributes<HTMLDivElement>,
-          HTMLDivElement
-        >,
-        "key" | keyof React.HTMLAttributes<HTMLDivElement>
-      > & {
-        ref?:
-          | ((instance: HTMLDivElement | null) => void)
-          | React.RefObject<HTMLDivElement>
-          | null
-          | undefined;
-      },
-      BsPrefixProps<"div"> & ModalProps
-    > &
-    BsPrefixProps<"div"> &
-    ModalProps & { children?: React.ReactNode }
-) {
-  const [currentItemPrice, setItemPrice] = useState(props.itemData.price);
 
-  const handleSubmitSmall = () => {
-    setItemPrice(props.itemData.price);
-  };
-
-  const handleSubmitMedium = () => {
-    setItemPrice(props.itemData.price * 2);
-  };
-
-  const handleSubmitLarge = () => {
-    setItemPrice(props.itemData.price * 3);
-  };
-
-  return (
-    <Modal
-      {...props}
-      dialogClassName="modal-90w"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          {props.itemData.title}
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <Row>
-          <Col sm={12} md={5}>
-            <Carousel fade>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={LandingPage}
-                  alt="First slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={LandingPage}
-                  alt="Second slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  className="d-block w-100"
-                  src={LandingPage}
-                  alt="Third slide"
-                />
-              </Carousel.Item>
-            </Carousel>
-          </Col>
-          <Col sm={12} md={7}>
-            <Row>
-              <p>{props.itemData.description}</p>
-            </Row>
-            <Row>
-              <Form>
-                <div className="mb-3">
-                  <Form.Check
-                    defaultChecked={true}
-                    inline
-                    label="Small"
-                    name="group1"
-                    type="radio"
-                    onChange={handleSubmitSmall}
-                  />
-                  <Form.Check
-                    inline
-                    label="Medium"
-                    name="group1"
-                    type="radio"
-                    onChange={handleSubmitMedium}
-                  />
-                  <Form.Check
-                    inline
-                    label="Large"
-                    name="group1"
-                    type="radio"
-                    onChange={handleSubmitLarge}
-                  />
-                </div>
-              </Form>
-            </Row>
-            <h3>${currentItemPrice}</h3>
-            <Row>
-              <Col sm={6}>
-                <Button variant="warning" style={{ width: "100%" }}>
-                  Add to Cart
-                </Button>
-              </Col>
-              <Col sm={6}>
-                <Button variant="dark" style={{ width: "100%" }}>
-                  Checkout
-                </Button>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Modal.Body>
-    </Modal>
-  );
-}
-
-function ShopItem(itemData: CartItemType): JSX.Element {
+function ShopItem(props: IShopItemProps): JSX.Element {
   const [isHovering, setIsHovering] = useState(false);
-  const [modalShow, setModalShow] = React.useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   return (
     <>
@@ -164,19 +30,21 @@ function ShopItem(itemData: CartItemType): JSX.Element {
         />
         {isHovering ? (
           <Card.ImgOverlay>
-            <Card.Title>{itemData.title.substring(0, 35)}...</Card.Title>
-            <Card.Text>{itemData.description.substring(0, 100)}...</Card.Text>
-            <Button variant="dark">${itemData.price}</Button>
+            <Card.Title>{props.item.title.substring(0, 35)}...</Card.Title>
+            <Card.Text>{props.item.description.substring(0, 100)}...</Card.Text>
+            <h3>${props.item.price}</h3>
           </Card.ImgOverlay>
         ) : (
           <></>
         )}
       </Card>
 
-      <MyVerticallyCenteredModal
-        itemData={itemData}
+      <ItemModal
+        item={props.item}
         show={modalShow}
         onHide={() => setModalShow(false)}
+        dimensions={props.dimensions}
+        scrollPosition={props.scrollPosition}
       />
     </>
   );

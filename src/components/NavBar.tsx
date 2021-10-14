@@ -1,35 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../css/NavBar.css";
 import { BsFillBagFill } from "react-icons/bs";
 import { Badge, Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IconContext } from "react-icons";
+import { IWindowProps } from "./Interfaces";
 
-function NavBar(): JSX.Element {
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  function handleResize() {
-    setDimensions({
-      height: window.innerHeight,
-      width: window.innerWidth,
-    });
-  }
-
-  function handleScroll() {
-    setScrollPosition(window.pageYOffset);
-  }
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-  }, [dimensions]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, [scrollPosition]);
+function NavBar(props: IWindowProps): JSX.Element {
 
   const cartCount = 3;
 
@@ -38,9 +15,9 @@ function NavBar(): JSX.Element {
       <Nav
         navbar
         fill
-        className={dimensions.width <= 429 ? "nav-styles-sm" : "nav-styles-md"}
+        className={props.dimensions.width <= 429 ? "nav-styles-sm" : "nav-styles-md"}
         style={
-          scrollPosition > 100
+          props.scrollPosition > 100
             ? { backgroundColor: "rgb(39, 39, 39)" }
             : { backgroundColor: "transparent" }
         }
