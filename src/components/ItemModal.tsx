@@ -36,6 +36,7 @@ function ItemModal(
 
   return (
     <Modal
+      {...props}
       dialogClassName="modal-90w"
       aria-labelledby="contained-modal-title-vcenter"
       centered
