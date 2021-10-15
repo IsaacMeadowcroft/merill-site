@@ -18,18 +18,18 @@ interface ItemModalType extends IShopItemProps {
 }
 
 function ItemModal(props: ItemModalType): JSX.Element {
-  const [currentItemPrice, setItemPrice] = useState(props.item.price);
+  const [currentItemPrice, setItemPrice] = useState(props.shopItem.price);
 
   const handleSubmitSmall = () => {
-    setItemPrice(props.item.price);
+    setItemPrice(props.shopItem.price);
   };
 
   const handleSubmitMedium = () => {
-    setItemPrice(props.item.price * 2);
+    setItemPrice(props.shopItem.price * 2);
   };
 
   const handleSubmitLarge = () => {
-    setItemPrice(props.item.price * 3);
+    setItemPrice(props.shopItem.price * 3);
   };
 
   return (
@@ -41,7 +41,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          {props.item.title}
+          {props.shopItem.title}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -73,7 +73,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
           </Col>
           <Col sm={12} md={8}>
             <Row>
-              <p>{props.item.description}</p>
+              <p>{props.shopItem.description}</p>
             </Row>
             <Row>
               <Form>

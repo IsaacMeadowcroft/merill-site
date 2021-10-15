@@ -30,9 +30,9 @@ function ShopItem(props: IShopItemProps): JSX.Element {
         />
         {isHovering ? (
           <Card.ImgOverlay>
-            <Card.Title>{props.item.title.substring(0, 35)}...</Card.Title>
-            <Card.Text>{props.item.description.substring(0, 100)}...</Card.Text>
-            <h6>${props.item.price}</h6>
+            <Card.Title>{props.shopItem.title.substring(0, 35)}...</Card.Title>
+            <Card.Text>{props.shopItem.description.substring(0, 100)}...</Card.Text>
+            <h6>${props.shopItem.price}</h6>
           </Card.ImgOverlay>
         ) : (
           <></>
@@ -40,7 +40,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
       </Card>
 
       <ItemModal
-        item={props.item}
+        shopItem={props.shopItem}
         show={modalShow}
         onHide={() => setModalShow(false)}
         dimensions={props.dimensions}

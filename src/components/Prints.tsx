@@ -3,9 +3,9 @@ import "../css/Prints.css";
 import ShopItem from "./ShopItem";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { IWindowDataProps } from "./Interfaces";
+import { IWindowShopProps } from "./Interfaces";
 
-function Prints(props: IWindowDataProps): JSX.Element {
+function Prints(props: IWindowShopProps): JSX.Element {
   return (
     <Container
       fluid
@@ -13,10 +13,10 @@ function Prints(props: IWindowDataProps): JSX.Element {
       id="Prints"
     >
       <Row style={{ width: "100%", margin: "0px" }}>
-        {props.data?.map((item) => (
+        {props.shopItems?.map((item) => (
           <Col md={4} style={{ padding: "0px" }}>
             <ShopItem
-              item={item}
+              shopItem={item}
               dimensions={props.dimensions}
               scrollPosition={props.scrollPosition}
             />

@@ -8,9 +8,15 @@ export type ShopItemType = {
   amount: number;
 };
 
-export interface CartItem {
+export enum Size {
+  SMALL,
+  MEDIUM,
+  LARGE
+}
+
+export type CartItem = {
   id: number;
-  size: number;
+  size: Size;
 }
 
 export interface IWindowProps {
@@ -18,12 +24,17 @@ export interface IWindowProps {
   scrollPosition: number;
 }
 
-export interface IWindowDataProps {
-  dimensions: { height: number, width: number };
-  scrollPosition: number;
-  data: ShopItemType[] | undefined;
+export interface IWindowShopProps extends IWindowProps {
+  shopItems: ShopItemType[] | undefined;
+}
+
+export interface IWindowCartProps extends IWindowProps {
+  cartItems: Map<CartItem, number>;
 }
 
 export interface IShopItemProps extends IWindowProps {
-  item: ShopItemType;
+  shopItem: ShopItemType;
+}
+
+export interface IWindowShopCartProps extends IWindowShopProps, IWindowCartProps {
 }

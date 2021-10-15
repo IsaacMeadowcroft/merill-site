@@ -4,9 +4,9 @@ import { BsFillBagFill } from "react-icons/bs";
 import { Badge, Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IconContext } from "react-icons";
-import { IWindowProps } from "./Interfaces";
+import { IWindowCartProps } from "./Interfaces";
 
-function NavBar(props: IWindowProps): JSX.Element {
+function NavBar(props: IWindowCartProps): JSX.Element {
 
   const cartCount = 3;
 
