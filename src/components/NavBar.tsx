@@ -12,7 +12,9 @@ function NavBar(props: IWindowCartProps): JSX.Element {
       <Nav
         navbar
         fill
-        className={props.dimensions.width <= 429 ? "nav-styles-sm" : "nav-styles-md"}
+        className={
+          props.dimensions.width <= 429 ? "nav-styles-sm" : "nav-styles-md"
+        }
         style={
           props.scrollPosition > 100
             ? { backgroundColor: "rgb(39, 39, 39)" }
@@ -23,32 +25,45 @@ function NavBar(props: IWindowCartProps): JSX.Element {
         <Nav.Link href="#Prints">PRINTS</Nav.Link>
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
-        <Nav.Link href="Cart" className="nav-bag" style={{ verticalAlign: "middle", position: "relative", padding: "0px", margin: "0px" }}>
+        <Nav.Link
+          href="Cart"
+          className="nav-bag"
+          style={{
+            verticalAlign: "middle",
+            position: "relative",
+            padding: "0px",
+            margin: "0px",
+          }}
+        >
           <IconContext.Provider
             value={{
               style: {
                 verticalAlign: "middle",
                 height: "100%",
-                overflow: "visible"
+                overflow: "visible",
               },
             }}
           >
             <BsFillBagFill />
-            <h6>
-            <Badge
-              pill
-              bg="warning"
-              text="dark"
-              style={{
-                fontFamily: "Helvetica Neue",
-                position: "absolute",
-                top: "3px",
-                left: "52%"
-              }}
-            >
-              {props.cartItems.size}
-            </Badge>
-            </h6>
+            {props.cartItems.size > 0 ? (
+              <h6>
+                <Badge
+                  pill
+                  bg="warning"
+                  text="dark"
+                  style={{
+                    fontFamily: "Helvetica Neue",
+                    position: "absolute",
+                    top: "3px",
+                    left: "52%",
+                  }}
+                >
+                  {props.cartItems.size}
+                </Badge>
+              </h6>
+            ) : (
+              <></>
+            )}
           </IconContext.Provider>
         </Nav.Link>
       </Nav>
