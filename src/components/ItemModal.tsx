@@ -10,7 +10,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "../assets/LandingPage.jpg";
-import { IShopItemProps } from "./Interfaces";
+import { IShopItemProps, Size } from "./Interfaces";
 
 interface ItemModalType extends IShopItemProps {
   show: boolean;
@@ -19,17 +19,21 @@ interface ItemModalType extends IShopItemProps {
 
 function ItemModal(props: ItemModalType): JSX.Element {
   const [currentItemPrice, setItemPrice] = useState(props.shopItem.price);
+  let currentItemSize = Size.SMALL;
 
   const handleSubmitSmall = () => {
     setItemPrice(props.shopItem.price);
+    currentItemSize = Size.SMALL;
   };
 
   const handleSubmitMedium = () => {
     setItemPrice(props.shopItem.price * 2);
+    currentItemSize = Size.MEDIUM;
   };
 
   const handleSubmitLarge = () => {
     setItemPrice(props.shopItem.price * 3);
+    currentItemSize = Size.LARGE;
   };
 
   return (
@@ -106,10 +110,10 @@ function ItemModal(props: ItemModalType): JSX.Element {
             <h6>${currentItemPrice}</h6>
             <Row>
               <Col sm={6} >
-                <Button variant="warning" style={{ width: "100%" }}>Add to Cart</Button>
+                <Button variant="warning" style={{ width: "100%" }} onClick={() => props.addCartItem(props.shopItem.id, currentItemSize)}>Add to Cart</Button>
               </Col>
               <Col sm={6} >
-                <Button variant="dark" style={{ width: "100%" }}>Buy Now</Button>
+                <Button variant="dark" style={{ width: "100%" }} >Buy Now</Button>
               </Col>
             </Row>
           </Col>

@@ -45,6 +45,8 @@ function ShopItem(props: IShopItemProps): JSX.Element {
         onHide={() => setModalShow(false)}
         dimensions={props.dimensions}
         scrollPosition={props.scrollPosition}
+        addCartItem={props.addCartItem}
+        removeCartItem={props.removeCartItem}
       />
     </>
   );

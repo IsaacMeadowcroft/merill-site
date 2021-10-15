@@ -34,7 +34,11 @@ export interface IWindowCartProps extends IWindowProps {
 
 export interface IShopItemProps extends IWindowProps {
   shopItem: ShopItemType;
+  addCartItem: (id: number, size: Size) => void;
+  removeCartItem: (id: number, size: Size) => void;
 }
 
 export interface IWindowShopCartProps extends IWindowShopProps, IWindowCartProps {
+  addCartItem: (id: number, size: Size) => void;
+  removeCartItem: (id: number, size: Size) => void;
 }

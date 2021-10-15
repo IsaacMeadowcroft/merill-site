@@ -3,9 +3,9 @@ import "../css/Prints.css";
 import ShopItem from "./ShopItem";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { IWindowShopProps } from "./Interfaces";
+import { IWindowShopCartProps } from "./Interfaces";
 
-function Prints(props: IWindowShopProps): JSX.Element {
+function Prints(props: IWindowShopCartProps): JSX.Element {
   return (
     <Container
       fluid
@@ -19,6 +19,8 @@ function Prints(props: IWindowShopProps): JSX.Element {
               shopItem={item}
               dimensions={props.dimensions}
               scrollPosition={props.scrollPosition}
+              addCartItem={props.addCartItem}
+              removeCartItem={props.removeCartItem}
             />
           </Col>
         ))}

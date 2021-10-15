@@ -7,9 +7,6 @@ import { IconContext } from "react-icons";
 import { IWindowCartProps } from "./Interfaces";
 
 function NavBar(props: IWindowCartProps): JSX.Element {
-
-  const cartCount = 3;
-
   return (
     <Navbar fixed="top" variant="dark" style={{ padding: "0px" }}>
       <Nav
@@ -49,7 +46,7 @@ function NavBar(props: IWindowCartProps): JSX.Element {
                 left: "52%"
               }}
             >
-              {cartCount}
+              {props.cartItems.size}
             </Badge>
             </h6>
           </IconContext.Provider>

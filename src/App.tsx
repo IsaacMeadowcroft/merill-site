@@ -37,7 +37,7 @@ function App(): JSX.Element {
     });
   }
 
-  function addCartItems(id: number, size: Size) {
+  function addCartItem(id: number, size: Size) {
     const cartItemCount = cartItems.get({ id, size });
     if (cartItemCount) {
       setCartItems(cartItems.set({ id, size }, cartItemCount + 1));
@@ -46,7 +46,7 @@ function App(): JSX.Element {
     }
   }
 
-  function removeCartItems(id: number, size: Size) {
+  function removeCartItem(id: number, size: Size) {
     const cartItemCount = cartItems.get({ id, size });
     if (cartItemCount && cartItemCount > 1) {
       setCartItems(cartItems.set({ id, size }, cartItemCount - 1));
@@ -91,6 +91,9 @@ function App(): JSX.Element {
                 dimensions={dimensions}
                 scrollPosition={scrollPosition}
                 shopItems={data}
+                cartItems={cartItems}
+                addCartItem={addCartItem}
+                removeCartItem={removeCartItem}
               />
             )}
             <Portfolio
@@ -111,6 +114,8 @@ function App(): JSX.Element {
                 scrollPosition={scrollPosition}
                 shopItems={data}
                 cartItems={cartItems}
+                addCartItem={addCartItem}
+                removeCartItem={removeCartItem}
               />
             )}
           </Route>
