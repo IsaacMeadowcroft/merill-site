@@ -32,7 +32,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
           <Card.ImgOverlay>
             <Card.Title>{props.item.title.substring(0, 35)}...</Card.Title>
             <Card.Text>{props.item.description.substring(0, 100)}...</Card.Text>
-            <h3>${props.item.price}</h3>
+            <h6>${props.item.price}</h6>
           </Card.ImgOverlay>
         ) : (
           <></>

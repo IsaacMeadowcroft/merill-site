@@ -17,9 +17,7 @@ interface ItemModalType extends IShopItemProps {
   onHide: () => void;
 }
 
-function ItemModal(
-  props: ItemModalType
-): JSX.Element {
+function ItemModal(props: ItemModalType): JSX.Element {
   const [currentItemPrice, setItemPrice] = useState(props.item.price);
 
   const handleSubmitSmall = () => {
@@ -48,7 +46,7 @@ function ItemModal(
       </Modal.Header>
       <Modal.Body>
         <Row>
-          <Col sm={12} md={5}>
+          <Col sm={12} md={4}>
             <Carousel fade>
               <Carousel.Item>
                 <img
@@ -73,7 +71,7 @@ function ItemModal(
               </Carousel.Item>
             </Carousel>
           </Col>
-          <Col sm={12} md={7}>
+          <Col sm={12} md={8}>
             <Row>
               <p>{props.item.description}</p>
             </Row>
@@ -105,28 +103,13 @@ function ItemModal(
                 </div>
               </Form>
             </Row>
-            <h3>${currentItemPrice}</h3>
+            <h6>${currentItemPrice}</h6>
             <Row>
-              <Form.Group>
-                <Form.Label>Quantity</Form.Label>
-              <Form.Select defaultValue="1" style={props.dimensions.width >= 768? { width: "7vw" } : { width: "20vw" } }>
-                <option>1</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">4</option>
-              </Form.Select>
-              </Form.Group>
-            </Row>
-            <Row style={{paddingTop: "3vh"}}>
-              <Col sm={6}>
-                <Button variant="warning" style={{ width: "100%" }}>
-                  Add to Cart
-                </Button>
+              <Col sm={6} >
+                <Button variant="warning" style={{ width: "100%" }}>Add to Cart</Button>
               </Col>
-              <Col sm={6}>
-                <Button variant="dark" style={{ width: "100%" }}>
-                  Buy Now
-                </Button>
+              <Col sm={6} >
+                <Button variant="dark" style={{ width: "100%" }}>Buy Now</Button>
               </Col>
             </Row>
           </Col>
