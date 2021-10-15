@@ -106,7 +106,7 @@ function App(): JSX.Element {
             <About dimensions={dimensions} scrollPosition={scrollPosition} />
             <Contact dimensions={dimensions} scrollPosition={scrollPosition} />
           </Route>
-          <Route path="/merill-site/Cart">
+          <Route path="/Cart">
             {isLoading ? (
               <Spinner animation="border" role="status">
                 <span className="visually-hidden">Loading...</span>
