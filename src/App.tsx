@@ -44,7 +44,7 @@ function App(): JSX.Element {
     <QueryClientProvider client={client}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/merill-bobotis">
             <NavBar dimensions={dimensions} scrollPosition={scrollPosition} />
             <Home dimensions={dimensions} scrollPosition={scrollPosition} />
             <Prints dimensions={dimensions} scrollPosition={scrollPosition} />
@@ -55,7 +55,7 @@ function App(): JSX.Element {
             <About dimensions={dimensions} scrollPosition={scrollPosition} />
             <Contact dimensions={dimensions} scrollPosition={scrollPosition} />
           </Route>
-          <Route path="/Cart">
+          <Route path="/merill-bobotis/Cart">
             <Cart dimensions={dimensions} scrollPosition={scrollPosition}/>
           </Route>
         </Switch>
