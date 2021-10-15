@@ -23,8 +23,11 @@ function App(): JSX.Element {
     height: window.innerHeight,
     width: window.innerWidth,
   });
-
-  const [cartItems, setCartItems] = useState(new Map<CartItem, number>());
+  const [cartItems, setCartItems] = useState(new Map<CartItem, number>(JSON.parse(localStorage.userCart)));
+  const { data, isLoading, error } = useQuery<ShopItemType[]>(
+    "products",
+    getProducts
+  );
 
   function handleScroll() {
     setScrollPosition(window.pageYOffset);
@@ -64,10 +67,10 @@ function App(): JSX.Element {
     window.addEventListener("resize", handleResize);
   }, [dimensions]);
 
-  const { data, isLoading, error } = useQuery<ShopItemType[]>(
-    "products",
-    getProducts
-  );
+  useEffect(() => {
+    localStorage.userCart = JSON.stringify(Array.from(cartItems.entries()));
+    localStorage.setItem('userCart', localStorage.userCart);
+  }, [cartItems.size]);
 
   if (error) {
     return <div>Something went wrong... </div>;
