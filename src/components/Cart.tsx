@@ -32,6 +32,9 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
               <h2>
                 Price: {props.shopItems?.find((x) => x.id === item.id)?.price}
               </h2>
+              <h2>
+                Quantity:
+              </h2>
             </Col>
           </Row>
         ))}

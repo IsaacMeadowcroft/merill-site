@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IShopItemProps, Size } from "./Interfaces";
+import { useHistory } from "react-router-dom";
 
 interface ItemModalType extends IShopItemProps {
   show: boolean;
@@ -17,6 +18,7 @@ interface ItemModalType extends IShopItemProps {
 }
 
 function ItemModal(props: ItemModalType): JSX.Element {
+  const history = useHistory();
   const [currentItemPrice, setItemPrice] = useState(props.shopItem.price);
   let currentItemSize = Size.SMALL;
 
@@ -112,7 +114,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
                 <Button variant="warning" style={{ width: "100%" }} onClick={() => props.addCartItem(props.shopItem.id, currentItemSize)}>Add to Cart</Button>
               </Col>
               <Col sm={6} >
-                <Button variant="dark" style={{ width: "100%" }} onClick={() => props.addCartItem(props.shopItem.id, currentItemSize)} href="/Cart">Buy Now</Button>
+                <Button variant="dark" style={{ width: "100%" }} onClick={() => {props.addCartItem(props.shopItem.id, currentItemSize); history.push("/Cart");}}>Buy Now</Button>
               </Col>
             </Row>
           </Col>
