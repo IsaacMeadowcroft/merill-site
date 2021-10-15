@@ -26,7 +26,7 @@ function NavBar(props: IWindowProps): JSX.Element {
         <Nav.Link href="#Prints">PRINTS</Nav.Link>
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
-        <Nav.Item className="nav-bag" style={{ verticalAlign: "middle", position: "relative", }}>
+        <Nav.Link href="Cart" className="nav-bag" style={{ verticalAlign: "middle", position: "relative", padding: "0px", margin: "0px" }}>
           <IconContext.Provider
             value={{
               style: {
@@ -53,7 +53,7 @@ function NavBar(props: IWindowProps): JSX.Element {
             </Badge>
             </h6>
           </IconContext.Provider>
-        </Nav.Item>
+        </Nav.Link>
       </Nav>
     </Navbar>
   );

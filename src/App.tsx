@@ -1,7 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import {NavBar, Home, Prints, Portfolio, About, Contact} from './components/index';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { QueryClient, QueryClientProvider } from 'react-query';
+import React, { useEffect, useState } from "react";
+import {
+  NavBar,
+  Home,
+  Prints,
+  Portfolio,
+  About,
+  Contact,
+  Cart,
+} from "./components/index";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 const client = new QueryClient();
 
@@ -31,17 +40,28 @@ function App(): JSX.Element {
     window.addEventListener("resize", handleResize);
   }, [dimensions]);
 
-
   return (
     <QueryClientProvider client={client}>
-      <NavBar dimensions={dimensions} scrollPosition={scrollPosition}/>
-      <Home dimensions={dimensions} scrollPosition={scrollPosition}/>
-      <Prints dimensions={dimensions} scrollPosition={scrollPosition}/>
-      <Portfolio dimensions={dimensions} scrollPosition={scrollPosition}/>
-      <About dimensions={dimensions} scrollPosition={scrollPosition}/>
-      <Contact dimensions={dimensions} scrollPosition={scrollPosition}/>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/">
+            <NavBar dimensions={dimensions} scrollPosition={scrollPosition} />
+            <Home dimensions={dimensions} scrollPosition={scrollPosition} />
+            <Prints dimensions={dimensions} scrollPosition={scrollPosition} />
+            <Portfolio
+              dimensions={dimensions}
+              scrollPosition={scrollPosition}
+            />
+            <About dimensions={dimensions} scrollPosition={scrollPosition} />
+            <Contact dimensions={dimensions} scrollPosition={scrollPosition} />
+          </Route>
+          <Route path="/Cart">
+            <Cart dimensions={dimensions} scrollPosition={scrollPosition}/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </QueryClientProvider>
-  )
+  );
 }
 
 export default App;
