@@ -19,23 +19,28 @@ interface ItemModalType extends IShopItemProps {
 
 function ItemModal(props: ItemModalType): JSX.Element {
   const history = useHistory();
-  const [currentItemPrice, setItemPrice] = useState(props.shopItem.price);
-  let currentItemSize = Size.SMALL;
+  const [currentItemSize, setItemSize] = useState<Size>(Size.SMALL);
 
   const handleSubmitSmall = () => {
-    setItemPrice(props.shopItem.price);
-    currentItemSize = Size.SMALL;
+    setItemSize(Size.SMALL);
   };
 
   const handleSubmitMedium = () => {
-    setItemPrice(props.shopItem.price * 2);
-    currentItemSize = Size.MEDIUM;
+    setItemSize(Size.MEDIUM);
   };
 
   const handleSubmitLarge = () => {
-    setItemPrice(props.shopItem.price * 3);
-    currentItemSize = Size.LARGE;
+    setItemSize(Size.LARGE);
   };
+
+  let currentItemPrice = props.shopItem.price;
+  if (currentItemSize == Size.SMALL) {
+    currentItemPrice = props.shopItem.price;
+  } else if (currentItemSize == Size.MEDIUM) {
+    currentItemPrice = props.shopItem.price*2;
+  } else {
+    currentItemPrice = props.shopItem.price*3;
+  }
 
   return (
     <Modal
@@ -89,21 +94,21 @@ function ItemModal(props: ItemModalType): JSX.Element {
                     label="Small"
                     name="group1"
                     type="radio"
-                    onChange={handleSubmitSmall}
+                    onClick={handleSubmitSmall}
                   />
                   <Form.Check
                     inline
                     label="Medium"
                     name="group1"
                     type="radio"
-                    onChange={handleSubmitMedium}
+                    onClick={handleSubmitMedium}
                   />
                   <Form.Check
                     inline
                     label="Large"
                     name="group1"
                     type="radio"
-                    onChange={handleSubmitLarge}
+                    onClick={handleSubmitLarge}
                   />
                 </div>
               </Form>

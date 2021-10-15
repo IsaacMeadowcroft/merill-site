@@ -1,8 +1,16 @@
 import React from "react";
 import "../css/Cart.css";
-import { Image, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
+import {
+  Image,
+  Col,
+  Container,
+  Nav,
+  Navbar,
+  Row,
+  Button,
+} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { IWindowShopCartProps } from "./Interfaces";
+import { IWindowShopCartProps, Size} from "./Interfaces";
 
 function Cart(props: IWindowShopCartProps): JSX.Element {
   return (
@@ -23,18 +31,23 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
               />
             </Col>
             <Col sm={6} style={{ padding: "0px", margin: "0px" }}>
-              <h2>ID: {item.id}</h2>
-              <h2>Size: {item.size}</h2>
-              <h2>
+              <h5>ID: {item.id}</h5>
+              <h5>Size: {Size[item.size]}</h5>
+              <h5>
                 Description:{" "}
                 {props.shopItems?.find((x) => x.id === item.id)?.description}
-              </h2>
-              <h2>
+              </h5>
+              <h5>
                 Price: {props.shopItems?.find((x) => x.id === item.id)?.price}
-              </h2>
-              <h2>
-                Quantity:
-              </h2>
+              </h5>
+              <h5>Quantity: {props.cartItems.get(item)}</h5>
+              <Row style={{ width: "100%" }}>
+                <Button
+                  onClick={() => props.removeCartItem(item.id, item.size)}
+                >
+                  Remove from Cart
+                </Button>
+              </Row>
             </Col>
           </Row>
         ))}

@@ -23,7 +23,9 @@ function App(): JSX.Element {
     height: window.innerHeight,
     width: window.innerWidth,
   });
-  const [cartItems, setCartItems] = useState(new Map<CartItem, number>(JSON.parse(localStorage.userCart)));
+  const [cartItems, setCartItems] = useState(
+    new Map<CartItem, number>([JSON.parse(localStorage.userCart)])
+  );
   const { data, isLoading, error } = useQuery<ShopItemType[]>(
     "products",
     getProducts
@@ -51,11 +53,13 @@ function App(): JSX.Element {
 
   function removeCartItem(id: number, size: Size) {
     const cartItemCount = cartItems.get({ id, size });
-    if (cartItemCount && cartItemCount > 1) {
-      setCartItems(cartItems.set({ id, size }, cartItemCount - 1));
-    } else if (cartItemCount && cartItemCount == 1) {
-      cartItems.delete({ id, size });
-      setCartItems(cartItems);
+    if (cartItemCount != undefined) {
+      if (cartItemCount > 1) {
+        setCartItems(cartItems.set({ id, size }, cartItemCount - 1));
+      } else if (cartItemCount == 1) {
+        cartItems.delete({ id, size });
+        setCartItems(cartItems);
+      }
     }
   }
 
@@ -69,7 +73,7 @@ function App(): JSX.Element {
 
   useEffect(() => {
     localStorage.userCart = JSON.stringify(Array.from(cartItems.entries()));
-    localStorage.setItem('userCart', localStorage.userCart);
+    localStorage.setItem("userCart", localStorage.userCart);
   }, [cartItems.size]);
 
   if (error) {
