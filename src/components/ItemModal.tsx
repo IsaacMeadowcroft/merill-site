@@ -9,7 +9,6 @@ import {
   Form,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LandingPage from "../assets/LandingPage.jpg";
 import { IShopItemProps, Size } from "./Interfaces";
 
 interface ItemModalType extends IShopItemProps {
@@ -55,21 +54,21 @@ function ItemModal(props: ItemModalType): JSX.Element {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src={LandingPage}
+                  src={props.shopItem.image}
                   alt="First slide"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src={LandingPage}
+                  src={props.shopItem.image}
                   alt="Second slide"
                 />
               </Carousel.Item>
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src={LandingPage}
+                  src={props.shopItem.image}
                   alt="Third slide"
                 />
               </Carousel.Item>
@@ -113,7 +112,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
                 <Button variant="warning" style={{ width: "100%" }} onClick={() => props.addCartItem(props.shopItem.id, currentItemSize)}>Add to Cart</Button>
               </Col>
               <Col sm={6} >
-                <Button variant="dark" style={{ width: "100%" }} >Buy Now</Button>
+                <Button variant="dark" style={{ width: "100%" }} onClick={() => props.addCartItem(props.shopItem.id, currentItemSize)} href="/Cart">Buy Now</Button>
               </Col>
             </Row>
           </Col>

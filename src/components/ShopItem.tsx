@@ -3,7 +3,6 @@ import "../css/ShopItem.css";
 import { Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemModal from "./ItemModal";
-import LandingPage from "../assets/LandingPage.jpg";
 import { IShopItemProps } from "./Interfaces";
 
 
@@ -21,12 +20,13 @@ function ShopItem(props: IShopItemProps): JSX.Element {
       >
         <Card.Img
           variant="top"
-          src={LandingPage}
+          src={props.shopItem.image}
           style={
             isHovering
               ? { filter: "brightness(20%)" }
               : { filter: "brightness(100%)" }
           }
+          className="img-size"
         />
         {isHovering ? (
           <Card.ImgOverlay>
