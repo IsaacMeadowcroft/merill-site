@@ -12,9 +12,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useQuery } from "react-query";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
-import { ShopItemType, Size } from "./components/Interfaces";
+import { TShopItem, Size } from "./components/Interfaces";
 
-const getProducts = async (): Promise<ShopItemType[]> =>
+const getProducts = async (): Promise<TShopItem[]> =>
   await (await fetch("https://fakestoreapi.com/products")).json();
 
 function App(): JSX.Element {
@@ -24,9 +24,10 @@ function App(): JSX.Element {
     width: window.innerWidth,
   });
   const localStorageCartRequest = localStorage.getItem("userCart");
-  const [cartItems, setCartItems] = localStorageCartRequest? useState(
-    new Map<string, number>(JSON.parse(localStorageCartRequest))) : useState(new Map<string, number>());
-  const { data, isLoading, error } = useQuery<ShopItemType[]>(
+  const [cartItems, setCartItems] = localStorageCartRequest
+    ? useState(new Map<string, number>(JSON.parse(localStorageCartRequest)))
+    : useState(new Map<string, number>());
+  const { data, isLoading, error } = useQuery<TShopItem[]>(
     "products",
     getProducts
   );
@@ -45,7 +46,9 @@ function App(): JSX.Element {
   function addCartItem(id: number, size: Size) {
     const cartItemCount = cartItems.get(JSON.stringify({ id, size }));
     if (cartItemCount) {
-      setCartItems(cartItems.set(JSON.stringify({ id, size }), cartItemCount + 1));
+      setCartItems(
+        cartItems.set(JSON.stringify({ id, size }), cartItemCount + 1)
+      );
     } else {
       setCartItems(cartItems.set(JSON.stringify({ id, size }), 1));
     }
@@ -57,7 +60,9 @@ function App(): JSX.Element {
     const cartItemCount = cartItems.get(JSON.stringify({ id, size }));
     if (cartItemCount != undefined) {
       if (cartItemCount > 1) {
-        setCartItems(cartItems.set(JSON.stringify({ id, size }), cartItemCount - 1));
+        setCartItems(
+          cartItems.set(JSON.stringify({ id, size }), cartItemCount - 1)
+        );
       } else if (cartItemCount == 1) {
         cartItems.delete(JSON.stringify({ id, size }));
         setCartItems(cartItems);

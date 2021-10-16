@@ -1,4 +1,4 @@
-export type ShopItemType = {
+export type TShopItem = {
   id: number;
   category: string;
   description: string;
@@ -6,17 +6,17 @@ export type ShopItemType = {
   price: number;
   title: string;
   amount: number;
-};
+}
+
+export type TCartItem = {
+  id: number;
+  size: Size;
+}
 
 export enum Size {
   SMALL,
   MEDIUM,
   LARGE
-}
-
-export type CartItem = {
-  id: number;
-  size: Size;
 }
 
 export interface IWindowProps {
@@ -25,7 +25,7 @@ export interface IWindowProps {
 }
 
 export interface IWindowShopProps extends IWindowProps {
-  shopItems: ShopItemType[] | undefined;
+  shopItems: TShopItem[] | undefined;
 }
 
 export interface IWindowCartProps extends IWindowProps {
@@ -33,7 +33,14 @@ export interface IWindowCartProps extends IWindowProps {
 }
 
 export interface IShopItemProps extends IWindowProps {
-  shopItem: ShopItemType;
+  shopItem: TShopItem;
+  addCartItem: (id: number, size: Size) => void;
+  removeCartItem: (id: number, size: Size) => void;
+}
+
+export interface ICartItemProps extends IWindowProps, IWindowShopProps {
+  quantity: number;
+  cartItem: TCartItem;
   addCartItem: (id: number, size: Size) => void;
   removeCartItem: (id: number, size: Size) => void;
 }
@@ -42,3 +49,4 @@ export interface IWindowShopCartProps extends IWindowShopProps, IWindowCartProps
   addCartItem: (id: number, size: Size) => void;
   removeCartItem: (id: number, size: Size) => void;
 }
+
