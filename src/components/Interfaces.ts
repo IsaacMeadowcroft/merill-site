@@ -29,7 +29,7 @@ export interface IWindowShopProps extends IWindowProps {
 }
 
 export interface IWindowCartProps extends IWindowProps {
-  cartItems: Map<CartItem, number>;
+  cartItems: Map<string, number>;
 }
 
 export interface IShopItemProps extends IWindowProps {
