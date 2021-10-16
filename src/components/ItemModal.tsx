@@ -119,7 +119,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
                 <Button variant="warning" style={{ width: "100%" }} onClick={() => props.addCartItem(props.shopItem.id, currentItemSize)}>Add to Cart</Button>
               </Col>
               <Col sm={6} >
-                <Button variant="dark" style={{ width: "100%" }} onClick={() => {props.addCartItem(props.shopItem.id, currentItemSize); history.push("/Cart");}}>Buy Now</Button>
+                <Button variant="dark" style={{ width: "100%" }} onClick={() => {props.addCartItem(props.shopItem.id, currentItemSize); history.push("/merill-site/Cart");}}>Buy Now</Button>
               </Col>
             </Row>
           </Col>

@@ -26,7 +26,7 @@ function NavBar(props: IWindowCartProps): JSX.Element {
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
         <Nav.Link
-          href="/Cart"
+          href="/merill-site/Cart"
           className="nav-bag"
           style={{
             verticalAlign: "middle",

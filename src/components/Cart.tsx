@@ -25,14 +25,12 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
       </Navbar>
       <Container fluid id="Cart">
         {Array.from(props.cartItems.keys()).map((item) => {
-          console.log("MY CART ITEM "+item)
           let cartItem = {id: 1, size: Size.SMALL};
           try {
             cartItem = JSON.parse(item);
           } catch(err) {
             return <></>
           }
-          console.log("CHICHI "+cartItem)
           return (
             <Card style={{ marginTop: "5vh" }}>
               <Card.Header>
