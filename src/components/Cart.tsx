@@ -2,6 +2,7 @@ import React from "react";
 import "../css/Cart.css";
 import {
   Image,
+  Card,
   Col,
   Container,
   Nav,
@@ -24,13 +25,16 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
       </Navbar>
       <Container fluid id="Cart">
         {Array.from(props.cartItems.keys()).map((item) => (
-          <Row style={{ padding: "0px", margin: "0px" }}>
-            <Col sm={6} style={{ padding: "0px", margin: "0px" }}>
-              <Image
+          <Card style={{marginTop: "5vh"}}>
+          <Card.Header>{props.shopItems?.find((x) => x.id === item.id)?.title}</Card.Header>
+          <Card.Body>
+            <Row style={{ padding: "0px", margin: "0px" }}>
+            <Col sm={3} style={{ padding: "0px", margin: "0px"}}>
+              <Image style={{maxWidth: "90%"}}
                 src={props.shopItems?.find((x) => x.id === item.id)?.image}
               />
             </Col>
-            <Col sm={6} style={{ padding: "0px", margin: "0px" }}>
+            <Col sm={9} style={{ padding: "0px", margin: "0px" }}>
               <h5>ID: {item.id}</h5>
               <h5>Size: {Size[item.size]}</h5>
               <h5>
@@ -51,6 +55,8 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
               </Row>
             </Col>
           </Row>
+          </Card.Body>
+        </Card>
         ))}
       </Container>
     </>
