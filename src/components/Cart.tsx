@@ -10,7 +10,7 @@ import {
   Button,
 } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { IWindowShopCartProps, Size} from "./Interfaces";
+import { IWindowShopCartProps, Size, CartItem} from "./Interfaces";
 
 function Cart(props: IWindowShopCartProps): JSX.Element {
   return (
@@ -40,7 +40,8 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
               <h5>
                 Price: {props.shopItems?.find((x) => x.id === item.id)?.price}
               </h5>
-              <h5>Quantity: {props.cartItems.get(item)}</h5>
+              {console.log(props.cartItems.get({id: item.id, size: item.size}))}
+              <h5>Quantity: {props.cartItems.get({id: item.id, size: item.size})}</h5>
               <Row style={{ width: "100%" }}>
                 <Button
                   onClick={() => props.removeCartItem(item.id, item.size)}

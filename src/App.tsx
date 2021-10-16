@@ -24,7 +24,7 @@ function App(): JSX.Element {
     width: window.innerWidth,
   });
   const [cartItems, setCartItems] = useState(
-    new Map<CartItem, number>([JSON.parse(localStorage.userCart)])
+    new Map<CartItem, number>(JSON.parse(localStorage.getItem("userCart")||""))
   );
   const { data, isLoading, error } = useQuery<ShopItemType[]>(
     "products",
@@ -49,6 +49,8 @@ function App(): JSX.Element {
     } else {
       setCartItems(cartItems.set({ id, size }, 1));
     }
+    console.log(Object.fromEntries(cartItems));
+    console.log(cartItems.size)
   }
 
   function removeCartItem(id: number, size: Size) {
