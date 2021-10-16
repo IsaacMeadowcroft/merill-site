@@ -5,8 +5,10 @@ import { Badge, Nav, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IconContext } from "react-icons";
 import { IWindowCartProps } from "./Interfaces";
+import { useHistory } from "react-router-dom";
 
 function NavBar(props: IWindowCartProps): JSX.Element {
+  const history = useHistory();
   return (
     <Navbar fixed="top" variant="dark" style={{ padding: "0px" }}>
       <Nav
@@ -26,7 +28,7 @@ function NavBar(props: IWindowCartProps): JSX.Element {
         <Nav.Link href="#Portfolio">PORTFOLIO</Nav.Link>
         <Nav.Link href="#About">ABOUT</Nav.Link>
         <Nav.Link
-          href="/merill-site/Cart"
+          onClick={() => history.push("/merill-site/Cart")}
           className="nav-bag"
           style={{
             verticalAlign: "middle",
