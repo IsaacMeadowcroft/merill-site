@@ -25,7 +25,7 @@ function App(): JSX.Element {
   });
   const localStorageCartRequest = localStorage.getItem("userCart");
   const [cartItems, setCartItems] = localStorageCartRequest? useState(
-    new Map<string, number>(JSON.parse(localStorageCartRequest))) : useState(new Map<string, number>([]));
+    new Map<string, number>(JSON.parse(localStorageCartRequest))) : useState(new Map<string, number>());
   const { data, isLoading, error } = useQuery<ShopItemType[]>(
     "products",
     getProducts
@@ -49,6 +49,8 @@ function App(): JSX.Element {
     } else {
       setCartItems(cartItems.set(JSON.stringify({ id, size }), 1));
     }
+    localStorage.userCart = JSON.stringify(Array.from(cartItems.entries()));
+    localStorage.setItem("userCart", localStorage.userCart);
   }
 
   function removeCartItem(id: number, size: Size) {
@@ -61,6 +63,8 @@ function App(): JSX.Element {
         setCartItems(cartItems);
       }
     }
+    localStorage.userCart = JSON.stringify(Array.from(cartItems.entries()));
+    localStorage.setItem("userCart", localStorage.userCart);
   }
 
   useEffect(() => {
@@ -70,11 +74,6 @@ function App(): JSX.Element {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
   }, [dimensions]);
-
-  useEffect(() => {
-    localStorage.userCart = JSON.stringify(Array.from(cartItems.entries()));
-    localStorage.setItem("userCart", localStorage.userCart);
-  }, [cartItems.size]);
 
   if (error) {
     return <div>Something went wrong... </div>;
