@@ -20,6 +20,7 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
               dimensions={props.dimensions}
               scrollPosition={props.scrollPosition}
               addCartItem={props.addCartItem}
+              minusCartItem={props.minusCartItem}
               removeCartItem={props.removeCartItem}
             />
           </Col>

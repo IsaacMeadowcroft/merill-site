@@ -46,6 +46,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
         dimensions={props.dimensions}
         scrollPosition={props.scrollPosition}
         addCartItem={props.addCartItem}
+        minusCartItem={props.minusCartItem}
         removeCartItem={props.removeCartItem}
       />
     </>

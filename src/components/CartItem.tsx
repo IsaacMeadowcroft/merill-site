@@ -1,53 +1,77 @@
 import React from "react";
 import "../css/Cart.css";
-import { Image, Card, Col, Row, Button } from "react-bootstrap";
+import { Image, Col, Row, Badge } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ICartItemProps, Size } from "./Interfaces";
+import { BsTrash } from "react-icons/bs";
+import { FiPlus, FiMinus } from "react-icons/fi";
 
 function CartItem(props: ICartItemProps): JSX.Element {
   return (
-    <Card style={{ marginTop: "5vh" }}>
-      <Card.Header>
-        {props.shopItems?.find((x) => x.id === props.cartItem.id)?.title}
-      </Card.Header>
-      <Card.Body>
-        <Row style={{ padding: "0px", margin: "0px" }}>
-          <Col sm={3} style={{ padding: "0px", margin: "0px" }}>
-            <Image
-              style={{ maxWidth: "90%" }}
-              src={
-                props.shopItems?.find((x) => x.id === props.cartItem.id)?.image
-              }
-            />
-          </Col>
-          <Col sm={9} style={{ padding: "0px", margin: "0px" }}>
-            <h5>ID: {props.cartItem.id}</h5>
-            <h5>Size: {Size[props.cartItem.size]}</h5>
-            <h5>
-              Description:{" "}
-              {
-                props.shopItems?.find((x) => x.id === props.cartItem.id)
-                  ?.description
-              }
-            </h5>
-            <h5>
-              Price:{" "}
-              {props.shopItems?.find((x) => x.id === props.cartItem.id)?.price}
-            </h5>
-            <h5>Quantity: {props.quantity}</h5>
-            <Row style={{ width: "100%" }}>
-              <Button
+    <Row style={{ padding: "0px", backgroundColor: "white", margin: "1vh" }}>
+      <Col sm={1} style={{ padding: "0px", margin: "0px" }}>
+        <Image
+          style={{ maxWidth: "90%" }}
+          src={props.shopItems?.find((x) => x.id === props.cartItem.id)?.image}
+        />
+      </Col>
+      <Col sm={5} className="position-relative">
+        <div className="position-absolute top-50 start-0 translate-middle-y">
+          {props.shopItems?.find((x) => x.id === props.cartItem.id)?.title}
+        </div>
+      </Col>
+      <Col sm={2} className="position-relative">
+        <div className="position-absolute top-50 start-0 translate-middle-y">
+          {Size[props.cartItem.size]}
+        </div>
+      </Col>
+      <Col sm={2} className="position-relative">
+        <div className="position-absolute top-50 start-0 translate-middle-y">
+          <Row>
+            <Col>
+              <div
                 onClick={() =>
-                  props.removeCartItem(props.cartItem.id, props.cartItem.size)
+                  props.addCartItem(props.cartItem.id, props.cartItem.size)
                 }
               >
-                Remove from Cart
-              </Button>
-            </Row>
-          </Col>
-        </Row>
-      </Card.Body>
-    </Card>
+                <FiPlus />
+              </div>
+            </Col>
+            <Col>
+              <Badge bg="light" text="dark">
+                {props.quantity}
+              </Badge>
+            </Col>
+            <Col>
+              <FiMinus
+                onClick={() =>
+                  props.minusCartItem(props.cartItem.id, props.cartItem.size)
+                }
+              />
+            </Col>
+          </Row>
+        </div>
+      </Col>
+      <Col
+        sm={1}
+        className="position-relative"
+        style={{ padding: "0px", margin: "0px" }}
+      >
+        <div className="position-absolute top-50 start-0 translate-middle-y">
+          ${(props.shopItems?.find((x) => x.id === props.cartItem.id)?.price || 1) * props.quantity}
+        </div>
+      </Col>
+      <Col sm={1} className="position-relative">
+        <div
+          className="position-absolute top-50 start-0 translate-middle-y"
+          onClick={() =>
+            props.removeCartItem(props.cartItem.id, props.cartItem.size)
+          }
+        >
+          <BsTrash />
+        </div>
+      </Col>
+    </Row>
   );
 }
 

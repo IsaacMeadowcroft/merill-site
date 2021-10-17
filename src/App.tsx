@@ -56,7 +56,7 @@ function App(): JSX.Element {
     localStorage.setItem("userCart", localStorage.userCart);
   }
 
-  function removeCartItem(id: number, size: Size) {
+  function minusCartItem(id: number, size: Size) {
     const cartItemCount = cartItems.get(JSON.stringify({ id, size }));
     if (cartItemCount != undefined) {
       if (cartItemCount > 1) {
@@ -68,6 +68,13 @@ function App(): JSX.Element {
         setCartItems(cartItems);
       }
     }
+    localStorage.userCart = JSON.stringify(Array.from(cartItems.entries()));
+    localStorage.setItem("userCart", localStorage.userCart);
+  }
+
+  function removeCartItem(id: number, size: Size) {
+    cartItems.delete(JSON.stringify({ id, size }));
+    setCartItems(cartItems);
     localStorage.userCart = JSON.stringify(Array.from(cartItems.entries()));
     localStorage.setItem("userCart", localStorage.userCart);
   }
@@ -104,6 +111,7 @@ function App(): JSX.Element {
                 shopItems={data}
                 cartItems={cartItems}
                 addCartItem={addCartItem}
+                minusCartItem={minusCartItem}
                 removeCartItem={removeCartItem}
               />
             )}
@@ -126,6 +134,7 @@ function App(): JSX.Element {
                 shopItems={data}
                 cartItems={cartItems}
                 addCartItem={addCartItem}
+                minusCartItem={minusCartItem}
                 removeCartItem={removeCartItem}
               />
             )}
