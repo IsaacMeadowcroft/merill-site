@@ -8,12 +8,13 @@ import { VscArrowLeft } from "react-icons/vsc";
 
 function Cart(props: IWindowShopCartProps): JSX.Element {
   return (
-    <Container fluid style={{ height: "100%" }}>
+    <Container fluid>
       <Row style={{ backgroundColor: "whitesmoke" }}>
         <Col sm={8}>
           <Nav.Link href="/merill-site/">
-            <VscArrowLeft />
-            <h3>Continue Shopping</h3>
+            <h4>
+              <VscArrowLeft /> Continue Shopping
+            </h4>
           </Nav.Link>
           <Row>
             {Array.from(props.cartItems.keys()).map((item) => {
@@ -43,7 +44,7 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
             })}
           </Row>
         </Col>
-        <Col sm={4} style={{ height: "100%", backgroundColor: "whitesmoke" }}>
+        <Col sm={4} style={{ height: "100vh", backgroundColor: "whitesmoke" }}>
           <Card style={{ height: "100%" }}>
             <Card.Body>
               <Card.Title>Checkout</Card.Title>
