@@ -10,14 +10,14 @@ import { VscArrowLeft } from "react-icons/vsc";
 function Cart(props: IWindowShopCartProps): JSX.Element {
   return (
     <Container fluid>
-      <Row style={{ backgroundColor: "whitesmoke" }}>
+      <Row style={{ backgroundColor: "whitesmoke"}}>
         <Col sm={8}>
           <Nav.Link href="/merill-site/">
             <h4>
               <VscArrowLeft /> Continue Shopping
             </h4>
           </Nav.Link>
-          <Row>
+          <Row style={{ backgroundColor: "whitesmoke"}}>
             {Array.from(props.cartItems.keys()).map((item) => {
               let cartItem: TCartItem;
               const quantity = props.cartItems.get(item);
@@ -40,12 +40,12 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
                   />
                 );
               } else {
-                return <></>;
+                return <div style={{ backgroundColor: "whitesmoke"}}></div>;
               }
             })}
           </Row>
         </Col>
-        <Col sm={4} style={{ height: "100vh", backgroundColor: "whitesmoke" }}>
+        <Col sm={4} style={{ height: "100vh", backgroundColor: "whitesmoke", position: "fixed", right: "0px", top: "0px"  }}>
           <Checkout
             cartItems={props.cartItems}
             shopItems={props.shopItems}
