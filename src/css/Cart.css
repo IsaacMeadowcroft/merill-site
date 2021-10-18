@@ -1,0 +1,8 @@
+.cart-item-button {
+    color: black;
+}
+
+.cart-item-button:hover {
+    color: rgb(117, 117, 117);
+    cursor: pointer;
+}
