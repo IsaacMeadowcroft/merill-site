@@ -39,7 +39,7 @@ function Checkout(props: IWindowShopCartProps): JSX.Element {
                     placeholder="Enter email"
                     value={values.email}
                     onChange={handleChange}
-                    isValid={!errors.email}
+                    isValid={touched.email && !errors.email}
                   />
                 </Form.Group>
 
