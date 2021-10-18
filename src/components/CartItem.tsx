@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../css/Cart.css";
 import { Image, Col, Row, Badge, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
