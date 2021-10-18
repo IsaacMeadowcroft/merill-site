@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/merill-site/static/css/main.1f41cc91.chunk.css",
-    "main.js": "/merill-site/static/js/main.a76d31e5.chunk.js",
-    "main.js.map": "/merill-site/static/js/main.a76d31e5.chunk.js.map",
+    "main.js": "/merill-site/static/js/main.083889d4.chunk.js",
+    "main.js.map": "/merill-site/static/js/main.083889d4.chunk.js.map",
     "runtime-main.js": "/merill-site/static/js/runtime-main.08f09ea5.js",
     "runtime-main.js.map": "/merill-site/static/js/runtime-main.08f09ea5.js.map",
     "static/css/2.f2512455.chunk.css": "/merill-site/static/css/2.f2512455.chunk.css",
-    "static/js/2.0c1b9c8f.chunk.js": "/merill-site/static/js/2.0c1b9c8f.chunk.js",
-    "static/js/2.0c1b9c8f.chunk.js.map": "/merill-site/static/js/2.0c1b9c8f.chunk.js.map",
+    "static/js/2.ddd6f643.chunk.js": "/merill-site/static/js/2.ddd6f643.chunk.js",
+    "static/js/2.ddd6f643.chunk.js.map": "/merill-site/static/js/2.ddd6f643.chunk.js.map",
     "static/js/3.da87e3c0.chunk.js": "/merill-site/static/js/3.da87e3c0.chunk.js",
     "static/js/3.da87e3c0.chunk.js.map": "/merill-site/static/js/3.da87e3c0.chunk.js.map",
     "index.html": "/merill-site/index.html",
     "static/css/2.f2512455.chunk.css.map": "/merill-site/static/css/2.f2512455.chunk.css.map",
     "static/css/main.1f41cc91.chunk.css.map": "/merill-site/static/css/main.1f41cc91.chunk.css.map",
-    "static/js/2.0c1b9c8f.chunk.js.LICENSE.txt": "/merill-site/static/js/2.0c1b9c8f.chunk.js.LICENSE.txt",
+    "static/js/2.ddd6f643.chunk.js.LICENSE.txt": "/merill-site/static/js/2.ddd6f643.chunk.js.LICENSE.txt",
     "static/media/LandingPage.ba31465c.jpg": "/merill-site/static/media/LandingPage.ba31465c.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.08f09ea5.js",
     "static/css/2.f2512455.chunk.css",
-    "static/js/2.0c1b9c8f.chunk.js",
+    "static/js/2.ddd6f643.chunk.js",
     "static/css/main.1f41cc91.chunk.css",
-    "static/js/main.a76d31e5.chunk.js"
+    "static/js/main.083889d4.chunk.js"
   ]
 }
