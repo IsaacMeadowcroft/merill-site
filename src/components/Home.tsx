@@ -12,8 +12,7 @@ function Home(props: IWindowProps): JSX.Element {
         fluid
         style={{
           backgroundColor: "black",
-          padding: "0px",
-          paddingTop: "4vh",
+          padding: "0px"
         }}
         id="Home"
       >
