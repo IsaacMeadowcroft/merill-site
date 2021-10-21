@@ -11,6 +11,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IShopItemProps, Size } from "./Interfaces";
 import { useHistory } from "react-router-dom";
+import PictureFrame from "../assets/PictureFrame.jpg";
 
 interface ItemModalType extends IShopItemProps {
   show: boolean;
@@ -66,11 +67,20 @@ function ItemModal(props: ItemModalType): JSX.Element {
                 />
               </Carousel.Item>
               <Carousel.Item>
+                <div style={{position: "relative", width: "100%"}}>
+                <img
+                  className="d-block w-100"
+                  src={PictureFrame}
+                  alt="Second slide"
+                  style={{width: "100%"}}
+                />
                 <img
                   className="d-block w-100"
                   src={props.shopItem.image}
                   alt="Second slide"
+                  style={{ maxWidth: "45%", position: "absolute", top: "14%", left: "28.8%", right: "27%"}}
                 />
+                </div>
               </Carousel.Item>
               <Carousel.Item>
                 <img
