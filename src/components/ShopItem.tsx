@@ -26,7 +26,6 @@ function ShopItem(props: IShopItemProps): JSX.Element {
               ? { filter: "brightness(20%)" }
               : { filter: "brightness(100%)" }
           }
-          className="img-size"
         />
         {isHovering ? (
           <Card.ImgOverlay>
