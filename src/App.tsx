@@ -15,7 +15,7 @@ import { Spinner } from "react-bootstrap";
 import { TShopItem, Size } from "./components/Interfaces";
 
 const getProducts = async (): Promise<TShopItem[]> =>
-  await (await fetch("http://127.0.0.1:8080/", )).json();
+  await (await fetch("http://127.0.0.1:8080/getShoppingItems", )).json();
 
 function App(): JSX.Element {
   const [scrollPosition, setScrollPosition] = useState(0);
