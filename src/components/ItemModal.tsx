@@ -60,14 +60,14 @@ function ItemModal(props: ItemModalType): JSX.Element {
         <Row>
           <Col sm={12} md={4}>
             <Carousel fade>
-              <Carousel.Item>
+              <Carousel.Item interval={1500}>
                 <img
                   className="d-block w-100"
                   src={props.shopItem.image}
                   alt="First slide"
                 />
               </Carousel.Item>
-              <Carousel.Item>
+              <Carousel.Item interval={1500}>
               <div style={{position: "relative", width: "100%"}}>
                 <img
                   className="d-block w-100"
@@ -82,7 +82,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
                 />
                 </div>
               </Carousel.Item>
-              <Carousel.Item>
+              <Carousel.Item interval={1500}>
                 <div style={{position: "relative", width: "100%"}}>
                 <img
                   className="d-block w-100"

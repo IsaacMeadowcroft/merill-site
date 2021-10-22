@@ -5,10 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ItemModal from "./ItemModal";
 import { IShopItemProps } from "./Interfaces";
 
-
 function ShopItem(props: IShopItemProps): JSX.Element {
   const [isHovering, setIsHovering] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  const shopItemTitleSubString = props.shopItem.title.substring(0, 35);
+  const shopItemDescriptionSubString = props.shopItem.description.substring(0, 100);
 
   return (
     <>
@@ -29,8 +30,19 @@ function ShopItem(props: IShopItemProps): JSX.Element {
         />
         {isHovering ? (
           <Card.ImgOverlay>
-            <Card.Title>{props.shopItem.title.substring(0, 35)}...</Card.Title>
-            <Card.Text>{props.shopItem.description.substring(0, 100)}...</Card.Text>
+            <Card.Title>
+              {shopItemTitleSubString}
+              {shopItemTitleSubString != props.shopItem.title
+                ? "..."
+                : ""}
+            </Card.Title>
+            <Card.Text>
+              {shopItemDescriptionSubString}
+              {shopItemDescriptionSubString !=
+              props.shopItem.description
+                ? "..."
+                : ""}
+            </Card.Text>
             <h6>${props.shopItem.price}</h6>
           </Card.ImgOverlay>
         ) : (
