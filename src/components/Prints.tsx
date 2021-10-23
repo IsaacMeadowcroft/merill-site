@@ -13,18 +13,20 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
       id="Prints"
     >
       <Row style={{ width: "100%", margin: "0px" }}>
-        {props.shopItems?.map((item) => (
-          <Col md={4} style={{ padding: "0px" }}>
-            <ShopItem
-              shopItem={item}
-              dimensions={props.dimensions}
-              scrollPosition={props.scrollPosition}
-              addCartItem={props.addCartItem}
-              minusCartItem={props.minusCartItem}
-              removeCartItem={props.removeCartItem}
-            />
-          </Col>
-        ))}
+        {props.shopItems
+          ?.sort((a, b) => a.id - b.id)
+          .map((item) => (
+            <Col md={4} style={{ padding: "0px" }}>
+              <ShopItem
+                shopItem={item}
+                dimensions={props.dimensions}
+                scrollPosition={props.scrollPosition}
+                addCartItem={props.addCartItem}
+                minusCartItem={props.minusCartItem}
+                removeCartItem={props.removeCartItem}
+              />
+            </Col>
+          ))}
       </Row>
     </Container>
   );
