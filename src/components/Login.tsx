@@ -13,7 +13,7 @@ function Login(props: any): JSX.Element {
 
   return (
     <Modal show={props.show} onHide={props.handleClose}>
-      <Modal.Header style={{ borderBottom: "none" }}>
+      <Modal.Header className="border-0" closeButton>
         <Modal.Title className="d-flex justify-content-center w-100">
           {radioValue === "0" ? "Login" : "Signup"}
         </Modal.Title>
@@ -65,9 +65,13 @@ function Login(props: any): JSX.Element {
           </Form.Floating>
         </>
       </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={props.handleClose}>
-          Close
+      <Modal.Footer className="border-0">
+        <Button
+          variant="dark"
+          onClick={props.handleClose}
+          className="w-100 py-2"
+        >
+          {radioValue === "0" ? "Login" : "Signup"}
         </Button>
       </Modal.Footer>
     </Modal>
