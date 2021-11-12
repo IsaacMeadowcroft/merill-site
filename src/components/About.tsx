@@ -7,9 +7,11 @@ function About(props: IWindowProps): JSX.Element {
   return (
     <Container
       fluid
-      style={{ backgroundColor: "black", padding: "0px" }}
-      id="About"
-    ></Container>
+      className="bg-black p-0 text-center text-white pt-5"
+      style={{ fontFamily: '"Cormorant", serif' }}
+    >
+      <h3>A B O U T</h3>
+    </Container>
   );
 }
 
