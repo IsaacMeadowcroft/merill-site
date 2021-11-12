@@ -9,12 +9,15 @@ function ShopItem(props: IShopItemProps): JSX.Element {
   const [isHovering, setIsHovering] = useState(false);
   const [modalShow, setModalShow] = useState(false);
   const shopItemTitleSubString = props.shopItem.title.substring(0, 35);
-  const shopItemDescriptionSubString = props.shopItem.description.substring(0, 100);
+  const shopItemDescriptionSubString = props.shopItem.description.substring(
+    0,
+    100
+  );
 
   return (
     <>
       <Card
-        className="card-styles"
+        className="card-styles border-secondary rounded-0"
         onMouseOver={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onClick={() => setModalShow(true)}
@@ -22,6 +25,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
         <Card.Img
           variant="top"
           src={props.shopItem.image}
+          className="rounded-0"
           style={
             isHovering
               ? { filter: "brightness(20%)" }
@@ -32,14 +36,11 @@ function ShopItem(props: IShopItemProps): JSX.Element {
           <Card.ImgOverlay>
             <Card.Title>
               {shopItemTitleSubString}
-              {shopItemTitleSubString != props.shopItem.title
-                ? "..."
-                : ""}
+              {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
             </Card.Title>
             <Card.Text>
               {shopItemDescriptionSubString}
-              {shopItemDescriptionSubString !=
-              props.shopItem.description
+              {shopItemDescriptionSubString != props.shopItem.description
                 ? "..."
                 : ""}
             </Card.Text>

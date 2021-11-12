@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/Prints.css";
 import ShopItem from "./ShopItem";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -9,14 +8,18 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
   return (
     <Container
       fluid
-      style={{ backgroundColor: "black", padding: "0px" }}
+      className="bg-black p-0 pt-5"
       id="Prints"
+      style={{ fontFamily: '"Cormorant", serif' }}
     >
-      <Row style={{ width: "100%", margin: "0px" }}>
+      <Container fluid className="bg-black p-0 text-center text-white pt-5">
+        <h3>P R I N T S</h3>
+      </Container>
+      <Row className="m-0 w-100" md={5}>
         {props.shopItems
           ?.sort((a, b) => a.id - b.id)
           .map((item) => (
-            <Col md={4} style={{ padding: "0px" }}>
+            <Col className="p-4">
               <ShopItem
                 shopItem={item}
                 dimensions={props.dimensions}
