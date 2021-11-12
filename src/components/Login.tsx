@@ -41,6 +41,10 @@ function Login(props: any): JSX.Element {
       </Modal.Header>
       <Modal.Body>
         <>
+          <Modal.Title className="d-flex justify-content-center w-100 pb-4">
+            {radioValue === "0" ? "Login" : "Signup"}
+          </Modal.Title>
+
           <Form.Floating className="mb-3">
             <Form.Control
               id="floatingInputCustom"
