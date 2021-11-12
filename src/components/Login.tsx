@@ -14,36 +14,38 @@ function Login(props: any): JSX.Element {
   return (
     <Modal show={props.show} onHide={props.handleClose}>
       <Modal.Header style={{ borderBottom: "none" }}>
-        <div className="d-flex justify-content-center w-100">
-          <ButtonGroup size="lg">
-            <ToggleButton
-              type="radio"
-              variant="outline-dark"
-              value="0"
-              id="0"
-              checked={radioValue === "0"}
-              onChange={() => setRadioValue("0")}
-            >
-              Login
-            </ToggleButton>
-            <ToggleButton
-              type="radio"
-              variant="outline-dark"
-              value="1"
-              id="1"
-              checked={radioValue === "1"}
-              onChange={() => setRadioValue("1")}
-            >
-              Signup
-            </ToggleButton>
-          </ButtonGroup>
-        </div>
+        <Modal.Title className="d-flex justify-content-center w-100">
+          {radioValue === "0" ? "Login" : "Signup"}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <>
-          <Modal.Title className="d-flex justify-content-center w-100 pb-4">
-            {radioValue === "0" ? "Login" : "Signup"}
-          </Modal.Title>
+          <div className="d-flex justify-content-center w-100 pb-4">
+            <ButtonGroup size="lg">
+              <ToggleButton
+                className="px-5"
+                type="radio"
+                variant="outline-dark"
+                value="0"
+                id="0"
+                checked={radioValue === "0"}
+                onChange={() => setRadioValue("0")}
+              >
+                Login
+              </ToggleButton>
+              <ToggleButton
+                className="px-5"
+                type="radio"
+                variant="outline-dark"
+                value="1"
+                id="1"
+                checked={radioValue === "1"}
+                onChange={() => setRadioValue("1")}
+              >
+                Signup
+              </ToggleButton>
+            </ButtonGroup>
+          </div>
 
           <Form.Floating className="mb-3">
             <Form.Control
