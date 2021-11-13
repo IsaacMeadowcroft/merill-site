@@ -3,7 +3,7 @@ import "../css/Home.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "../assets/LandingPage.jpg";
-import {IWindowProps} from "./Interfaces";
+import { IWindowProps } from "./Interfaces";
 
 function Home(props: IWindowProps): JSX.Element {
   if (props.dimensions.width >= 768) {
@@ -12,29 +12,25 @@ function Home(props: IWindowProps): JSX.Element {
         fluid
         style={{
           backgroundColor: "black",
-          padding: "0px"
+          padding: "0px",
         }}
         id="Home"
       >
-        <Row md={3} style={{ margin: "0px" }}>
-          <Col md={5} style={{ padding: "0px" }}>
+        <Row md={3} className="m-0">
+          <Col md={5} className="p-0">
             <Image src={LandingPage} fluid />
           </Col>
-          <Col md={4} style={{ paddingTop: "4vw" }}>
-            <Row className="name">MERILL</Row>
-            <Row className="name">BOBOTIS</Row>
-            <Row className="bar" />
-            <Row className="profession">Visual Artist</Row>
+          <Col md={7} className="pt-5">
+            <Row className="name pt-4">
+              <p>M E R I L L</p>
+            </Row>
+            <Row className="name">
+              <p className="text-center">B O B O T I S</p>
+            </Row>
+            <Row className="profession">
+              <p className="text-center">Visual Artist | Photographer</p>
+            </Row>
           </Col>
-          <Col
-            md={3}
-            style={{
-              paddingLeft: "17vw",
-              paddingTop: "2vw",
-              paddingRight: "1vw",
-            }}
-            id="Home"
-          ></Col>
         </Row>
       </Container>
     );
@@ -44,7 +40,7 @@ function Home(props: IWindowProps): JSX.Element {
         fluid
         style={{
           backgroundColor: "black",
-          padding: "0px"
+          padding: "0px",
         }}
         id="Home"
       >
