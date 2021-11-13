@@ -11,7 +11,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
   const shopItemTitleSubString = props.shopItem.title.substring(0, 35);
   const shopItemDescriptionSubString = props.shopItem.description.substring(
     0,
-    100
+    85
   );
 
   return (
