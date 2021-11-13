@@ -6,6 +6,7 @@
     color: white;
 }
 
-.modal-90w {
-    min-width: 80%;
+.modal-height {
+    max-height: 200px;
+    height: 200px;
 }

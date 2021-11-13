@@ -13,13 +13,13 @@ function Login(props: any): JSX.Element {
 
   return (
     <Modal show={props.show} onHide={props.handleClose}>
-      <Modal.Header className="border-0" closeButton>
-        <Modal.Title className="d-flex justify-content-center w-100">
-          <h2>{radioValue === "0" ? "Login" : "Signup"}</h2>
-        </Modal.Title>
-      </Modal.Header>
+      <Modal.Header className="border-0" closeButton></Modal.Header>
       <Modal.Body>
         <>
+          <Modal.Title className="d-flex justify-content-center w-100 mb-5">
+            <h2>{radioValue === "0" ? "Login" : "Signup"}</h2>
+          </Modal.Title>
+
           <div className="d-flex justify-content-center w-100 pb-4">
             <ButtonGroup size="lg">
               <ToggleButton
@@ -46,8 +46,7 @@ function Login(props: any): JSX.Element {
               </ToggleButton>
             </ButtonGroup>
           </div>
-
-          <Form.Floating className="mb-3">
+          <Form.Floating className="mb-4">
             <Form.Control
               id="floatingInputCustom"
               type="email"
@@ -65,11 +64,12 @@ function Login(props: any): JSX.Element {
           </Form.Floating>
         </>
       </Modal.Body>
-      <Modal.Footer className="border-0 pb-4">
+      <Modal.Footer className="border-0 mt-2 mb-4">
         <Button
           variant="dark"
           onClick={props.handleClose}
           className="w-100 py-2"
+          size="lg"
         >
           {radioValue === "0" ? "Login" : "Signup"}
         </Button>

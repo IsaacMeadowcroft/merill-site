@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../css/ShopItem.css";
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemModal from "./ItemModal";
-import { IShopItemProps } from "./Interfaces";
+import { IShopItemProps, Size } from "./Interfaces";
 
 function ShopItem(props: IShopItemProps): JSX.Element {
   const [isHovering, setIsHovering] = useState(false);
@@ -33,18 +33,29 @@ function ShopItem(props: IShopItemProps): JSX.Element {
           }
         />
         {isHovering ? (
-          <Card.ImgOverlay>
-            <Card.Title>
-              {shopItemTitleSubString}
-              {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
-            </Card.Title>
-            <Card.Text>
-              {shopItemDescriptionSubString}
-              {shopItemDescriptionSubString != props.shopItem.description
-                ? "..."
-                : ""}
-            </Card.Text>
-            <h6>${props.shopItem.price}</h6>
+          <Card.ImgOverlay className="d-flex flex-column justify-content-between">
+            <div>
+              <Card.Title>
+                {shopItemTitleSubString}
+                {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
+              </Card.Title>
+              <Card.Text>
+                {shopItemDescriptionSubString}
+                {shopItemDescriptionSubString != props.shopItem.description
+                  ? "..."
+                  : ""}
+              </Card.Text>
+              <h6>${props.shopItem.price}</h6>
+            </div>
+            <div className="w-100 align-self-end">
+              <Button
+                variant="outline-light"
+                className=" py-1 px-3 text-italic"
+                onClick={() => props.addCartItem(props.shopItem.id, Size.SMALL)}
+              >
+                Buy
+              </Button>
+            </div>
           </Card.ImgOverlay>
         ) : (
           <></>

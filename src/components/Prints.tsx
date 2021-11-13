@@ -15,7 +15,7 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
       <Container fluid className="bg-black p-0 text-center text-white pt-5">
         <h3>P R I N T S</h3>
       </Container>
-      <Row className="m-0 w-100" md={5}>
+      <Row className="m-0 w-100" lg="4" md={3} sm={2} xs={1}>
         {props.shopItems
           ?.sort((a, b) => a.id - b.id)
           .map((item) => (
