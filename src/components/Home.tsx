@@ -2,7 +2,7 @@ import React from "react";
 import "../css/Home.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LandingPage from "../assets/LandingPage.jpg";
+import LandingPage from "../assets/LandingPage.png";
 import { IWindowProps } from "./Interfaces";
 
 function Home(props: IWindowProps): JSX.Element {
