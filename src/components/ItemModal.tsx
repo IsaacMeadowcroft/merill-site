@@ -102,41 +102,40 @@ function ItemModal(props: ItemModalType): JSX.Element {
               </Carousel.Item>
             </Carousel>
           </div>
-          <div className="d-flex px-3 row justify-content-start">
-            <div>
-              <div className="w-100">
-                <p>{props.shopItem.description}</p>
-              </div>
-              <div className="w-100">
-                <Form>
-                  <div className="mb-3">
-                    <Form.Check
-                      defaultChecked={true}
-                      inline
-                      label="Small"
-                      name="group1"
-                      type="radio"
-                      onClick={handleSubmitSmall}
-                    />
-                    <Form.Check
-                      inline
-                      label="Medium"
-                      name="group1"
-                      type="radio"
-                      onClick={handleSubmitMedium}
-                    />
-                    <Form.Check
-                      inline
-                      label="Large"
-                      name="group1"
-                      type="radio"
-                      onClick={handleSubmitLarge}
-                    />
-                  </div>
-                </Form>
-              </div>
-              <h6>${currentItemPrice}</h6>
+          <div className="d-flex px-3 row justify-content-between">
+            <div className="w-100">
+              <p>{props.shopItem.description}</p>
             </div>
+            <div className="w-100">
+              <Form>
+                <div className="mb-3">
+                  <Form.Check
+                    defaultChecked={true}
+                    inline
+                    label="Small"
+                    name="group1"
+                    type="radio"
+                    onClick={handleSubmitSmall}
+                  />
+                  <Form.Check
+                    inline
+                    label="Medium"
+                    name="group1"
+                    type="radio"
+                    onClick={handleSubmitMedium}
+                  />
+                  <Form.Check
+                    inline
+                    label="Large"
+                    name="group1"
+                    type="radio"
+                    onClick={handleSubmitLarge}
+                  />
+                </div>
+              </Form>
+            </div>
+            <h6>${currentItemPrice}</h6>
+
             <div className="w-100 align-self-end pb-2">
               <Button
                 variant="warning"
