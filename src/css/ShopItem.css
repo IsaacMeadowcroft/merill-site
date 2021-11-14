@@ -6,7 +6,7 @@
     color: white;
 }
 
-.modal-height {
-    max-height: 200px;
-    height: 200px;
+.modal-width {
+    max-width: 60vw;
+    width: 60vw;
 }

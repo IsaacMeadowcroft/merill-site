@@ -42,7 +42,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
       {...props}
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      dialogClassName="modal-height"
+      dialogClassName="modal-width"
     >
       <Modal.Header closeButton className="border-0">
         <Modal.Title id="contained-modal-title-vcenter">
@@ -50,108 +50,114 @@ function ItemModal(props: ItemModalType): JSX.Element {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Carousel fade>
-          <Carousel.Item interval={1500}>
-            <img
-              className="d-block mh-80"
-              src={props.shopItem.image}
-              alt="First slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item interval={1500}>
-            <div style={{ position: "relative", height: "80%" }}>
-              <img
-                className="d-block mh-8"
-                src={PictureFrame2}
-                alt="Second slide"
-              />
-              <img
-                className="d-block "
-                src={props.shopItem.image}
-                alt="Second slide"
-                style={{
-                  maxWidth: "52.1%",
-                  position: "absolute",
-                  top: "16.3%",
-                  left: "23.7%",
-                }}
-              />
-            </div>
-          </Carousel.Item>
-          <Carousel.Item interval={1500}>
-            <div style={{ position: "relative", width: "100%" }}>
-              <img
-                className="d-block mh-80"
-                src={PictureFrame}
-                alt="Third slide"
-              />
-              <img
-                className="d-block"
-                src={props.shopItem.image}
-                alt="Third slide"
-                style={{
-                  maxWidth: "45%",
-                  position: "absolute",
-                  top: "14%",
-                  left: "29%",
-                }}
-              />
-            </div>
-          </Carousel.Item>
-        </Carousel>
-        <div className="w-100">
-          <div className="w-100">
-            <p>{props.shopItem.description}</p>
+        <div className="d-flex column">
+          <div>
+            <Carousel fade>
+              <Carousel.Item interval={1500}>
+                <img
+                  style={{ maxHeight: "80vh" }}
+                  src={props.shopItem.image}
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item interval={1500}>
+                <div style={{ position: "relative", height: "80%" }}>
+                  <img
+                    style={{ maxHeight: "80vh" }}
+                    src={PictureFrame2}
+                    alt="Second slide"
+                  />
+                  <img
+                    className="d-block "
+                    src={props.shopItem.image}
+                    alt="Second slide"
+                    style={{
+                      maxWidth: "52.1%",
+                      position: "absolute",
+                      top: "16.3%",
+                      left: "23.7%",
+                    }}
+                  />
+                </div>
+              </Carousel.Item>
+              <Carousel.Item interval={1500}>
+                <div style={{ position: "relative", height: "80%" }}>
+                  <img
+                    style={{ maxHeight: "80vh" }}
+                    src={PictureFrame}
+                    alt="Third slide"
+                  />
+                  <img
+                    className="d-block"
+                    src={props.shopItem.image}
+                    alt="Third slide"
+                    style={{
+                      maxWidth: "45%",
+                      position: "absolute",
+                      top: "14%",
+                      left: "29%",
+                    }}
+                  />
+                </div>
+              </Carousel.Item>
+            </Carousel>
           </div>
-          <div className="w-100">
-            <Form>
-              <div className="mb-3">
-                <Form.Check
-                  defaultChecked={true}
-                  inline
-                  label="Small"
-                  name="group1"
-                  type="radio"
-                  onClick={handleSubmitSmall}
-                />
-                <Form.Check
-                  inline
-                  label="Medium"
-                  name="group1"
-                  type="radio"
-                  onClick={handleSubmitMedium}
-                />
-                <Form.Check
-                  inline
-                  label="Large"
-                  name="group1"
-                  type="radio"
-                  onClick={handleSubmitLarge}
-                />
+          <div className="d-flex px-3 row justify-content-start">
+            <div>
+              <div className="w-100">
+                <p>{props.shopItem.description}</p>
               </div>
-            </Form>
-          </div>
-          <h6>${currentItemPrice}</h6>
-          <div className="w-100">
-            <Button
-              variant="warning"
-              className="w-50"
-              onClick={() =>
-                props.addCartItem(props.shopItem.id, currentItemSize)
-              }
-            >
-              Add to Cart
-            </Button>
-            <Button
-              variant="dark"
-              className="w-50"
-              onClick={() => {
-                props.addCartItem(props.shopItem.id, currentItemSize);
-                history.push("/merill-site/Cart");
-              }}
-            >
-              Buy Now
-            </Button>
+              <div className="w-100">
+                <Form>
+                  <div className="mb-3">
+                    <Form.Check
+                      defaultChecked={true}
+                      inline
+                      label="Small"
+                      name="group1"
+                      type="radio"
+                      onClick={handleSubmitSmall}
+                    />
+                    <Form.Check
+                      inline
+                      label="Medium"
+                      name="group1"
+                      type="radio"
+                      onClick={handleSubmitMedium}
+                    />
+                    <Form.Check
+                      inline
+                      label="Large"
+                      name="group1"
+                      type="radio"
+                      onClick={handleSubmitLarge}
+                    />
+                  </div>
+                </Form>
+              </div>
+              <h6>${currentItemPrice}</h6>
+            </div>
+            <div className="w-100 align-self-end pb-2">
+              <Button
+                variant="warning"
+                style={{ width: "49%", marginRight: "1%" }}
+                onClick={() =>
+                  props.addCartItem(props.shopItem.id, currentItemSize)
+                }
+              >
+                Add to Cart
+              </Button>
+              <Button
+                variant="dark"
+                style={{ width: "49%", marginLeft: "1%" }}
+                onClick={() => {
+                  props.addCartItem(props.shopItem.id, currentItemSize);
+                  history.push("/merill-site/Cart");
+                }}
+              >
+                Buy Now
+              </Button>
+            </div>
           </div>
         </div>
       </Modal.Body>
