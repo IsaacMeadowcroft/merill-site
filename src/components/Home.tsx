@@ -21,9 +21,7 @@ function Home(props: IWindowProps): JSX.Element {
             <Image src={LandingPage} fluid />
           </Col>
           <Col md={7} className="pt-5">
-            <Row className="name pt-4">
-              <p>M E R I L L</p>
-            </Row>
+            <Row className="name pt-4">M E R I L L</Row>
             <Row className="name">
               <p className="text-center">B O B O T I S</p>
             </Row>
@@ -45,13 +43,13 @@ function Home(props: IWindowProps): JSX.Element {
         id="Home"
       >
         <Image src={LandingPage} fluid />
-        <Row className="name name-mobile" style={{ margin: "0px" }}>
+        <Row className="name name-mobile m-0">
           <p className="text-center">MERILL BOBOTIS</p>
         </Row>
-        <Row className="bar-wrapper" style={{ margin: "0px" }}>
+        <Row className="bar-wrapper m-0">
           <div className="bar-mobile"></div>
         </Row>
-        <Row className="name" style={{ margin: "0px" }}>
+        <Row className="name m-0">
           <p className="profession-mobile text-center">Visual Artist</p>
         </Row>
       </Container>
