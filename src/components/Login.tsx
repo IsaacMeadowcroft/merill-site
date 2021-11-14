@@ -31,7 +31,7 @@ function Login(props: any): JSX.Element {
           <div className="d-flex justify-content-center w-100 pb-4">
             <ButtonGroup size="lg">
               <ToggleButton
-                className="px-5 border-secondary"
+                className="px-5"
                 type="radio"
                 variant="outline-light"
                 value="0"
@@ -42,7 +42,7 @@ function Login(props: any): JSX.Element {
                 Login
               </ToggleButton>
               <ToggleButton
-                className="px-5 border-secondary"
+                className="px-5"
                 type="radio"
                 variant="outline-light"
                 value="1"
@@ -59,7 +59,7 @@ function Login(props: any): JSX.Element {
               id="floatingInputCustom"
               type="email"
               placeholder="name@example.com"
-              className="bg-dark border-secondary"
+              className="bg-dark"
             />
             <label className="text-light" htmlFor="floatingInputCustom">
               Email address
@@ -70,7 +70,7 @@ function Login(props: any): JSX.Element {
               id="floatingPasswordCustom"
               type="password"
               placeholder="Password"
-              className="bg-dark border-secondary"
+              className="bg-dark"
             />
             <label className="text-light" htmlFor="floatingPasswordCustom">
               Password
