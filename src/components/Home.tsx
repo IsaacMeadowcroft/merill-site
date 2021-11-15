@@ -3,6 +3,7 @@ import "../css/Home.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "../assets/LandingPage.png";
+import Wave from "../assets/Wave.svg";
 import { IWindowProps } from "./Interfaces";
 
 function Home(props: IWindowProps): JSX.Element {
@@ -16,7 +17,7 @@ function Home(props: IWindowProps): JSX.Element {
         }}
         id="Home"
       >
-        <Row md={3} className="m-0">
+        <Row md={3} className="m-0 pb-4 position-relative">
           <Col md={5} className="p-0">
             <Image src={LandingPage} fluid />
           </Col>
@@ -29,6 +30,10 @@ function Home(props: IWindowProps): JSX.Element {
               <p className="text-center">Visual Artist | Photographer</p>
             </Row>
           </Col>
+          <img
+            src={Wave}
+            className="w-100 position-absolute bottom-0 p-0"
+          ></img>
         </Row>
       </Container>
     );

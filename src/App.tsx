@@ -100,6 +100,10 @@ function App(): JSX.Element {
               cartItems={cartItems}
             />
             <Home dimensions={dimensions} scrollPosition={scrollPosition} />
+            <Portfolio
+              dimensions={dimensions}
+              scrollPosition={scrollPosition}
+            />
             {isLoading ? (
               <Spinner animation="border" role="status">
                 <span className="visually-hidden">Loading...</span>
@@ -115,10 +119,6 @@ function App(): JSX.Element {
                 removeCartItem={removeCartItem}
               />
             )}
-            <Portfolio
-              dimensions={dimensions}
-              scrollPosition={scrollPosition}
-            />
             <About dimensions={dimensions} scrollPosition={scrollPosition} />
             <Footer />
           </Route>
