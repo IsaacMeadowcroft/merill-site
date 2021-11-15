@@ -8,7 +8,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
   return (
     <Container
       fluid
-      className="bg-black p-0 text-center text-white pt-5"
+      className="bg-black p-0 text-center text-white m-0"
       style={{ fontFamily: '"Cormorant", serif' }}
       id="Portfolio"
     >

@@ -25,7 +25,7 @@ function NavBar(props: IWindowCartProps): JSX.Element {
           }
           style={
             props.scrollPosition > 100
-              ? { backgroundColor: "rgb(39, 39, 39)" }
+              ? { backgroundColor: "rgb(27, 27, 27)" }
               : { backgroundColor: "transparent" }
           }
         >

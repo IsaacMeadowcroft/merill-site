@@ -2,14 +2,13 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
-import AboutPage from "../assets/AboutPage.png";
 import HeadShot from "../assets/AboutPageHeadShot.png";
 
 function About(props: IWindowProps): JSX.Element {
   return (
     <Container
       fluid
-      className="bg-black p-0 text-center text-white pt-5"
+      className="bg-black p-0 text-center text-white m-0"
       style={{ fontFamily: '"Cormorant", serif' }}
       id="About"
     >
