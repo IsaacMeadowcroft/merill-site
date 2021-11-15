@@ -24,10 +24,10 @@ function Footer(): JSX.Element {
                 <a href="#Home">Home</a>
               </li>
               <li>
-                <a href="#Prints">Prints</a>
+                <a href="#Portfolio">Portfolio</a>
               </li>
               <li>
-                <a href="#Portfolio">Portfolio</a>
+                <a href="#Prints">Prints</a>
               </li>
               <li>
                 <a href="#About">About</a>
