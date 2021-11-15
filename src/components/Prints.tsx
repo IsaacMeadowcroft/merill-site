@@ -15,7 +15,7 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
         backgroundColor: "rgb(182, 182, 182)",
       }}
     >
-      <Container fluid className="p-0 text-center text-dark">
+      <Container fluid className="p-0 text-center text-dark pb-3">
         <h3>
           <b>P R I N T S H O P</b>
         </h3>

@@ -20,7 +20,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
       }}
       id="Portfolio"
     >
-      <Container fluid className="p-0 text-center text-dark pb-5">
+      <Container fluid className="p-0 text-center text-dark pb-3">
         <h3>
           <b>P O R T F O L I O</b>
         </h3>
