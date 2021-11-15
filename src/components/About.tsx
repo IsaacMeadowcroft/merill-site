@@ -13,7 +13,9 @@ function About(props: IWindowProps): JSX.Element {
       id="About"
     >
       <Container fluid className="bg-black p-0 text-center text-white pt-5">
-        <h3>A B O U T</h3>
+        <h3>
+          <b>A B O U T</b>
+        </h3>
       </Container>
 
       <Row md={2} className="m-0">

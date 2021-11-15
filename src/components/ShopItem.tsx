@@ -17,7 +17,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
   return (
     <>
       <Card
-        className="card-styles border-secondary rounded-0"
+        className="card-styles border-0 rounded-0"
         onMouseOver={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         onClick={() => setModalShow(true)}

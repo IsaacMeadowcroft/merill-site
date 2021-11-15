@@ -8,18 +8,23 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
   return (
     <Container
       fluid
-      className="bg-light p-0 pt-3 m-0"
+      className="p-0 m-0"
       id="Prints"
-      style={{ fontFamily: '"Cormorant", serif' }}
+      style={{
+        fontFamily: '"Cormorant", serif',
+        backgroundColor: "rgb(182, 182, 182)",
+      }}
     >
-      <Container fluid className="bg-light p-0 text-center text-dark pt-5">
-        <h3>P R I N T S H O P</h3>
+      <Container fluid className="p-0 text-center text-dark">
+        <h3>
+          <b>P R I N T S H O P</b>
+        </h3>
       </Container>
       <Row className="m-0 w-100" lg="4" md={3} sm={2} xs={1}>
         {props.shopItems
           ?.sort((a, b) => a.id - b.id)
           .map((item) => (
-            <Col className="p-4">
+            <Col className="p-2">
               <ShopItem
                 shopItem={item}
                 dimensions={props.dimensions}
