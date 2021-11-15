@@ -8,7 +8,7 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
   return (
     <Container
       fluid
-      className="bg-black p-0 pt-3"
+      className="bg-black p-0 pt-3 m-0"
       id="Prints"
       style={{ fontFamily: '"Cormorant", serif' }}
     >

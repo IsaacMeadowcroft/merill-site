@@ -8,11 +8,14 @@ function Portfolio(props: IWindowProps): JSX.Element {
   return (
     <Container
       fluid
-      className="bg-black p-0 text-center text-white m-0"
+      className="bg-black p-0 text-center text-white m-0 p-3"
       style={{ fontFamily: '"Cormorant", serif' }}
       id="Portfolio"
     >
-      <h3>P O R T F O L I O</h3>
+      <Container fluid className="bg-black p-0 text-center text-white pt-5">
+        <h3>P O R T F O L I O</h3>
+      </Container>
+
       <div className="d-flex row justify-content-center">
         <Carousel fade style={{ width: "35%" }}>
           <Carousel.Item>
