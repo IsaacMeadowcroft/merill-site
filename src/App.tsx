@@ -5,8 +5,8 @@ import {
   Prints,
   Portfolio,
   About,
-  Contact,
   Cart,
+  Footer,
 } from "./components/index";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useQuery } from "react-query";
@@ -120,7 +120,7 @@ function App(): JSX.Element {
               scrollPosition={scrollPosition}
             />
             <About dimensions={dimensions} scrollPosition={scrollPosition} />
-            <Contact dimensions={dimensions} scrollPosition={scrollPosition} />
+            <Footer />
           </Route>
           <Route path="/merill-site/Cart">
             {isLoading ? (
