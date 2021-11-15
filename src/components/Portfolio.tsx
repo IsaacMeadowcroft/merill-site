@@ -4,6 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
 import Heidi from "../assets/Heidi.jpg";
 import Wave from "../assets/WaveGrey.svg";
+import Desperation from "../assets/Desperation.jpg";
+import Imprisoned from "../assets/Imprisoned.jpg";
+import Cloak from "../assets/Cloak.jpg";
+import Smoke from "../assets/Smoke.jpg";
 
 function Portfolio(props: IWindowProps): JSX.Element {
   return (
@@ -23,20 +27,24 @@ function Portfolio(props: IWindowProps): JSX.Element {
       </Container>
 
       <div className="d-flex row justify-content-around mb-5">
-        <div className="w-25">
-          <img
-            src={Heidi}
-            style={{ maxWidth: "80%", marginLeft: "10%", marginRight: "10%" }}
-          />
+        <div style={{ width: "20%" }}>
+          <div className="d-flex row justify-content-around">
+            <img src={Smoke} style={{ maxWidth: "90%" }} className="pb-2" />
+            <img src={Desperation} style={{ maxWidth: "90%" }} />
+          </div>
         </div>
-        <div className="w-50">
+        <div style={{ width: "60%" }}>
           <img src={Heidi} style={{ maxWidth: "100%" }} />
         </div>
-        <div className="w-25">
-          <img
-            src={Heidi}
-            style={{ maxWidth: "80%", marginLeft: "10%", marginRight: "10%" }}
-          />
+        <div style={{ width: "20%" }}>
+          <div className="d-flex row justify-content-around">
+            <img
+              src={Imprisoned}
+              style={{ maxWidth: "90%" }}
+              className="pb-2"
+            />
+            <img src={Cloak} style={{ maxWidth: "90%" }} />
+          </div>
         </div>
       </div>
       <img
