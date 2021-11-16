@@ -8,6 +8,10 @@ import Desperation from "../assets/Desperation.jpg";
 import Imprisoned from "../assets/Imprisoned.jpg";
 import Cloak from "../assets/Cloak.jpg";
 import Smoke from "../assets/Smoke.jpg";
+import Blindfolded from "../assets/BlindFolded.jpg";
+import Wet from "../assets/Wet.jpg";
+import Lake from "../assets/Lake.jpg";
+import Model from "../assets/Model.jpg";
 
 function Portfolio(props: IWindowProps): JSX.Element {
   return (
@@ -26,66 +30,54 @@ function Portfolio(props: IWindowProps): JSX.Element {
         </h3>
       </Container>
 
+      <div className="d-flex row justify-content-around pb-2">
+        <div
+          className="d-flex row justify-content-center"
+          style={{ width: "25%" }}
+        >
+          <img src={Wet} style={{ maxWidth: "100%", padding: "0px" }} />
+        </div>
+        <div
+          className="d-flex row justify-content-center"
+          style={{ width: "25%" }}
+        >
+          <img src={Smoke} style={{ maxWidth: "100%", padding: "0px" }} />
+        </div>
+        <div
+          className="d-flex row justify-content-center"
+          style={{ width: "25%" }}
+        >
+          <img src={Desperation} style={{ maxWidth: "100%", padding: "0px" }} />
+        </div>
+        <div
+          className="d-flex row justify-content-center"
+          style={{ width: "25%" }}
+        >
+          <img src={Imprisoned} style={{ maxWidth: "100%", padding: "0px" }} />
+        </div>
+      </div>
+
       <div className="d-flex row justify-content-around">
         <div
           className="d-flex row justify-content-center"
-          style={{ width: "20%" }}
+          style={{ width: "25%" }}
         >
-          <img
-            src={Smoke}
-            style={{ maxWidth: "90%", padding: "0px" }}
-            className="pb-1"
-          />
-          <img src={Desperation} style={{ maxWidth: "90%", padding: "0px" }} />
+          <img src={Cloak} style={{ maxWidth: "100%", padding: "0px" }} />
         </div>
         <div
-          style={{ width: "60%" }}
+          style={{ width: "50%" }}
           className="d-flex row justify-content-center"
         >
-          <img src={Heidi} style={{ maxWidth: "100%", padding: "0px" }} />
+          <img src={Heidi} style={{ maxWidth: "83%", padding: "0px" }} />
         </div>
         <div
           className="d-flex row justify-content-center"
-          style={{ width: "20%" }}
+          style={{ width: "25%" }}
         >
-          <img
-            src={Imprisoned}
-            style={{ maxWidth: "90%", padding: "0px" }}
-            className="pb-1"
-          />
-          <img src={Cloak} style={{ maxWidth: "90%", padding: "0px" }} />
+          <img src={Model} style={{ maxWidth: "100%", padding: "0px" }} />
         </div>
       </div>
-      <div className="d-flex row justify-content-around pt-2">
-        <div
-          className="d-flex row justify-content-center"
-          style={{ width: "20%" }}
-        >
-          <img
-            src={Smoke}
-            style={{ maxWidth: "90%", padding: "0px" }}
-            className="pb-1"
-          />
-          <img src={Desperation} style={{ maxWidth: "90%", padding: "0px" }} />
-        </div>
-        <div
-          style={{ width: "60%" }}
-          className="d-flex row justify-content-center"
-        >
-          <img src={Heidi} style={{ maxWidth: "100%", padding: "0px" }} />
-        </div>
-        <div
-          className="d-flex row justify-content-center"
-          style={{ width: "20%" }}
-        >
-          <img
-            src={Imprisoned}
-            style={{ maxWidth: "90%", padding: "0px" }}
-            className="pb-1"
-          />
-          <img src={Cloak} style={{ maxWidth: "90%", padding: "0px" }} />
-        </div>
-      </div>
+
       <div
         style={{
           width: "100%",
