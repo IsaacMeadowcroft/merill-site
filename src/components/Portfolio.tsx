@@ -44,19 +44,19 @@ function Portfolio(props: IWindowProps): JSX.Element {
         <Tab eventKey={1} title="Photos">
           <div className="d-flex row justify-content-around">
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Wet} style={{ maxWidth: "100%", padding: "0px" }} />
             </div>
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Smoke} style={{ maxWidth: "100%", padding: "0px" }} />
             </div>
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img
@@ -65,7 +65,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
               />
             </div>
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img
@@ -75,7 +75,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
             </div>
           </div>
 
-          <div className="d-flex row justify-content-around pl-1">
+          <div className="d-flex row justify-content-around">
             <div
               className="d-flex row justify-content-center px-0 "
               style={{ width: "50%" }}
@@ -92,13 +92,13 @@ function Portfolio(props: IWindowProps): JSX.Element {
 
           <div className="d-flex row justify-content-around">
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Cloak} style={{ maxWidth: "100%", padding: "0px" }} />
             </div>
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img
@@ -107,13 +107,13 @@ function Portfolio(props: IWindowProps): JSX.Element {
               />
             </div>
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Lake} style={{ maxWidth: "100%", padding: "0px" }} />
             </div>
             <div
-              className="d-flex row justify-content-center px-1"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Model} style={{ maxWidth: "100%", padding: "0px" }} />
