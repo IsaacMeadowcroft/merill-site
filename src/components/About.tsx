@@ -8,11 +8,11 @@ function About(props: IWindowProps): JSX.Element {
   return (
     <Container
       fluid
-      className="bg-black p-0 text-center text-white m-0 pt-3"
+      className="bg-black p-0 text-center text-white m-0"
       style={{ fontFamily: '"Cormorant", serif' }}
       id="About"
     >
-      <Container fluid className="bg-black p-0 text-center text-white pt-5">
+      <Container fluid className="bg-black p-0 text-center text-white">
         <h3>
           <b>A B O U T</b>
         </h3>

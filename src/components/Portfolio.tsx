@@ -56,6 +56,36 @@ function Portfolio(props: IWindowProps): JSX.Element {
           <img src={Cloak} style={{ maxWidth: "90%", padding: "0px" }} />
         </div>
       </div>
+      <div className="d-flex row justify-content-around pt-2">
+        <div
+          className="d-flex row justify-content-center"
+          style={{ width: "20%" }}
+        >
+          <img
+            src={Smoke}
+            style={{ maxWidth: "90%", padding: "0px" }}
+            className="pb-1"
+          />
+          <img src={Desperation} style={{ maxWidth: "90%", padding: "0px" }} />
+        </div>
+        <div
+          style={{ width: "60%" }}
+          className="d-flex row justify-content-center"
+        >
+          <img src={Heidi} style={{ maxWidth: "100%", padding: "0px" }} />
+        </div>
+        <div
+          className="d-flex row justify-content-center"
+          style={{ width: "20%" }}
+        >
+          <img
+            src={Imprisoned}
+            style={{ maxWidth: "90%", padding: "0px" }}
+            className="pb-1"
+          />
+          <img src={Cloak} style={{ maxWidth: "90%", padding: "0px" }} />
+        </div>
+      </div>
       <div
         style={{
           width: "100%",
