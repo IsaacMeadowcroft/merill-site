@@ -6,6 +6,7 @@ import {
   Portfolio,
   About,
   Cart,
+  Contact,
   Footer,
 } from "./components/index";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -119,6 +120,7 @@ function App(): JSX.Element {
                 removeCartItem={removeCartItem}
               />
             )}
+            <Contact dimensions={dimensions} scrollPosition={scrollPosition} />
             <About dimensions={dimensions} scrollPosition={scrollPosition} />
             <Footer />
           </Route>
