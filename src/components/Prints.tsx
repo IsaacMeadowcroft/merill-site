@@ -3,7 +3,7 @@ import ShopItem from "./ShopItem";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowShopCartProps } from "./Interfaces";
-import Wave from "../assets/WaveBlack.svg";
+import Wave from "../assets/WaveDarkGrey.svg";
 
 function Prints(props: IWindowShopCartProps): JSX.Element {
   return (

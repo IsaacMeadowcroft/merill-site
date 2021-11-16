@@ -1,44 +1,62 @@
-import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import Axios from "axios";
+import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
-import HeadShot from "../assets/AboutPageHeadShot.png";
+import Wave from "../assets/WaveBlack.svg";
 
 function Contact(props: IWindowProps): JSX.Element {
+  const [frommail, setfrommail] = useState("");
+  const [password, setpassword] = useState(0);
+  const [tomail, settomail] = useState("");
+
+  useEffect(() => {
+    Axios.get("http://localhost:3001/read").then((response) => {
+      console.log(response.data);
+    });
+  }, []);
+
+  const sendmail = () => {
+    Axios.post("http://localhost:3001/mail", {
+      frommail: frommail,
+      password: password,
+      tomail: tomail,
+    }).then((response) => {
+      if (response.data.msg === "success") {
+        alert("Email sent, awesome!");
+      } else if (response.data.msg === "fail") {
+        alert("Oops, something went wrong. Try again");
+      }
+    });
+  };
+
   return (
     <Container
       fluid
-      className="bg-black p-0 text-center text-white m-0"
-      style={{ fontFamily: '"Cormorant", serif' }}
-      id="About"
+      className="p-0 text-center text-white m-0 position-relative"
+      style={{
+        fontFamily: '"Cormorant", serif',
+        backgroundColor: "rgb(20, 20, 20)",
+      }}
+      id="Contact"
     >
-      <Container fluid className="bg-black p-0 text-center text-white">
+      <Container fluid className="p-0 text-center text-white">
         <h3>
           <b>C O N T A C T</b>
         </h3>
       </Container>
 
-      <Row md={2} className="m-0">
-        <Col className="w-50 d-flex column justify-content-center">
-          <h4 className="px-4 align-self-center">
-            {
-              "Merill Bobotis is a Montreal-based, 20 year old freelance Visual Artist."
-            }
-            {
-              '"The Artistic Process forces one’s vulnerability to surface, creating an incredibly intense connection between the artist and the subject, rarely found elsewhere. That vulnerability is what I try to capture the most. There is so much left unsaid, so many words hidden behind others… but body language does not lie. I usually go into a creative session with a vague idea of what I would like to create, and base the direction on what the subject is subconsciously communicating to me. Nothing has felt as genuine to me before."'
-            }
-          </h4>
-        </Col>
-        <Col className="d-flex row justify-content-center w-50 py-5">
-          <img
-            style={{
-              maxWidth: "60%",
-              borderRadius: "50%",
-            }}
-            src={HeadShot}
-          ></img>
-        </Col>
-      </Row>
+      <Row md={2} className="m-0"></Row>
+      <div
+        style={{
+          width: "100%",
+          height: "calc(100vw * 128 / 1440)",
+        }}
+      ></div>
+      <img
+        src={Wave}
+        className="w-100 position-absolute bottom-0 start-0 p-0"
+      ></img>
     </Container>
   );
 }

@@ -12,7 +12,7 @@ function About(props: IWindowProps): JSX.Element {
       style={{ fontFamily: '"Cormorant", serif' }}
       id="About"
     >
-      <Container fluid className="bg-black p-0 text-center text-white">
+      <Container fluid className="p-0 text-center text-white">
         <h3>
           <b>A B O U T</b>
         </h3>
