@@ -10,6 +10,8 @@ import Cloak from "../assets/Cloak.jpg";
 import Smoke from "../assets/Smoke.jpg";
 import Wet from "../assets/Wet.jpg";
 import Model from "../assets/Model.jpg";
+import Lake from "../assets/Lake.jpg";
+import BlindFolded from "../assets/BlindFolded.jpg";
 
 function Portfolio(props: IWindowProps): JSX.Element {
   const [key, setKey] = useState(1);
@@ -40,21 +42,21 @@ function Portfolio(props: IWindowProps): JSX.Element {
         }}
       >
         <Tab eventKey={1} title="Photos">
-          <div className="d-flex row justify-content-around pb-2">
+          <div className="d-flex row justify-content-around">
             <div
-              className="d-flex row justify-content-center"
+              className="d-flex row justify-content-center bg-primary px-0"
               style={{ width: "25%" }}
             >
               <img src={Wet} style={{ maxWidth: "100%", padding: "0px" }} />
             </div>
             <div
-              className="d-flex row justify-content-center"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Smoke} style={{ maxWidth: "100%", padding: "0px" }} />
             </div>
             <div
-              className="d-flex row justify-content-center"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img
@@ -63,7 +65,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
               />
             </div>
             <div
-              className="d-flex row justify-content-center"
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img
@@ -75,19 +77,43 @@ function Portfolio(props: IWindowProps): JSX.Element {
 
           <div className="d-flex row justify-content-around">
             <div
-              className="d-flex row justify-content-center"
+              className="d-flex row justify-content-center px-0"
+              style={{ width: "50%" }}
+            >
+              <img src={Heidi} style={{ maxWidth: "100%", padding: "0px" }} />
+            </div>
+            <div
+              className="d-flex row justify-content-center px-0"
+              style={{ width: "50%", transform: "scaleX(-1)" }}
+            >
+              <img src={Heidi} style={{ maxWidth: "100%", padding: "0px" }} />
+            </div>
+          </div>
+
+          <div className="d-flex row justify-content-around">
+            <div
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Cloak} style={{ maxWidth: "100%", padding: "0px" }} />
             </div>
             <div
-              style={{ width: "50%" }}
-              className="d-flex row justify-content-center"
+              className="d-flex row justify-content-center px-0"
+              style={{ width: "25%" }}
             >
-              <img src={Heidi} style={{ maxWidth: "83%", padding: "0px" }} />
+              <img
+                src={BlindFolded}
+                style={{ maxWidth: "100%", padding: "0px" }}
+              />
             </div>
             <div
-              className="d-flex row justify-content-center"
+              className="d-flex row justify-content-center px-0"
+              style={{ width: "25%" }}
+            >
+              <img src={Lake} style={{ maxWidth: "100%", padding: "0px" }} />
+            </div>
+            <div
+              className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
               <img src={Model} style={{ maxWidth: "100%", padding: "0px" }} />
