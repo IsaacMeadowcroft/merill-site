@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
 import Heidi from "../assets/Heidi.jpg";
@@ -13,10 +13,10 @@ function Portfolio(props: IWindowProps): JSX.Element {
   return (
     <Container
       fluid
-      className=" p-0 text-center m-0 px-3 position-relative pb-5"
+      className=" p-0 text-center m-0 px-3 position-relative"
       style={{
         fontFamily: '"Cormorant", serif',
-        backgroundColor: "rgb(224, 224, 224)",
+        backgroundColor: "#f8f9fa",
       }}
       id="Portfolio"
     >
@@ -26,7 +26,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
         </h3>
       </Container>
 
-      <div className="d-flex row justify-content-around mb-5">
+      <div className="d-flex row justify-content-around">
         <div
           className="d-flex row justify-content-center"
           style={{ width: "20%" }}
@@ -56,6 +56,12 @@ function Portfolio(props: IWindowProps): JSX.Element {
           <img src={Cloak} style={{ maxWidth: "90%", padding: "0px" }} />
         </div>
       </div>
+      <div
+        style={{
+          width: "100%",
+          height: "calc(100vw * 128 / 1440)",
+        }}
+      ></div>
       <img
         src={Wave}
         className="w-100 position-absolute bottom-0 start-0 p-0"

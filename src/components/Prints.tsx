@@ -3,12 +3,13 @@ import ShopItem from "./ShopItem";
 import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowShopCartProps } from "./Interfaces";
+import Wave from "../assets/WaveBlack.svg";
 
 function Prints(props: IWindowShopCartProps): JSX.Element {
   return (
     <Container
       fluid
-      className="p-0 m-0"
+      className="p-0 m-0 position-relative"
       id="Prints"
       style={{
         fontFamily: '"Cormorant", serif',
@@ -36,6 +37,16 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
             </Col>
           ))}
       </Row>
+      <div
+        style={{
+          width: "100%",
+          height: "calc(100vw * 128 / 1440)",
+        }}
+      ></div>
+      <img
+        src={Wave}
+        className="w-100 position-absolute bottom-0 start-0 p-0"
+      ></img>
     </Container>
   );
 }

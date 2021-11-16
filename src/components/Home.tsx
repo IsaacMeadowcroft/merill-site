@@ -3,7 +3,7 @@ import "../css/Home.css";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LandingPage from "../assets/LandingPage.png";
-import Wave from "../assets/Wave.svg";
+import Wave from "../assets/WaveLight.svg";
 import { IWindowProps } from "./Interfaces";
 
 function Home(props: IWindowProps): JSX.Element {
