@@ -1,35 +1,10 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
+import React from "react";
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
 import Wave from "../assets/WaveBlack.svg";
 
 function Contact(props: IWindowProps): JSX.Element {
-  const [frommail, setfrommail] = useState("");
-  const [password, setpassword] = useState(0);
-  const [tomail, settomail] = useState("");
-
-  useEffect(() => {
-    Axios.get("http://localhost:3001/read").then((response) => {
-      console.log(response.data);
-    });
-  }, []);
-
-  const sendmail = () => {
-    Axios.post("http://localhost:3001/mail", {
-      frommail: frommail,
-      password: password,
-      tomail: tomail,
-    }).then((response) => {
-      if (response.data.msg === "success") {
-        alert("Email sent, awesome!");
-      } else if (response.data.msg === "fail") {
-        alert("Oops, something went wrong. Try again");
-      }
-    });
-  };
-
   return (
     <Container
       fluid
