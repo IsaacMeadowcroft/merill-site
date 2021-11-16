@@ -3,6 +3,7 @@ import { Container, Tabs, Tab } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
 import Heidi from "../assets/Heidi.jpg";
+import HeidiFlipped from "../assets/HeidiFlipped.jpg";
 import Wave from "../assets/WaveGrey.svg";
 import Desperation from "../assets/Desperation.jpg";
 import Imprisoned from "../assets/Imprisoned.jpg";
@@ -77,21 +78,6 @@ function Portfolio(props: IWindowProps): JSX.Element {
 
           <div className="d-flex row justify-content-around">
             <div
-              className="d-flex row justify-content-center px-0 "
-              style={{ width: "50%" }}
-            >
-              <img src={Heidi} style={{ maxWidth: "100%", padding: "0px" }} />
-            </div>
-            <div
-              className="d-flex row justify-content-center px-0"
-              style={{ width: "50%", transform: "scaleX(-1)" }}
-            >
-              <img src={Heidi} style={{ maxWidth: "100%", padding: "0px" }} />
-            </div>
-          </div>
-
-          <div className="d-flex row justify-content-around">
-            <div
               className="d-flex row justify-content-center px-0"
               style={{ width: "25%" }}
             >
@@ -117,6 +103,15 @@ function Portfolio(props: IWindowProps): JSX.Element {
               style={{ width: "25%" }}
             >
               <img src={Model} style={{ maxWidth: "100%", padding: "0px" }} />
+            </div>
+          </div>
+
+          <div className="d-flex row justify-content-around">
+            <div className="d-flex row justify-content-center px-0 w-50">
+              <img src={Heidi} className="mw-100 p-0" />
+            </div>
+            <div className="d-flex row justify-content-center px-0 w-50">
+              <img src={HeidiFlipped} className="mw-100 p-0" />
             </div>
           </div>
         </Tab>
