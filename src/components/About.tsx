@@ -22,7 +22,7 @@ function About(props: IWindowProps): JSX.Element {
         <Col className="w-50 d-flex column justify-content-center">
           <h4 className="px-4 align-self-center">
             {
-              "Merill Bobotis is a Montreal-based, 20 year old freelance Visual Artist.\n\n\n\n\n\t\t\t\t"
+              "Merill Bobotis is a Montreal-based, 20 year old freelance Visual Artist."
             }
             {
               '"The Artistic Process forces one’s vulnerability to surface, creating an incredibly intense connection between the artist and the subject, rarely found elsewhere. That vulnerability is what I try to capture the most. There is so much left unsaid, so many words hidden behind others… but body language does not lie. I usually go into a creative session with a vague idea of what I would like to create, and base the direction on what the subject is subconsciously communicating to me. Nothing has felt as genuine to me before."'

@@ -9,7 +9,7 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
   return (
     <Container
       fluid
-      className="p-0 m-0 position-relative"
+      className="p-0 m-0 position-relative pb-5"
       id="Prints"
       style={{
         fontFamily: '"Cormorant", serif',
