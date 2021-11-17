@@ -62,7 +62,7 @@ function Contact(props: IWindowProps): JSX.Element {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="exampleForm.ControlText">
-            <Form.Label>Text</Form.Label>
+            <Form.Label>Message</Form.Label>
             <Form.Control
               as="textarea"
               placeholder="Hi Merill, I was hoping to have you take my LinkedIn headshot!"
