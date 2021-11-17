@@ -21,11 +21,11 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
           <b>P R I N T S H O P</b>
         </h3>
       </Container>
-      <Row className="m-0 w-100" lg="4" md={3} sm={2} xs={1}>
+      <Row className="m-0 w-100" lg={4} md={3} sm={2} xs={1}>
         {props.shopItems
           ?.sort((a, b) => a.id - b.id)
           .map((item) => (
-            <Col className="p-2">
+            <Col className="p-3">
               <ShopItem
                 shopItem={item}
                 dimensions={props.dimensions}
