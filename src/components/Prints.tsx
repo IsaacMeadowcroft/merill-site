@@ -13,10 +13,10 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
       id="Prints"
       style={{
         fontFamily: '"Cormorant", serif',
-        backgroundColor: "rgb(182, 182, 182)",
+        backgroundColor: "rgb(20, 20, 20)",
       }}
     >
-      <Container fluid className="p-0 text-center text-dark pb-3">
+      <Container fluid className="p-0 text-center text-light pt-5 pb-3">
         <h3>
           <b>P R I N T S H O P</b>
         </h3>
@@ -37,16 +37,6 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
             </Col>
           ))}
       </Row>
-      <div
-        style={{
-          width: "100%",
-          height: "calc(100vw * 128 / 1440)",
-        }}
-      ></div>
-      <img
-        src={Wave}
-        className="w-100 position-absolute bottom-0 start-0 p-0"
-      ></img>
     </Container>
   );
 }

@@ -1,37 +1,89 @@
-import React from "react";
-import { Container, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Container, FloatingLabel, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
 import Wave from "../assets/WaveBlack.svg";
 
 function Contact(props: IWindowProps): JSX.Element {
+  const [emailSender, setEmailSender] = useState("Unknown");
+  const [emailBody, setEmailBody] = useState("Empty");
+
+  const sendEmailPostRequest = async () => {
+    const res = await fetch("http://127.0.0.1:8080/postSendEmail", {
+      method: "POST",
+      body: JSON.stringify({
+        email: emailSender,
+        body: emailBody,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(res);
+  };
+
+  const handleEmailSenderChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setEmailSender(e.target.value);
+  };
+
+  const handleEmailBodyChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setEmailBody(e.target.value);
+  };
+
   return (
     <Container
       fluid
-      className="p-0 text-center text-white m-0 position-relative"
+      className="p-0 text-center text-white m-0 position-relative "
       style={{
         fontFamily: '"Cormorant", serif',
         backgroundColor: "rgb(20, 20, 20)",
       }}
       id="Contact"
     >
-      <Container fluid className="p-0 text-center text-white">
+      <Container fluid className="p-0 text-center text-white pt-5 pb-3">
         <h3>
           <b>C O N T A C T</b>
         </h3>
       </Container>
 
-      <Row md={2} className="m-0"></Row>
-      <div
-        style={{
-          width: "100%",
-          height: "calc(100vw * 128 / 1440)",
-        }}
-      ></div>
-      <img
-        src={Wave}
-        className="w-100 position-absolute bottom-0 start-0 p-0"
-      ></img>
+      <div className="px-3 py-2 flex-row justify-content-center">
+        <Form className="pb-5">
+          <Form.Group className="mb-3" controlId="exampleForm.ControlInput">
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="name@example.com"
+              onChange={handleEmailSenderChange}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="exampleForm.ControlText">
+            <Form.Label>Text</Form.Label>
+            <FloatingLabel
+              controlId="floatingTextarea"
+              label="Comments"
+              className="mb-3"
+            >
+              <Form.Control
+                as="textarea"
+                placeholder="Leave a comment here"
+                style={{ height: "100px" }}
+                onChange={handleEmailBodyChange}
+              />
+            </FloatingLabel>
+          </Form.Group>
+
+          <div className="w-100">
+            <Button variant="dark" type="submit" onClick={sendEmailPostRequest}>
+              Send Email
+            </Button>
+          </div>
+        </Form>
+      </div>
     </Container>
   );
 }
