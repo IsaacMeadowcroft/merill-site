@@ -13,7 +13,7 @@ function CartItem(props: ICartItemProps): JSX.Element {
   if (visible) {
     return (
       <div
-        className="p-0 my-2 d-flex flex-row w-100"
+        className="p-0 my-2 d-flex flex-row w-100 rounded"
         style={{
           backgroundColor: "white",
           fontSize: "14px",
@@ -21,7 +21,11 @@ function CartItem(props: ICartItemProps): JSX.Element {
       >
         <div style={{ width: "12%" }}>
           <Image
-            style={{ maxWidth: "100%" }}
+            style={{
+              maxWidth: "100%",
+              borderTopLeftRadius: "4px",
+              borderBottomLeftRadius: "4px",
+            }}
             src={
               props.shopItems?.find((x) => x.id === props.cartItem.id)?.image
             }
