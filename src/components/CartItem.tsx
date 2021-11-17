@@ -16,10 +16,7 @@ function CartItem(props: ICartItemProps): JSX.Element {
         className="p-0 my-2 d-flex flex-row w-100"
         style={{
           backgroundColor: "white",
-          fontSize:
-            props.dimensions.width && props.dimensions.width > 500
-              ? "15px"
-              : "9px",
+          fontSize: "14px",
         }}
       >
         <div style={{ width: "12%" }}>
@@ -39,35 +36,35 @@ function CartItem(props: ICartItemProps): JSX.Element {
             <div>{Size[props.cartItem.size]}</div>
           </div>
 
-          <div className="d-flex flex-column justify-content-center">
-            <div className="d-flex flex-row justify-content-center">
-              <div
-                className="cart-item-button"
-                onClick={() => {
-                  props.addCartItem(props.cartItem.id, props.cartItem.size);
-                  setQuantity(quantity + 1);
-                }}
-              >
-                <FiPlus />
-              </div>
-              <div>
-                <Badge bg="light" text="dark">
-                  {quantity}
-                </Badge>
-              </div>
-              <div
-                className="cart-item-button"
-                onClick={() => {
-                  props.minusCartItem(props.cartItem.id, props.cartItem.size);
-                  if (quantity - 1 <= 0) {
-                    setVisible(false);
-                  } else {
-                    setQuantity(quantity - 1);
-                  }
-                }}
-              >
-                <FiMinus />
-              </div>
+          <div className="d-flex flex-row justify-content-center">
+            <div
+              className="d-flex flex-column justify-content-center cart-item-button"
+              onClick={() => {
+                props.addCartItem(props.cartItem.id, props.cartItem.size);
+                setQuantity(quantity + 1);
+              }}
+            >
+              <FiPlus />
+            </div>
+
+            <div className="d-flex flex-column justify-content-center cart-item-button">
+              <Badge bg="light" text="dark" style={{ fontSize: "14px" }}>
+                {quantity}
+              </Badge>
+            </div>
+
+            <div
+              className="d-flex flex-column justify-content-center cart-item-button"
+              onClick={() => {
+                props.minusCartItem(props.cartItem.id, props.cartItem.size);
+                if (quantity - 1 <= 0) {
+                  setVisible(false);
+                } else {
+                  setQuantity(quantity - 1);
+                }
+              }}
+            >
+              <FiMinus />
             </div>
           </div>
 

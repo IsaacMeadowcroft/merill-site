@@ -8,7 +8,10 @@ import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
 
 function Cart(props: IWindowShopCartProps): JSX.Element {
   return (
-    <div style={{ fontFamily: '"Cormorant", serif', fontSize: "2.1vh" }}>
+    <div
+      className="bg-light"
+      style={{ fontFamily: '"Cormorant", serif', fontSize: "2.1vh" }}
+    >
       <Navbar expand="lg" variant="dark" bg="dark" sticky="top">
         <Container fluid className="d-flex flex-row justify-content-between">
           <Nav.Link href="/merill-site/" className="text-light">
@@ -16,15 +19,19 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
               <div className="d-flex flex-column justify-content-center">
                 <VscArrowLeft />
               </div>
-              <div className="px-1">B A C K</div>
+              <div className="px-1">
+                <b>B A C K</b>
+              </div>
             </div>
           </Nav.Link>
           <Navbar.Text className="text-light d-flex flex-column justify-content-center">
-            C A R T
+            <b>C A R T</b>
           </Navbar.Text>
           <Nav.Link href="/merill-site/" className="text-light">
             <div className="d-flex flex-row justify-content-center">
-              <div className="px-1">C H E C K O U T</div>
+              <div className="px-1">
+                <b>C H E C K O U T</b>
+              </div>
               <div className="d-flex flex-column justify-content-center">
                 <VscArrowRight />
               </div>
@@ -32,7 +39,7 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
           </Nav.Link>
         </Container>
       </Navbar>
-      <Container fluid className="bg-light">
+      <Container fluid>
         {Array.from(props.cartItems.keys()).map((item) => {
           let cartItem: TCartItem;
           const quantity = props.cartItems.get(item);
