@@ -9,9 +9,9 @@ import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
 function Cart(props: IWindowShopCartProps): JSX.Element {
   return (
     <div
-      className="bg-light"
       style={{
         fontFamily: '"Cormorant", serif',
+        backgroundColor: "rgb(220,220,220)",
         fontSize: "2.1vh",
         height: "100vh",
       }}
@@ -43,7 +43,11 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
           </Nav.Link>
         </Container>
       </Navbar>
-      <Container fluid className="bg-light pb-3">
+      <Container
+        fluid
+        className="pb-3"
+        style={{ backgroundColor: "rgb(220,220,220)" }}
+      >
         {Array.from(props.cartItems.keys()).map((item) => {
           let cartItem: TCartItem;
           const quantity = props.cartItems.get(item);
