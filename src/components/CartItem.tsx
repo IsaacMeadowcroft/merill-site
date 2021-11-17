@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/Cart.css";
-import { Image, Col, Row, Badge, Container } from "react-bootstrap";
+import { Image, Badge } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ICartItemProps, Size } from "./Interfaces";
 import { BsTrash } from "react-icons/bs";
@@ -12,33 +12,36 @@ function CartItem(props: ICartItemProps): JSX.Element {
 
   if (visible) {
     return (
-      <Row style={{ padding: "0px", backgroundColor: "white", margin: "1vh" }}>
-        <Col sm={1} style={{ padding: "0px", margin: "0px" }}>
+      <div
+        className="p-0 my-2 d-flex flex-row w-100"
+        style={{
+          backgroundColor: "white",
+          fontSize:
+            props.dimensions.width && props.dimensions.width > 500
+              ? "15px"
+              : "9px",
+        }}
+      >
+        <div style={{ width: "12%" }}>
           <Image
-            style={{ maxWidth: "90%" }}
+            style={{ maxWidth: "100%" }}
             src={
               props.shopItems?.find((x) => x.id === props.cartItem.id)?.image
             }
           />
-        </Col>
-        <Col sm={7} className="position-relative">
-          <Container className="position-absolute top-50 start-0 translate-middle-y">
-            <div style={{ textAlign: "center", width: "100%" }}>
+        </div>
+
+        <div className="d-flex flex-row justify-content-around w-100">
+          <div className="d-flex flex-column justify-content-center">
+            <div>
               {props.shopItems?.find((x) => x.id === props.cartItem.id)?.title}
             </div>
-            <div style={{ textAlign: "center", width: "100%" }}>
-              {Size[props.cartItem.size]}
-            </div>
-          </Container>
-        </Col>
-        <Col sm={1} className="position-relative">
-          <div
-            className="position-absolute top-50 start-0 translate-middle-y"
-            style={{ width: "100%", textAlign: "center" }}
-          >
-            <Row>
-              <Col
-                sm={4}
+            <div>{Size[props.cartItem.size]}</div>
+          </div>
+
+          <div className="d-flex flex-column justify-content-center">
+            <div className="d-flex flex-row justify-content-center">
+              <div
                 className="cart-item-button"
                 onClick={() => {
                   props.addCartItem(props.cartItem.id, props.cartItem.size);
@@ -46,14 +49,13 @@ function CartItem(props: ICartItemProps): JSX.Element {
                 }}
               >
                 <FiPlus />
-              </Col>
-              <Col sm={4}>
+              </div>
+              <div>
                 <Badge bg="light" text="dark">
                   {quantity}
                 </Badge>
-              </Col>
-              <Col
-                sm={4}
+              </div>
+              <div
                 className="cart-item-button"
                 onClick={() => {
                   props.minusCartItem(props.cartItem.id, props.cartItem.size);
@@ -65,28 +67,18 @@ function CartItem(props: ICartItemProps): JSX.Element {
                 }}
               >
                 <FiMinus />
-              </Col>
-            </Row>
+              </div>
+            </div>
           </div>
-        </Col>
-        <Col
-          sm={2}
-          className="position-relative"
-          style={{ padding: "0px", margin: "0px" }}
-        >
-          <div
-            className="position-absolute top-50 start-0 translate-middle-y"
-            style={{ width: "100%", textAlign: "center" }}
-          >
+
+          <div className="d-flex flex-column justify-content-center">
             $
             {(props.shopItems?.find((x) => x.id === props.cartItem.id)?.price ||
               1) * quantity}
           </div>
-        </Col>
-        <Col sm={1} className="position-relative">
+
           <div
-            className="position-absolute top-50 start-0 translate-middle-y cart-item-button"
-            style={{ width: "100%", textAlign: "center" }}
+            className="d-flex flex-column justify-content-center"
             onClick={() => {
               props.removeCartItem(props.cartItem.id, props.cartItem.size);
               setVisible(false);
@@ -94,8 +86,8 @@ function CartItem(props: ICartItemProps): JSX.Element {
           >
             <BsTrash />
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
     );
   } else {
     return <></>;
