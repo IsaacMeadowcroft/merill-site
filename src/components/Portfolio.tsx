@@ -19,7 +19,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
     <>
       <Container
         fluid
-        className="text-center m-0 px-3 position-relative pb-5"
+        className="text-center m-0 px-3 pb-5"
         style={{
           fontFamily: '"Cormorant", serif',
           backgroundColor: "rgb(20, 20, 20)",
@@ -32,54 +32,54 @@ function Portfolio(props: IWindowProps): JSX.Element {
           </h3>
         </Container>
 
-        {/*<Tabs id="abc" transition={false} className="mb-3">
-          <Tab eventKey={1} title="Photos">*/}
-        <div className="d-flex row justify-content-around">
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={Wet} className="mw-100 p-0" />
-          </div>
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={Smoke} className="mw-100 p-0" />
-          </div>
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={Desperation} className="mw-100 p-0" />
-          </div>
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={Imprisoned} className="mw-100 p-0" />
-          </div>
-        </div>
+        <Tabs id="abc" transition={false} className="mb-3">
+          <Tab eventKey={1} title="Photos">
+            <div className="d-flex row justify-content-around">
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={Wet} className="mw-100 p-0" />
+              </div>
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={Smoke} className="mw-100 p-0" />
+              </div>
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={Desperation} className="mw-100 p-0" />
+              </div>
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={Imprisoned} className="mw-100 p-0" />
+              </div>
+            </div>
 
-        <div className="d-flex row justify-content-around">
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={Cloak} className="mw-100 p-0" />
-          </div>
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={BlindFolded} className="mw-100 p-0" />
-          </div>
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={Lake} className="mw-100 p-0" />
-          </div>
-          <div className="d-flex row justify-content-center px-0 w-25">
-            <img src={Model} className="mw-100 p-0" />
-          </div>
-        </div>
+            <div className="d-flex row justify-content-around">
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={Cloak} className="mw-100 p-0" />
+              </div>
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={BlindFolded} className="mw-100 p-0" />
+              </div>
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={Lake} className="mw-100 p-0" />
+              </div>
+              <div className="d-flex row justify-content-center px-0 w-25">
+                <img src={Model} className="mw-100 p-0" />
+              </div>
+            </div>
 
-        <div className="d-flex row justify-content-around">
-          <div className="d-flex row justify-content-center px-0 w-50">
-            <img src={Heidi} className="mw-100 p-0" />
-          </div>
-          <div className="d-flex row justify-content-center px-0 w-50">
-            <img src={HeidiFlipped} className="mw-100 p-0" />
-          </div>
-        </div>
-        {/*</Container></Tab>
+            <div className="d-flex row justify-content-around">
+              <div className="d-flex row justify-content-center px-0 w-50">
+                <img src={Heidi} className="mw-100 p-0" />
+              </div>
+              <div className="d-flex row justify-content-center px-0 w-50">
+                <img src={HeidiFlipped} className="mw-100 p-0" />
+              </div>
+            </div>
+          </Tab>
           <Tab eventKey={2} title="Videos">
             <div>hello</div>
           </Tab>
           <Tab eventKey={3} title="Instagram">
             <div>goodbye</div>
           </Tab>
-          </Tabs>*/}
+        </Tabs>
       </Container>
     </>
   );
