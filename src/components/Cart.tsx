@@ -9,7 +9,7 @@ import { VscArrowLeft, VscArrowRight } from "react-icons/vsc";
 function Cart(props: IWindowShopCartProps): JSX.Element {
   return (
     <div
-      className="bg-light"
+      className="bg-light h-100"
       style={{ fontFamily: '"Cormorant", serif', fontSize: "2.1vh" }}
     >
       <Navbar expand="lg" variant="dark" bg="dark" sticky="top">

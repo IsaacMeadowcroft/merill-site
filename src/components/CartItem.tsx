@@ -75,7 +75,7 @@ function CartItem(props: ICartItemProps): JSX.Element {
           </div>
 
           <div
-            className="d-flex flex-column justify-content-center"
+            className="d-flex flex-column justify-content-center cart-item-button"
             onClick={() => {
               props.removeCartItem(props.cartItem.id, props.cartItem.size);
               setVisible(false);
