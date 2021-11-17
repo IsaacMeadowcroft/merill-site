@@ -11,12 +11,24 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
     <div style={{ fontFamily: '"Cormorant", serif', fontSize: "2.1vh" }}>
       <Navbar expand="lg" variant="dark" bg="dark" sticky="top">
         <Container fluid className="d-flex flex-row justify-content-between">
-          <Nav.Link href="/merill-site/" className="text-light">
-            <VscArrowLeft /> B A C K
+          <Nav.Link href="/merill-site/" className="text-light tex-center">
+            <div className="d-flex flex-row justify-content-center">
+              <div className="d-flex flex-column justify-content-center">
+                <VscArrowLeft />
+              </div>
+              <div className="px-1">B A C K</div>
+            </div>
           </Nav.Link>
+          <Navbar.Text className="text-light d-flex flex-column justify-content-center">
+            C A R T
+          </Navbar.Text>
           <Nav.Link href="/merill-site/" className="text-light">
-            C H E C K O U T
-            <VscArrowRight />
+            <div className="d-flex flex-row justify-content-center">
+              <div className="px-1">C H E C K O U T</div>
+              <div className="d-flex flex-column justify-content-center">
+                <VscArrowRight />
+              </div>
+            </div>
           </Nav.Link>
         </Container>
       </Navbar>
