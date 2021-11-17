@@ -24,7 +24,7 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
                 <VscArrowLeft />
               </div>
               <div className="px-1">
-                <b>B A C K</b>
+                <b>BACK</b>
               </div>
             </div>
           </Nav.Link>
@@ -34,7 +34,7 @@ function Cart(props: IWindowShopCartProps): JSX.Element {
           <Nav.Link href="/merill-site/" className="text-light">
             <div className="d-flex flex-row justify-content-center">
               <div className="px-1">
-                <b>C H E C K O U T</b>
+                <b>CHECKOUT</b>
               </div>
               <div className="d-flex flex-column justify-content-center">
                 <VscArrowRight />
