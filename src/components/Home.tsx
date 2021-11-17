@@ -41,6 +41,7 @@ function Home(props: IWindowProps): JSX.Element {
     return (
       <Container
         fluid
+        className="position-relative pb-4"
         style={{
           backgroundColor: "black",
           padding: "0px",
@@ -49,14 +50,16 @@ function Home(props: IWindowProps): JSX.Element {
       >
         <Image src={LandingPage} fluid />
         <Row className="name name-mobile m-0">
-          <p className="text-center">MERILL BOBOTIS</p>
-        </Row>
-        <Row className="bar-wrapper m-0">
-          <div className="bar-mobile"></div>
+          <p className="text-center">
+            <b>M E R I L L B O B O T I S</b>
+          </p>
         </Row>
         <Row className="name m-0">
-          <p className="profession-mobile text-center">Visual Artist</p>
+          <p className="profession-mobile text-center">
+            Visual Artist | Photographer
+          </p>
         </Row>
+        <img src={Wave} className="w-100 position-absolute bottom-0 p-0"></img>;
       </Container>
     );
   }
