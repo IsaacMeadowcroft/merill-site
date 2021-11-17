@@ -63,18 +63,12 @@ function Contact(props: IWindowProps): JSX.Element {
 
           <Form.Group className="mb-3" controlId="exampleForm.ControlText">
             <Form.Label>Text</Form.Label>
-            <FloatingLabel
-              controlId="floatingTextarea"
-              label="Comments"
-              className="mb-3"
-            >
-              <Form.Control
-                as="textarea"
-                placeholder="Leave a comment here"
-                style={{ height: "100px" }}
-                onChange={handleEmailBodyChange}
-              />
-            </FloatingLabel>
+            <Form.Control
+              as="textarea"
+              placeholder="Hi Merill, I was hoping to have you take my LinkedIn headshot!"
+              className="h-100"
+              onChange={handleEmailBodyChange}
+            />
           </Form.Group>
 
           <div className="w-100">
