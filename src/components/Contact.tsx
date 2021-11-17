@@ -50,8 +50,8 @@ function Contact(props: IWindowProps): JSX.Element {
         </h3>
       </Container>
 
-      <div className="px-3 py-2 flex-row justify-content-center">
-        <Form className="pb-5">
+      <div className="py-2 flex-row justify-content-center">
+        <Form className="pb-5 px-5">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput">
             <Form.Label>Email address</Form.Label>
             <Form.Control
