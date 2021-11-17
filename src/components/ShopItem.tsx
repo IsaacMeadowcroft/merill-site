@@ -113,7 +113,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
                 : ""}
               </Card.Text>*/}
           <div>
-            <Form className="mb-3 d-flex flew-row justify-content-around w-100">
+            <Form className="d-flex flew-row justify-content-around w-100">
               <Form.Check
                 defaultChecked={true}
                 inline
