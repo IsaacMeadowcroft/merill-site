@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Tabs, Tab } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Tabs.css";
@@ -17,8 +17,6 @@ import BlindFolded from "../assets/BlindFolded.jpg";
 import { createSecretKey } from "crypto";
 
 function Portfolio(props: IWindowProps): JSX.Element {
-  const [key, setKey] = useState(1);
-
   return (
     <>
       <Container
@@ -41,12 +39,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
           className="mb-3 border-secondary"
           defaultActiveKey={1}
         >
-          <Tab
-            eventKey={1}
-            title="Photos"
-            tabClassName={"tab " + (key == 2 ? "bg-secondary text-light" : "")}
-            onSelect={() => setKey(1)}
-          >
+          <Tab eventKey={1} title="Photos" tabClassName="tab">
             <div className="d-flex row justify-content-around">
               <div className="d-flex row justify-content-center px-0 w-25">
                 <img src={Wet} className="mw-100 p-0" />
@@ -87,19 +80,9 @@ function Portfolio(props: IWindowProps): JSX.Element {
             </div>
           </Tab>
 
-          <Tab
-            eventKey={2}
-            title="Videos"
-            tabClassName={"tab " + (key == 2 ? "bg-secondary text-light" : "")}
-            onSelect={() => setKey(2)}
-          ></Tab>
+          <Tab eventKey={2} title="Videos" tabClassName="tab"></Tab>
 
-          <Tab
-            eventKey={3}
-            title="Instagram"
-            tabClassName="tab"
-            onSelect={() => setKey(3)}
-          >
+          <Tab eventKey={3} title="Instagram" tabClassName="tab">
             <div>goodbye</div>
           </Tab>
         </Tabs>
