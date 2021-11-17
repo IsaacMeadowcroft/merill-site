@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Tabs, Tab } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../css/Tabs.css";
 import { IWindowProps } from "./Interfaces";
 import Heidi from "../assets/Heidi.jpg";
 import HeidiFlipped from "../assets/HeidiFlipped.jpg";
@@ -13,8 +14,11 @@ import Wet from "../assets/Wet.jpg";
 import Model from "../assets/Model.jpg";
 import Lake from "../assets/Lake.jpg";
 import BlindFolded from "../assets/BlindFolded.jpg";
+import { createSecretKey } from "crypto";
 
 function Portfolio(props: IWindowProps): JSX.Element {
+  const [key, setKey] = useState(1);
+
   return (
     <>
       <Container
@@ -32,8 +36,17 @@ function Portfolio(props: IWindowProps): JSX.Element {
           </h3>
         </Container>
 
-        <Tabs id="abc" transition={false} className="mb-3">
-          <Tab eventKey={1} title="Photos">
+        <Tabs
+          transition={false}
+          className="mb-3 border-secondary"
+          defaultActiveKey={1}
+        >
+          <Tab
+            eventKey={1}
+            title="Photos"
+            tabClassName={"tab " + (key == 2 ? "bg-secondary text-light" : "")}
+            onSelect={() => setKey(1)}
+          >
             <div className="d-flex row justify-content-around">
               <div className="d-flex row justify-content-center px-0 w-25">
                 <img src={Wet} className="mw-100 p-0" />
@@ -73,10 +86,20 @@ function Portfolio(props: IWindowProps): JSX.Element {
               </div>
             </div>
           </Tab>
-          <Tab eventKey={2} title="Videos">
-            <div>hello</div>
-          </Tab>
-          <Tab eventKey={3} title="Instagram">
+
+          <Tab
+            eventKey={2}
+            title="Videos"
+            tabClassName={"tab " + (key == 2 ? "bg-secondary text-light" : "")}
+            onSelect={() => setKey(2)}
+          ></Tab>
+
+          <Tab
+            eventKey={3}
+            title="Instagram"
+            tabClassName="tab"
+            onSelect={() => setKey(3)}
+          >
             <div>goodbye</div>
           </Tab>
         </Tabs>
