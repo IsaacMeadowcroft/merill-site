@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../css/ShopItem.css";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemModal from "./ItemModal";
 import { IShopItemProps, Size } from "./Interfaces";
+import PictureFrame from "../assets/PictureFrame.jpg";
+import PictureFrame2 from "../assets/PictureFrame2.jpg";
 
 function ShopItem(props: IShopItemProps): JSX.Element {
   const [modalShow, setModalShow] = useState(false);
@@ -19,11 +21,55 @@ function ShopItem(props: IShopItemProps): JSX.Element {
         className="card-styles border-0 rounded-0"
         onClick={() => setModalShow(true)}
       >
-        <Card.Img
-          variant="top"
-          src={props.shopItem.image}
-          className="rounded-0"
-        />
+        <Carousel fade>
+          <Carousel.Item interval={7000}>
+            <img
+              style={{ maxWidth: "100%" }}
+              src={props.shopItem.image}
+              alt="First slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item interval={1500}>
+            <div style={{ position: "relative", height: "80%" }}>
+              <img
+                style={{ maxWidth: "100%" }}
+                src={PictureFrame2}
+                alt="Second slide"
+              />
+              <img
+                className="d-block "
+                src={props.shopItem.image}
+                alt="Second slide"
+                style={{
+                  maxWidth: "52.1%",
+                  position: "absolute",
+                  top: "16.3%",
+                  left: "23.7%",
+                }}
+              />
+            </div>
+          </Carousel.Item>
+          <Carousel.Item interval={1500}>
+            <div style={{ position: "relative", height: "80%" }}>
+              <img
+                style={{ maxWidth: "100%" }}
+                src={PictureFrame}
+                alt="Third slide"
+              />
+              <img
+                className="d-block"
+                src={props.shopItem.image}
+                alt="Third slide"
+                style={{
+                  maxWidth: "45%",
+                  position: "absolute",
+                  top: "14%",
+                  left: "29%",
+                }}
+              />
+            </div>
+          </Carousel.Item>
+        </Carousel>
         <Card.Body className="d-flex flex-column justify-content-between">
           <div>
             <Card.Title>
