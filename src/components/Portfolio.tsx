@@ -40,41 +40,41 @@ function Portfolio(props: IWindowProps): JSX.Element {
           defaultActiveKey={1}
         >
           <Tab eventKey={1} title="Photos" tabClassName="tab">
-            <div className="d-flex row justify-content-around">
-              <div className="d-flex row justify-content-center px-0 w-25">
+            <div className="d-flex flex-row justify-content-around">
+              <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Wet} className="mw-100 p-0" />
               </div>
-              <div className="d-flex row justify-content-center px-0 w-25">
+              <div className="d-flex flew-row justify-content-center px-0 w-25">
                 <img src={Smoke} className="mw-100 p-0" />
               </div>
-              <div className="d-flex row justify-content-center px-0 w-25">
+              <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Desperation} className="mw-100 p-0" />
               </div>
-              <div className="d-flex row justify-content-center px-0 w-25">
+              <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Imprisoned} className="mw-100 p-0" />
               </div>
             </div>
 
-            <div className="d-flex row justify-content-around">
-              <div className="d-flex row justify-content-center px-0 w-25">
+            <div className="d-flex flex-row justify-content-around">
+              <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Cloak} className="mw-100 p-0" />
               </div>
-              <div className="d-flex row justify-content-center px-0 w-25">
+              <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={BlindFolded} className="mw-100 p-0" />
               </div>
-              <div className="d-flex row justify-content-center px-0 w-25">
+              <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Lake} className="mw-100 p-0" />
               </div>
-              <div className="d-flex row justify-content-center px-0 w-25">
+              <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Model} className="mw-100 p-0" />
               </div>
             </div>
 
-            <div className="d-flex row justify-content-around">
-              <div className="d-flex row justify-content-center px-0 w-50">
+            <div className="d-flex flex-row justify-content-around">
+              <div className="d-flex flex-row justify-content-center px-0 w-50">
                 <img src={Heidi} className="mw-100 p-0" />
               </div>
-              <div className="d-flex row justify-content-center px-0 w-50">
+              <div className="d-flex flex-row justify-content-center px-0 w-50">
                 <img src={HeidiFlipped} className="mw-100 p-0" />
               </div>
             </div>
