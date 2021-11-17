@@ -17,7 +17,9 @@ function ItemModal(props: ItemModalType): JSX.Element {
       {...props}
       aria-labelledby="contained-modal-title-vcenter"
       centered
-      contentClassName="bg-dark text-light modal-height"
+      contentClassName="bg-dark p-0"
+      dialogClassName="my-0 p-0"
+      animation={false}
     >
       <Modal.Body>
         <Carousel fade interval={null}>
@@ -28,7 +30,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
               alt="First slide"
             />
           </Carousel.Item>
-          <Carousel.Item>
+          {/*<Carousel.Item>
             <div style={{ position: "relative", height: "100vh" }}>
               <img
                 style={{ maxWidth: "100%" }}
@@ -47,7 +49,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
                 }}
               />
             </div>
-          </Carousel.Item>
+              </Carousel.Item>
           <Carousel.Item>
             <div style={{ position: "relative", height: "100vh" }}>
               <img
@@ -67,7 +69,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
                 }}
               />
             </div>
-          </Carousel.Item>
+              </Carousel.Item>*/}
         </Carousel>
       </Modal.Body>
     </Modal>

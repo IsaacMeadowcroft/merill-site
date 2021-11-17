@@ -16,3 +16,7 @@
     border-color: rgb(20, 20, 20) !important;
     padding: 0px;
 }
+
+.modal-body {
+    padding: 0px;
+}

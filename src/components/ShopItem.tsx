@@ -48,11 +48,7 @@ function ShopItem(props: IShopItemProps): JSX.Element {
             {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
           </Card.Title>
         </Card.Header>
-        <Carousel
-          onClick={() => setModalShow(true)}
-          variant="dark"
-          interval={null}
-        >
+        <Carousel onClick={() => setModalShow(true)} interval={null}>
           <Carousel.Item>
             <img
               style={{ maxWidth: "100%" }}
