@@ -18,7 +18,7 @@ function Prints(props: IWindowShopCartProps): JSX.Element {
     >
       <Container fluid className="p-0 text-center text-light pt-5 pb-3">
         <h3>
-          <b>P R I N T S H O P</b>
+          <b>P R I N T&nbsp;&nbsp;S H O P</b>
         </h3>
       </Container>
       <Row className="m-0 w-100" lg={4} md={3} sm={2} xs={1}>

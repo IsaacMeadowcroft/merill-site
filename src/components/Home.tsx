@@ -51,7 +51,7 @@ function Home(props: IWindowProps): JSX.Element {
         <Image src={LandingPage} fluid />
         <Row className="name name-mobile m-0">
           <p className="text-center">
-            <b>M E R I L L B O B O T I S</b>
+            <b>M E R I L L&nbsp;&nbsp;B O B O T I S</b>
           </p>
         </Row>
         <Row className="name m-0">
