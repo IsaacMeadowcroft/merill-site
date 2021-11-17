@@ -66,7 +66,7 @@ function Contact(props: IWindowProps): JSX.Element {
             <Form.Control
               as="textarea"
               placeholder="Hi Merill, I was hoping to have you take my LinkedIn headshot!"
-              className="h-100"
+              style={{ height: "20vh" }}
               onChange={handleEmailBodyChange}
             />
           </Form.Group>
