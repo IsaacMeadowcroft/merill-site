@@ -109,12 +109,6 @@ function ShopItem(props: IShopItemProps): JSX.Element {
           </Carousel.Item>
         </Carousel>
         <Card.Body className="d-flex flex-column justify-content-between">
-          {/*<Card.Text>
-              {shopItemDescriptionSubString}
-              {shopItemDescriptionSubString != props.shopItem.description
-                ? "..."
-                : ""}
-              </Card.Text>*/}
           <Card.Title style={{ textTransform: "uppercase" }}>
             {shopItemTitleSubString}
             {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
@@ -158,12 +152,14 @@ function ShopItem(props: IShopItemProps): JSX.Element {
               </div>
               <b>${currentItemPrice}</b>
             </div>
-          </Card.Subtitle>
 
-          {/*<div className="w-100 d-flex flex-row justify-content-between">
-            <div>Checkout</div>
-            <div>Add to cart</div>
-            </div>*/}
+            {/*<Card.Text>
+              {shopItemDescriptionSubString}
+              {shopItemDescriptionSubString != props.shopItem.description
+                ? "..."
+                : ""}
+              </Card.Text>*/}
+          </Card.Subtitle>
 
           <div className="w-100 align-self-end mt-3">
             <div className="d-flex column justify-content-between">
