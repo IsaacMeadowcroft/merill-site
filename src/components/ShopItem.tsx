@@ -115,49 +115,27 @@ function ShopItem(props: IShopItemProps): JSX.Element {
                 ? "..."
                 : ""}
               </Card.Text>*/}
-          <div className="w-100">
-            {shopItemTitleSubString}
-            {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
-          </div>
-          <div className="w-100 d-flex flex-row justify-content-between">
-            <div>${currentItemPrice}</div>
-            <div>
-              <BsFillBagFill
-                onClick={() => {
-                  props.addCartItem(props.shopItem.id, currentItemSize);
-                  toggleShowA();
-                }}
-              />
-            </div>
+          <div className="w-100" style={{ textTransform: "uppercase" }}>
+            <b>
+              {shopItemTitleSubString}
+              {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
+            </b>
           </div>
 
-          {/*
-          <div>
-            <Form className="d-flex flew-row justify-content-around w-100">
-              <Form.Check
-                defaultChecked={true}
-                inline
-                label={"S"}
-                name="group1"
-                type="radio"
-                onClick={handleSubmitSmall}
-              />
-              <Form.Check
-                inline
-                label="M"
-                name="group1"
-                type="radio"
-                onClick={handleSubmitMedium}
-              />
-              <Form.Check
-                inline
-                label="L"
-                name="group1"
-                type="radio"
-                onClick={handleSubmitLarge}
-              />
-            </Form>
-          </div>*/}
+          <div className="w-100 d-flex flex-row justify-content-between">
+            <div className="d-flex flex-row justify-content-between">
+              <div>S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <div>M &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+              <div>L &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            </div>
+            <div>${currentItemPrice}</div>
+          </div>
+
+          <div className="w-100 d-flex flex-row justify-content-between">
+            <div>Checkout</div>
+            <div>Add to cart</div>
+          </div>
+
           {/*
           <div className="w-100 align-self-end mt-3">
             <div className="d-flex column justify-content-between">
