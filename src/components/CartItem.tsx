@@ -19,7 +19,7 @@ function CartItem(props: ICartItemProps): JSX.Element {
           fontSize: "14px",
         }}
       >
-        <div style={{ width: "12%" }}>
+        <div style={{ width: props.dimensions.width > 800 ? "8%" : "15%" }}>
           <Image
             style={{
               maxWidth: "100%",
