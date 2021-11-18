@@ -13,7 +13,7 @@ function CartItem(props: ICartItemProps): JSX.Element {
   if (visible) {
     return (
       <div
-        className="p-0 my-2 d-flex flex-row w-100 rounded"
+        className="p-0 my-4 d-flex flex-row w-100 rounded"
         style={{
           backgroundColor: "white",
           fontSize: "14px",

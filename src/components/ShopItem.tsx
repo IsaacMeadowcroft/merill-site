@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../css/ShopItem.css";
-import { Button, Card, Carousel, Form } from "react-bootstrap";
+import { Button, Card, Carousel, Form, Toast } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BsFillBagFill } from "react-icons/bs";
 import ItemModal from "./ItemModal";
 import { IShopItemProps, Size } from "./Interfaces";
 import { useHistory } from "react-router-dom";
@@ -17,6 +18,8 @@ function ShopItem(props: IShopItemProps): JSX.Element {
     0,
     85
   );
+  const [showA, setShowA] = useState(false);
+  const toggleShowA = () => setShowA(!showA);
 
   const handleSubmitSmall = () => {
     setItemSize(Size.SMALL);
@@ -42,12 +45,12 @@ function ShopItem(props: IShopItemProps): JSX.Element {
   return (
     <>
       <Card className="card-styles border-0 rounded-0">
-        <Card.Header>
+        {/*<Card.Header>
           <Card.Title>
             {shopItemTitleSubString}
             {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
           </Card.Title>
-        </Card.Header>
+        </Card.Header>*/}
         <Carousel onClick={() => setModalShow(true)} interval={null}>
           <Carousel.Item>
             <img
@@ -112,6 +115,23 @@ function ShopItem(props: IShopItemProps): JSX.Element {
                 ? "..."
                 : ""}
               </Card.Text>*/}
+          <div className="w-100">
+            {shopItemTitleSubString}
+            {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
+          </div>
+          <div className="w-100 d-flex flex-row justify-content-between">
+            <div>${currentItemPrice}</div>
+            <div>
+              <BsFillBagFill
+                onClick={() => {
+                  props.addCartItem(props.shopItem.id, currentItemSize);
+                  toggleShowA();
+                }}
+              />
+            </div>
+          </div>
+
+          {/*
           <div>
             <Form className="d-flex flew-row justify-content-around w-100">
               <Form.Check
@@ -137,7 +157,8 @@ function ShopItem(props: IShopItemProps): JSX.Element {
                 onClick={handleSubmitLarge}
               />
             </Form>
-          </div>
+          </div>*/}
+          {/*
           <div className="w-100 align-self-end mt-3">
             <div className="d-flex column justify-content-between">
               <Button
@@ -162,9 +183,20 @@ function ShopItem(props: IShopItemProps): JSX.Element {
                 Buy: ${currentItemPrice}
               </Button>
             </div>
-          </div>
+              </div>*/}
         </Card.Body>
       </Card>
+
+      <Toast show={showA} onClose={toggleShowA} className="mt-3">
+        <Toast.Header>
+          <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+          <strong className="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+        </Toast.Header>
+        <Toast.Body className={"Dark text-white"}>
+          Woohoo, you're reading this text in a Toast!
+        </Toast.Body>
+      </Toast>
 
       <ItemModal
         shopItem={props.shopItem}
