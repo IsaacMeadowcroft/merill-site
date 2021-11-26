@@ -18,8 +18,6 @@ function ShopItem(props: IShopItemProps): JSX.Element {
     0,
     85
   );
-  const [showA, setShowA] = useState(false);
-  const toggleShowA = () => setShowA(!showA);
 
   const handleSubmitSmall = () => {
     setItemSize(Size.SMALL);
@@ -45,69 +43,13 @@ function ShopItem(props: IShopItemProps): JSX.Element {
   return (
     <>
       <Card className="card-styles border-0 rounded-0">
-        {/*<Card.Header>
-          <Card.Title>
-            {shopItemTitleSubString}
-            {shopItemTitleSubString != props.shopItem.title ? "..." : ""}
-          </Card.Title>
-        </Card.Header>*/}
-        <Carousel onClick={() => setModalShow(true)} interval={null}>
-          <Carousel.Item>
-            <img
-              style={{ maxWidth: "100%" }}
-              src={props.shopItem.image}
-              alt="First slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <div style={{ position: "relative", height: "80%" }}>
-              <img
-                style={{
-                  maxWidth: "100%",
-                  WebkitFilter: "grayscale(60%)",
-                  filter: "grayscale(60%)",
-                }}
-                src={PictureFrame2}
-                alt="Second slide"
-              />
-              <img
-                className="d-block "
-                src={props.shopItem.image}
-                alt="Second slide"
-                style={{
-                  maxWidth: "52.1%",
-                  position: "absolute",
-                  top: "16.3%",
-                  left: "23.7%",
-                }}
-              />
-            </div>
-          </Carousel.Item>
-          <Carousel.Item>
-            <div style={{ position: "relative", height: "80%" }}>
-              <img
-                style={{
-                  maxWidth: "100%",
-                  WebkitFilter: "grayscale(60%)",
-                  filter: "grayscale(60%)",
-                }}
-                src={PictureFrame}
-                alt="Third slide"
-              />
-              <img
-                className="d-block"
-                src={props.shopItem.image}
-                alt="Third slide"
-                style={{
-                  maxWidth: "45%",
-                  position: "absolute",
-                  top: "14%",
-                  left: "29%",
-                }}
-              />
-            </div>
-          </Carousel.Item>
-        </Carousel>
+        <img
+          style={{ maxWidth: "100%" }}
+          src={props.shopItem.image}
+          alt="First slide"
+          onClick={() => setModalShow(!modalShow)}
+        />
+
         <Card.Body className="d-flex flex-column justify-content-between">
           <Card.Title style={{ textTransform: "uppercase" }}>
             {shopItemTitleSubString}
@@ -152,13 +94,6 @@ function ShopItem(props: IShopItemProps): JSX.Element {
               </div>
               <b>${currentItemPrice}</b>
             </div>
-
-            {/*<Card.Text>
-              {shopItemDescriptionSubString}
-              {shopItemDescriptionSubString != props.shopItem.description
-                ? "..."
-                : ""}
-              </Card.Text>*/}
           </Card.Subtitle>
 
           <div className="w-100 align-self-end mt-3">
