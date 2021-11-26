@@ -14,7 +14,6 @@ import Wet from "../assets/Wet.jpg";
 import Model from "../assets/Model.jpg";
 import Lake from "../assets/Lake.jpg";
 import BlindFolded from "../assets/BlindFolded.jpg";
-import { createSecretKey } from "crypto";
 
 function Portfolio(props: IWindowProps): JSX.Element {
   return (

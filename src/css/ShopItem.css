@@ -6,11 +6,6 @@
     color: white;
 }
 
-.modal-height {
-    max-height: 100vh;
-    height: 100vh;
-}
-
 .form-check-input:checked {
     background-color: rgb(80, 80, 80) !important;
     border-color: rgb(20, 20, 20) !important;
