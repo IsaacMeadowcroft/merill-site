@@ -50,7 +50,14 @@ function Contact(props: IWindowProps): JSX.Element {
         </h3>
       </Container>
 
-      <div className="py-2 flex-row justify-content-center">
+      <div
+        className="py-2 flex-row justify-content-center"
+        style={
+          props.dimensions.width < 900
+            ? { paddingLeft: "0%", paddingRight: "0%" }
+            : { paddingLeft: "10%", paddingRight: "10%" }
+        }
+      >
         <Form className="pb-5 px-5">
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput">
             <Form.Label>Email address</Form.Label>
