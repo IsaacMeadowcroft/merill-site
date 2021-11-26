@@ -189,17 +189,6 @@ function ShopItem(props: IShopItemProps): JSX.Element {
         </Card.Body>
       </Card>
 
-      <Toast show={showA} onClose={toggleShowA} className="mt-3">
-        <Toast.Header>
-          <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-          <strong className="me-auto">Bootstrap</strong>
-          <small>11 mins ago</small>
-        </Toast.Header>
-        <Toast.Body className={"Dark text-white"}>
-          Woohoo, you're reading this text in a Toast!
-        </Toast.Body>
-      </Toast>
-
       <ItemModal
         shopItem={props.shopItem}
         show={modalShow}
