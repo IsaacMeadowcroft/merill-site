@@ -33,46 +33,54 @@ function ItemModal(props: ItemModalType): JSX.Element {
             alt="First slide"
           />
         </Carousel.Item>
-        {/*<Carousel.Item>
-            <div style={{ position: "relative", height: "100vh" }}>
-              <img
-                style={{ maxWidth: "100%" }}
-                src={PictureFrame2}
-                alt="Second slide"
-              />
-              <img
-                className="d-block "
-                src={props.shopItem.image}
-                alt="Second slide"
-                style={{
-                  maxWidth: "52.1%",
-                  position: "absolute",
-                  top: "16.3%",
-                  left: "23.7%",
-                }}
-              />
-            </div>
-              </Carousel.Item>
-          <Carousel.Item>
-            <div style={{ position: "relative", height: "100vh" }}>
-              <img
-                style={{ maxWidth: "100%" }}
-                src={PictureFrame}
-                alt="Third slide"
-              />
-              <img
-                className="d-block"
-                src={props.shopItem.image}
-                alt="Third slide"
-                style={{
-                  maxWidth: "45%",
-                  position: "absolute",
-                  top: "14%",
-                  left: "29%",
-                }}
-              />
-            </div>
-              </Carousel.Item>*/}
+        <Carousel.Item>
+          <div style={{ position: "relative", height: "100vh" }}>
+            <img
+              style={
+                props.dimensions.width > 800
+                  ? { maxHeight: "100vh" }
+                  : { maxWidth: "100vw", maxHeight: "80vh" }
+              }
+              src={PictureFrame2}
+              alt="Second slide"
+            />
+            <img
+              className="d-block "
+              src={props.shopItem.image}
+              alt="Second slide"
+              style={{
+                maxWidth: "52.1%",
+                position: "absolute",
+                top: "16.3%",
+                left: "23.7%",
+              }}
+            />
+          </div>
+        </Carousel.Item>
+        <Carousel.Item>
+          <div style={{ position: "relative", height: "100vh" }}>
+            <img
+              style={
+                props.dimensions.width > 800
+                  ? { maxHeight: "100vh" }
+                  : { maxWidth: "100vw", maxHeight: "80vh" }
+              }
+              src={PictureFrame}
+              alt="Third slide"
+            />
+            <img
+              className="d-block"
+              src={props.shopItem.image}
+              alt="Third slide"
+              style={{
+                maxWidth: "45%",
+                position: "absolute",
+                top: "14%",
+                left: "29%",
+              }}
+            />
+          </div>
+        </Carousel.Item>
       </Carousel>
     </Modal>
   );
