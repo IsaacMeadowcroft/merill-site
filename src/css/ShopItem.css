@@ -6,6 +6,11 @@
     color: white;
 }
 
+.card-styles>img:hover {
+    filter: brightness(50%);
+    cursor: zoom-in;
+}
+
 .form-check-input:checked {
     background-color: rgb(80, 80, 80) !important;
     border-color: rgb(20, 20, 20) !important;
