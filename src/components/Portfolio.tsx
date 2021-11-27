@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Container, Tabs, Tab } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Tabs.css";
-import "../css/ShopItem.css";
 import { IWindowProps } from "./Interfaces";
 import Heidi from "../assets/Heidi.jpg";
 import HeidiFlipped from "../assets/HeidiFlipped.jpg";
@@ -41,7 +40,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
           defaultActiveKey={1}
         >
           <Tab eventKey={1} title="Photos" tabClassName="tab">
-            <div className="d-flex flex-row justify-content-around shop-item-style">
+            <div className="d-flex flex-row justify-content-around">
               <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <div>
                   <img src={Wet} className="mw-100 p-0" />
@@ -63,7 +62,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
                 </div>
               </div>
             </div>
-            <div className="d-flex flex-row justify-content-around shop-item-style">
+            <div className="d-flex flex-row justify-content-around">
               <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <div>
                   <img src={Cloak} className="mw-100 p-0" />
@@ -85,7 +84,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
                 </div>
               </div>
             </div>
-            <div className="d-flex flex-row justify-content-around shop-item-style">
+            <div className="d-flex flex-row justify-content-around">
               <div className="d-flex flex-row justify-content-center px-0 w-50">
                 <div>
                   <img src={Heidi} className="mw-100 p-0" />
