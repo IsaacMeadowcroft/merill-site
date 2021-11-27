@@ -85,14 +85,14 @@ function NavBar(props: IWindowCartProps): JSX.Element {
           </Nav>
         </Navbar>
       ) : (
-        <Navbar bg="dark" className="text-light" expand={false}>
+        <Navbar bg="dark" expand={false}>
           <Container fluid>
-            <Navbar.Brand href="#">M E R I L L B O B O T I S</Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
             <Navbar.Offcanvas
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
               placement="end"
+              variant="dark"
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id="offcanvasNavbarLabel">
