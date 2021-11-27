@@ -79,7 +79,51 @@ function NavBar(props: IWindowCartProps): JSX.Element {
         </Navbar>
       ) : (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-          <Container fluid className="px-3 d-flex flex-row justify-content-end">
+          <Container
+            fluid
+            className="px-4 d-flex flex-row justify-content-between"
+          >
+            <Nav.Link
+              onClick={() => history.push("/merill-site/Cart")}
+              className="nav-bag"
+              style={{
+                verticalAlign: "middle",
+                position: "relative",
+                padding: "0px",
+                margin: "0px",
+              }}
+            >
+              <IconContext.Provider
+                value={{
+                  style: {
+                    verticalAlign: "middle",
+                    height: "100%",
+                    overflow: "visible",
+                  },
+                }}
+              >
+                <BsFillBagFill />
+                {props.cartItems.size > 0 ? (
+                  <h6>
+                    <Badge
+                      pill
+                      bg="warning"
+                      text="dark"
+                      style={{
+                        fontFamily: "Helvetica Neue",
+                        position: "absolute",
+                        top: "3px",
+                        left: "52%",
+                      }}
+                    >
+                      {props.cartItems.size}
+                    </Badge>
+                  </h6>
+                ) : (
+                  <></>
+                )}
+              </IconContext.Provider>
+            </Nav.Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           </Container>
           <Container>
