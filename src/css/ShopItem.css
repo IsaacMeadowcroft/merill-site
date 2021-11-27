@@ -17,6 +17,11 @@
     padding: 0px;
 }
 
+.shop-item-style>div>img:hover {
+    filter: brightness(30%);
+    cursor: zoom-in;
+}
+
 .modal-body {
     padding: 0px;
 }

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Tabs, Tab } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Tabs.css";
+import "../css/ShopItem.css";
 import { IWindowProps } from "./Interfaces";
 import Heidi from "../assets/Heidi.jpg";
 import HeidiFlipped from "../assets/HeidiFlipped.jpg";
@@ -16,6 +17,7 @@ import Lake from "../assets/Lake.jpg";
 import BlindFolded from "../assets/BlindFolded.jpg";
 
 function Portfolio(props: IWindowProps): JSX.Element {
+  const [modalShow, setShowModal] = useState(true);
   return (
     <>
       <Container
@@ -39,7 +41,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
           defaultActiveKey={1}
         >
           <Tab eventKey={1} title="Photos" tabClassName="tab">
-            <div className="d-flex flex-row justify-content-around">
+            <div className="d-flex flex-row justify-content-around shop-item-style">
               <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Wet} className="mw-100 p-0" />
               </div>
@@ -53,8 +55,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
                 <img src={Imprisoned} className="mw-100 p-0" />
               </div>
             </div>
-
-            <div className="d-flex flex-row justify-content-around">
+            <div className="d-flex flex-row justify-content-around shop-item-style">
               <div className="d-flex flex-row justify-content-center px-0 w-25">
                 <img src={Cloak} className="mw-100 p-0" />
               </div>
@@ -68,8 +69,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
                 <img src={Model} className="mw-100 p-0" />
               </div>
             </div>
-
-            <div className="d-flex flex-row justify-content-around">
+            <div className="d-flex flex-row justify-content-around shop-item-style">
               <div className="d-flex flex-row justify-content-center px-0 w-50">
                 <img src={Heidi} className="mw-100 p-0" />
               </div>
