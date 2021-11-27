@@ -165,7 +165,7 @@ function App(): JSX.Element {
         title: "Freedom",
       },
       {
-        id: 9,
+        id: 10,
         description: "...",
         image:
           "https://live.staticflickr.com/65535/51615669001_f560d30667_o_d.jpg",
