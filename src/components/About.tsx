@@ -24,9 +24,9 @@ function About(props: IWindowProps): JSX.Element {
         </Container>
 
         <Row className="m-0 pb-5">
-          {props.dimensions.width >= 1000 ? (
+          {props.dimensions.width >= 992 ? (
             <>
-              <Col md={7} className="d-flex column justify-content-center">
+              <Col lg={7} className="d-flex column justify-content-center">
                 <div
                   className="px-4 align-self-center"
                   style={{ fontWeight: "lighter", fontSize: "3vh" }}
@@ -47,7 +47,7 @@ function About(props: IWindowProps): JSX.Element {
                   </div>
                 </div>
               </Col>
-              <Col md={5} className="d-flex flex-column justify-content-center">
+              <Col lg={5} className="d-flex flex-column justify-content-center">
                 <div className="d-flex flex-row justify-content-center py-3">
                   <div>
                     <img
@@ -63,10 +63,7 @@ function About(props: IWindowProps): JSX.Element {
             </>
           ) : (
             <>
-              <Row
-                md={5}
-                className="d-flex flex-column justify-content-center m-0"
-              >
+              <Row className="d-flex flex-column justify-content-center m-0">
                 <div className="d-flex flex-row justify-content-center py-3">
                   <div>
                     <img
