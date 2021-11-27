@@ -29,7 +29,7 @@ function About(props: IWindowProps): JSX.Element {
               <Col lg={7} className="d-flex column justify-content-center">
                 <div
                   className="px-4 align-self-center"
-                  style={{ fontWeight: "lighter", fontSize: "3vh" }}
+                  style={{ fontWeight: "lighter", fontSize: "2.5vh" }}
                 >
                   <div>
                     Merill Bobotis is a Montreal-based, 20 year old freelance
@@ -79,7 +79,7 @@ function About(props: IWindowProps): JSX.Element {
               <Row className="d-flex column justify-content-center m-0">
                 <div
                   className="px-4 align-self-center"
-                  style={{ fontWeight: "lighter", fontSize: "2vh" }}
+                  style={{ fontWeight: "lighter", fontSize: "2.2vh" }}
                 >
                   <div>
                     Merill Bobotis is a Montreal-based, 20 year old freelance
