@@ -44,7 +44,7 @@ function About(props: IWindowProps): JSX.Element {
                     with a vague idea of what I would like to create, and base
                     the direction on what the subject is subconsciously
                     communicating to me. Nothing has felt as genuine to me
-                    before.
+                    before."
                   </div>
                 </div>
               </Col>
