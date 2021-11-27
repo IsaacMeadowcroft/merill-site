@@ -24,9 +24,8 @@ function About(props: IWindowProps): JSX.Element {
         </Container>
 
         <Row className="m-0 pb-5">
-          {props.dimensions.width >= 768 ? (
+          {props.dimensions.width >= 1000 ? (
             <>
-              {" "}
               <Col md={7} className="d-flex column justify-content-center">
                 <div
                   className="px-4 align-self-center"
@@ -50,13 +49,15 @@ function About(props: IWindowProps): JSX.Element {
               </Col>
               <Col md={5} className="d-flex flex-column justify-content-center">
                 <div className="d-flex flex-row justify-content-center py-3">
-                  <img
-                    style={{
-                      maxWidth: "70%",
-                      borderRadius: "50%",
-                    }}
-                    src={HeadShot}
-                  ></img>
+                  <div>
+                    <img
+                      style={{
+                        maxWidth: "70%",
+                        borderRadius: "50%",
+                      }}
+                      src={HeadShot}
+                    ></img>
+                  </div>
                 </div>
               </Col>
             </>
@@ -67,13 +68,15 @@ function About(props: IWindowProps): JSX.Element {
                 className="d-flex flex-column justify-content-center m-0"
               >
                 <div className="d-flex flex-row justify-content-center py-3">
-                  <img
-                    style={{
-                      maxWidth: "70%",
-                      borderRadius: "50%",
-                    }}
-                    src={HeadShot}
-                  ></img>
+                  <div>
+                    <img
+                      style={{
+                        maxWidth: "70%",
+                        borderRadius: "50%",
+                      }}
+                      src={HeadShot}
+                    ></img>
+                  </div>
                 </div>
               </Row>
               <Row className="d-flex column justify-content-center m-0">
