@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/NavBar.css";
 import { BsFillBagFill } from "react-icons/bs";
-import { Badge, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { Badge, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IconContext } from "react-icons";
 import Login from "./Login";
@@ -78,36 +78,36 @@ function NavBar(props: IWindowCartProps): JSX.Element {
           </Nav>
         </Navbar>
       ) : (
-        <Navbar bg="dark" expand={false}>
-          <Container fluid className="d-flex flex-row justify-content-end">
-            <Navbar.Toggle aria-controls="offcanvasNavbar" />
-          </Container>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
           <Container fluid>
-            <Navbar.Offcanvas
-              id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel"
-              placement="end"
-              className="bg-dark"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title
-                  className="text-light"
-                  style={{ fontFamily: '"Cormorant", serif' }}
-                >
-                  <h3>M E N U</h3>
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3 nav-styles-md">
-                  <Nav.Link href="#Home">H O M E</Nav.Link>
-                  <Nav.Link href="#Portfolio">P O R T F O L I O</Nav.Link>
-                  <Nav.Link href="#Prints">P R I N T S</Nav.Link>
-                  <Nav.Link href="#Contact">C O N T A C T</Nav.Link>
-                  <Nav.Link href="#About">A B O U T</Nav.Link>
-                  <Nav.Link onClick={handleShow}>L O G I N</Nav.Link>
-                </Nav>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          </Container>
+          <Container>
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href="#features">Features</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                  <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Another action
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.3">
+                    Something
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="#action/3.4">
+                    Separated link
+                  </NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+              <Nav>
+                <Nav.Link href="#deets">More deets</Nav.Link>
+                <Nav.Link eventKey={2} href="#memes">
+                  Dank memes
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
           </Container>
         </Navbar>
       )}
