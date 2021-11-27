@@ -35,13 +35,15 @@ function About(props: IWindowProps): JSX.Element {
             </h4>
           </Col>
           <Col className="d-flex row justify-content-center w-50 py-5">
-            <img
-              style={{
-                maxWidth: "60%",
-                borderRadius: "50%",
-              }}
-              src={HeadShot}
-            ></img>
+            <div>
+              <img
+                style={{
+                  maxWidth: "60%",
+                  borderRadius: "50%",
+                }}
+                src={HeadShot}
+              ></img>
+            </div>
           </Col>
         </Row>
       </Container>
