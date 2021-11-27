@@ -106,9 +106,14 @@ function App(): JSX.Element {
               scrollPosition={scrollPosition}
             />
             {isLoading ? (
-              <Spinner animation="border" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </Spinner>
+              <div
+                className="w-100 d-flex flex-row justify-content-center"
+                style={{ backgroundColor: "rgb(20,20,20)" }}
+              >
+                <Spinner animation="border" variant="light" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              </div>
             ) : (
               <Prints
                 dimensions={dimensions}
