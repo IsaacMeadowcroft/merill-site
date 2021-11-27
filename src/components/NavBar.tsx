@@ -85,8 +85,12 @@ function NavBar(props: IWindowCartProps): JSX.Element {
           <Container>
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="#features">Features</Nav.Link>
-                <Nav.Link href="#pricing">Pricing</Nav.Link>
+                <Nav.Link href="#Home">H O M E</Nav.Link>
+                <Nav.Link href="#Portfolio">P O R T F O L I O</Nav.Link>
+                <Nav.Link href="#Prints">P R I N T S</Nav.Link>
+                <Nav.Link href="#Contact">C O N T A C T</Nav.Link>
+                <Nav.Link href="#About">A B O U T</Nav.Link>
+                <Nav.Link onClick={handleShow}>Login</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
