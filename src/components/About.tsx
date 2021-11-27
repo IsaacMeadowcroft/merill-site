@@ -69,7 +69,7 @@ function About(props: IWindowProps): JSX.Element {
                 <div className="d-flex flex-row justify-content-center py-3">
                   <img
                     style={{
-                      maxWidth: "60%",
+                      maxWidth: "70%",
                       borderRadius: "50%",
                     }}
                     src={HeadShot}
