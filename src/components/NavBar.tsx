@@ -78,7 +78,12 @@ function NavBar(props: IWindowCartProps): JSX.Element {
           </Nav>
         </Navbar>
       ) : (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar
+          collapseOnSelect
+          expand="lg"
+          variant="dark"
+          style={{ backgroundColor: "rgb(20,20,20)" }}
+        >
           <Container
             fluid
             className="px-4 d-flex flex-row justify-content-between"
