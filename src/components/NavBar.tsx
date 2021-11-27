@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import "../css/NavBar.css";
 import { BsFillBagFill } from "react-icons/bs";
-import {
-  Badge,
-  Container,
-  Nav,
-  Navbar,
-  NavDropdown,
-  Offcanvas,
-} from "react-bootstrap";
+import { Badge, Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IconContext } from "react-icons";
 import Login from "./Login";
@@ -86,33 +79,32 @@ function NavBar(props: IWindowCartProps): JSX.Element {
         </Navbar>
       ) : (
         <Navbar bg="dark" expand={false}>
-          <Container fluid>
+          <Container fluid className="d-flex flex-row justify-content-end">
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
+          </Container>
+          <Container fluid>
             <Navbar.Offcanvas
               id="offcanvasNavbar"
               aria-labelledby="offcanvasNavbarLabel"
               placement="end"
-              variant="dark"
+              className="bg-dark"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel">
-                  Offcanvas
+                <Offcanvas.Title
+                  className="text-light"
+                  style={{ fontFamily: '"Cormorant", serif' }}
+                >
+                  <h3>M E N U</h3>
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                  <NavDropdown title="Dropdown" id="offcanvasNavbarDropdown">
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Something else here
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                <Nav className="justify-content-end flex-grow-1 pe-3 nav-styles-md">
+                  <Nav.Link href="#Home">H O M E</Nav.Link>
+                  <Nav.Link href="#Portfolio">P O R T F O L I O</Nav.Link>
+                  <Nav.Link href="#Prints">P R I N T S</Nav.Link>
+                  <Nav.Link href="#Contact">C O N T A C T</Nav.Link>
+                  <Nav.Link href="#About">A B O U T</Nav.Link>
+                  <Nav.Link onClick={handleShow}>L O G I N</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
