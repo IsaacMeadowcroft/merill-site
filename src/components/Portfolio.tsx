@@ -42,9 +42,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
           <Tab eventKey={1} title="Photos" tabClassName="tab">
             <Row md={4} xs={2}>
               <Col style={{ paddingRight: "0" }}>
-                <div>
-                  <img src={Wet} className="mw-100 p-0" />
-                </div>
+                <img src={Wet} className="mw-100 p-0" />
               </Col>
               <Col
                 style={
@@ -53,9 +51,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
                     : { paddingLeft: "0" }
                 }
               >
-                <div>
-                  <img src={Smoke} className="mw-100 p-0" />
-                </div>
+                <img src={Smoke} className="mw-100 p-0" />
               </Col>
               <Col
                 style={
@@ -64,14 +60,10 @@ function Portfolio(props: IWindowProps): JSX.Element {
                     : { paddingRight: "0" }
                 }
               >
-                <div>
-                  <img src={Desperation} className="mw-100 p-0" />
-                </div>
+                <img src={Desperation} className="mw-100 p-0" />
               </Col>
               <Col style={{ paddingLeft: "0" }}>
-                <div>
-                  <img src={Imprisoned} className="mw-100 p-0" />
-                </div>
+                <img src={Imprisoned} className="mw-100 p-0" />
               </Col>
             </Row>
             <Row md={4} xs={2}>
@@ -87,9 +79,7 @@ function Portfolio(props: IWindowProps): JSX.Element {
                     : { paddingLeft: "0" }
                 }
               >
-                <div>
-                  <img src={BlindFolded} className="mw-100 p-0" />
-                </div>
+                <img src={BlindFolded} className="mw-100 p-0" />
               </Col>
               <Col
                 style={
@@ -98,14 +88,10 @@ function Portfolio(props: IWindowProps): JSX.Element {
                     : { paddingRight: "0" }
                 }
               >
-                <div>
-                  <img src={Lake} className="mw-100 p-0" />
-                </div>
+                <img src={Lake} className="mw-100 p-0" />
               </Col>
               <Col style={{ paddingLeft: "0" }}>
-                <div>
-                  <img src={Model} className="mw-100 p-0" />
-                </div>
+                <img src={Model} className="mw-100 p-0" />
               </Col>
             </Row>
             <div className="d-flex flex-row justify-content-around">
