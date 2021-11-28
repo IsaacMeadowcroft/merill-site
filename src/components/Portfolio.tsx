@@ -75,22 +75,34 @@ function Portfolio(props: IWindowProps): JSX.Element {
               </Col>
             </Row>
             <Row md={4} xs={2}>
-              <Col>
+              <Col style={{ paddingRight: "0" }}>
                 <div>
                   <img src={Cloak} className="mw-100 p-0" />
                 </div>
               </Col>
-              <Col>
+              <Col
+                style={
+                  props.dimensions.width >= 768
+                    ? { padding: "0" }
+                    : { paddingLeft: "0" }
+                }
+              >
                 <div>
                   <img src={BlindFolded} className="mw-100 p-0" />
                 </div>
               </Col>
-              <Col>
+              <Col
+                style={
+                  props.dimensions.width >= 768
+                    ? { padding: "0" }
+                    : { paddingRight: "0" }
+                }
+              >
                 <div>
                   <img src={Lake} className="mw-100 p-0" />
                 </div>
               </Col>
-              <Col>
+              <Col style={{ paddingLeft: "0" }}>
                 <div>
                   <img src={Model} className="mw-100 p-0" />
                 </div>
