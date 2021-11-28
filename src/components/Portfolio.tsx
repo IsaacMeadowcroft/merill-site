@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Tabs, Tab } from "react-bootstrap";
+import { Col, Container, Row, Tabs, Tab } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Tabs.css";
 import { IWindowProps } from "./Interfaces";
@@ -40,61 +40,82 @@ function Portfolio(props: IWindowProps): JSX.Element {
           defaultActiveKey={1}
         >
           <Tab eventKey={1} title="Photos" tabClassName="tab">
-            <div className="d-flex flex-row justify-content-around">
-              <div className="d-flex flex-row justify-content-center px-0 w-25">
+            <Row md={4} xs={2}>
+              <Col style={{ paddingRight: "0" }}>
                 <div>
                   <img src={Wet} className="mw-100 p-0" />
                 </div>
-              </div>
-              <div className="d-flex flew-row justify-content-center px-0 w-25">
+              </Col>
+              <Col
+                style={
+                  props.dimensions.width >= 768
+                    ? { padding: "0" }
+                    : { paddingLeft: "0" }
+                }
+              >
                 <div>
                   <img src={Smoke} className="mw-100 p-0" />
                 </div>
-              </div>
-              <div className="d-flex flex-row justify-content-center px-0 w-25">
+              </Col>
+              <Col
+                style={
+                  props.dimensions.width >= 768
+                    ? { padding: "0" }
+                    : { paddingRight: "0" }
+                }
+              >
                 <div>
                   <img src={Desperation} className="mw-100 p-0" />
                 </div>
-              </div>
-              <div className="d-flex flex-row justify-content-center px-0 w-25">
+              </Col>
+              <Col style={{ paddingLeft: "0" }}>
                 <div>
                   <img src={Imprisoned} className="mw-100 p-0" />
                 </div>
-              </div>
-            </div>
-            <div className="d-flex flex-row justify-content-around">
-              <div className="d-flex flex-row justify-content-center px-0 w-25">
+              </Col>
+            </Row>
+            <Row md={4} xs={2}>
+              <Col>
                 <div>
                   <img src={Cloak} className="mw-100 p-0" />
                 </div>
-              </div>
-              <div className="d-flex flex-row justify-content-center px-0 w-25">
+              </Col>
+              <Col>
                 <div>
                   <img src={BlindFolded} className="mw-100 p-0" />
                 </div>
-              </div>
-              <div className="d-flex flex-row justify-content-center px-0 w-25">
+              </Col>
+              <Col>
                 <div>
                   <img src={Lake} className="mw-100 p-0" />
                 </div>
-              </div>
-              <div className="d-flex flex-row justify-content-center px-0 w-25">
+              </Col>
+              <Col>
                 <div>
                   <img src={Model} className="mw-100 p-0" />
                 </div>
-              </div>
-            </div>
+              </Col>
+            </Row>
             <div className="d-flex flex-row justify-content-around">
-              <div className="d-flex flex-row justify-content-center px-0 w-50">
+              <div
+                className={
+                  "d-flex flex-row justify-content-center px-0 " +
+                  (props.dimensions.width >= 768 ? "w-50" : "w-100")
+                }
+              >
                 <div>
                   <img src={Heidi} className="mw-100 p-0" />
                 </div>
               </div>
-              <div className="d-flex flex-row justify-content-center px-0 w-50">
-                <div>
-                  <img src={HeidiFlipped} className="mw-100 p-0" />
+              {props.dimensions.width >= 768 ? (
+                <div className="d-flex flex-row justify-content-center px-0 w-50">
+                  <div>
+                    <img src={HeidiFlipped} className="mw-100 p-0" />
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
             </div>
           </Tab>
 
