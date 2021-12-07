@@ -27,8 +27,8 @@ function ItemModal(props: ItemModalType): JSX.Element {
           props.dimensions.width > 800
             ? { maxWidth: "calc(100vh * 982/1310)", maxHeight: "100vh" }
             : {
-                maxWidth: "calc(80vh * 982/1310)",
-                maxHeight: "80vh",
+                maxWidth: "100vw",
+                maxHeight: "calc(100vw * 1310/982)",
               }
         }
       >
@@ -37,7 +37,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
             style={
               props.dimensions.width > 800
                 ? { maxHeight: "100vh" }
-                : { maxWidth: "100vw", maxHeight: "80vh" }
+                : { maxWidth: "100vw", maxHeight: "calc(100vw * 1310/982)" }
             }
             src={props.shopItem.image}
             alt="First slide"
@@ -49,7 +49,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
               style={
                 props.dimensions.width > 800
                   ? { maxHeight: "100vh" }
-                  : { maxWidth: "100vw", maxHeight: "80vh" }
+                  : { maxWidth: "100vw", maxHeight: "calc(100vw * 1310/982)" }
               }
               src={PictureFrame2}
               alt="Second slide"
@@ -73,7 +73,7 @@ function ItemModal(props: ItemModalType): JSX.Element {
               style={
                 props.dimensions.width > 800
                   ? { maxHeight: "100vh" }
-                  : { maxWidth: "100vw", maxHeight: "80vh" }
+                  : { maxWidth: "100vw", maxHeight: "calc(100vw * 1310/982)" }
               }
               src={PictureFrame}
               alt="Third slide"
