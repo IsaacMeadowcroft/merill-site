@@ -21,7 +21,17 @@ function ItemModal(props: ItemModalType): JSX.Element {
       dialogClassName="my-0 p-0 d-flex flex-row justify-content-center"
       animation={false}
     >
-      <Carousel fade interval={null}>
+      <Carousel
+        interval={null}
+        style={
+          props.dimensions.width > 800
+            ? { maxWidth: "calc(100vh * 982/1310)", maxHeight: "100vh" }
+            : {
+                maxWidth: "calc(80vh * 982/1310)",
+                maxHeight: "80vh",
+              }
+        }
+      >
         <Carousel.Item>
           <img
             style={
