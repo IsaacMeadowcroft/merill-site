@@ -27,7 +27,7 @@ function Login(props: any): JSX.Element {
         },
       });
       console.log("Result " + res.status);
-      if (res.status == 100) {
+      if (res.status == 200) {
         props.handleClose();
         props.setLogin(true);
       }
@@ -53,7 +53,7 @@ function Login(props: any): JSX.Element {
         }
       );
       console.log("Result " + res.status);
-      if (res.status == 100) {
+      if (res.status == 200) {
         props.handleClose();
         props.setLogin(true);
       }
