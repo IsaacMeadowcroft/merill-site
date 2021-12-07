@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/merill-site/static/css/main.693a1ea8.chunk.css",
-    "main.js": "/merill-site/static/js/main.a5b810b5.chunk.js",
-    "main.js.map": "/merill-site/static/js/main.a5b810b5.chunk.js.map",
+    "main.js": "/merill-site/static/js/main.fc6e70ee.chunk.js",
+    "main.js.map": "/merill-site/static/js/main.fc6e70ee.chunk.js.map",
     "runtime-main.js": "/merill-site/static/js/runtime-main.f122ab24.js",
     "runtime-main.js.map": "/merill-site/static/js/runtime-main.f122ab24.js.map",
     "static/css/2.0a9ec390.chunk.css": "/merill-site/static/css/2.0a9ec390.chunk.css",
@@ -35,6 +35,6 @@
     "static/css/2.0a9ec390.chunk.css",
     "static/js/2.e4bdc9c3.chunk.js",
     "static/css/main.693a1ea8.chunk.css",
-    "static/js/main.a5b810b5.chunk.js"
+    "static/js/main.fc6e70ee.chunk.js"
   ]
 }
