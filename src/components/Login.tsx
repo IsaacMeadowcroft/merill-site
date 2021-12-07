@@ -25,7 +25,8 @@ function Login(props: any): JSX.Element {
         "Content-Type": "application/json",
       },
     });
-    if ("Succesfully logged in user" === res.body?.toString()) {
+    console.log("Result " + res.status);
+    if (res.status == 100) {
       props.handleClose();
       props.setLogin(true);
     }
@@ -43,8 +44,8 @@ function Login(props: any): JSX.Element {
         "Content-Type": "application/json",
       },
     });
-    console.log(res);
-    if ("Succesfully created user" === res.body?.toString()) {
+    console.log("Result " + res.status);
+    if (res.status == 100) {
       props.handleClose();
       props.setLogin(true);
     }
