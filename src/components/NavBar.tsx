@@ -13,6 +13,7 @@ function NavBar(props: IWindowCartProps): JSX.Element {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [login, setLogin] = useState(false);
 
   return (
     <>
@@ -33,7 +34,9 @@ function NavBar(props: IWindowCartProps): JSX.Element {
             <Nav.Link href="#Prints">PRINTS</Nav.Link>
             <Nav.Link href="#Contact">CONTACT</Nav.Link>
             <Nav.Link href="#About">ABOUT</Nav.Link>
-            <Nav.Link onClick={handleShow}>Login</Nav.Link>
+            <Nav.Link onClick={handleShow}>
+              {login ? "Logout" : "Login"}
+            </Nav.Link>
             <Nav.Link
               onClick={() => history.push("/merill-site/Cart")}
               className="nav-bag"
@@ -154,14 +157,14 @@ function NavBar(props: IWindowCartProps): JSX.Element {
                   <b>A B O U T</b>
                 </Nav.Link>
                 <Nav.Link onClick={handleShow}>
-                  <b>Login</b>
+                  <b>{login ? "Logout" : "Login"}</b>
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
       )}
-      <Login show={show} handleClose={handleClose} />
+      <Login show={show} handleClose={handleClose} setLogin={setLogin} />
     </>
   );
 }
