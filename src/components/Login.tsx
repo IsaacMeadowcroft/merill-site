@@ -54,7 +54,7 @@ function Login(props: any): JSX.Element {
               </ToggleButton>
             </ButtonGroup>
           </div>
-          <Form.Floating className="mb-4">
+          <Form.Floating className="mb-4 mx-3">
             <Form.Control
               id="floatingInputCustom"
               type="email"
@@ -65,7 +65,7 @@ function Login(props: any): JSX.Element {
               Email address
             </label>
           </Form.Floating>
-          <Form.Floating>
+          <Form.Floating className="mb-4 mx-3">
             <Form.Control
               id="floatingPasswordCustom"
               type="password"
