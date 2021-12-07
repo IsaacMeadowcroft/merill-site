@@ -14,40 +14,51 @@ function Login(props: any): JSX.Element {
   const [radioValue, setRadioValue] = useState("0");
 
   const sendLoginPostRequest = async (event: any) => {
-    event.preventDefault();
-    const res = await fetch("https://merillbackend.herokuapp.com/loginUser", {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    console.log("Result " + res.status);
-    if (res.status == 100) {
-      props.handleClose();
-      props.setLogin(true);
+    try {
+      event.preventDefault();
+      const res = await fetch("https://merillbackend.herokuapp.com/loginUser", {
+        method: "POST",
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log("Result " + res.status);
+      if (res.status == 100) {
+        props.handleClose();
+        props.setLogin(true);
+      }
+    } catch (e) {
+      console.log(e);
     }
   };
 
   const sendSignupPostRequest = async (event: any) => {
-    event.preventDefault();
-    const res = await fetch("https://merillbackend.herokuapp.com/createUser", {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    console.log("Result " + res.status);
-    if (res.status == 100) {
-      props.handleClose();
-      props.setLogin(true);
+    try {
+      event.preventDefault();
+      const res = await fetch(
+        "https://merillbackend.herokuapp.com/createUser",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Result " + res.status);
+      if (res.status == 100) {
+        props.handleClose();
+        props.setLogin(true);
+      }
+    } catch (e) {
+      console.log(e);
     }
   };
 
