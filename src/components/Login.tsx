@@ -9,7 +9,58 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Login(props: any): JSX.Element {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [radioValue, setRadioValue] = useState("0");
+
+  const sendLoginPostRequest = async (event: any) => {
+    event.preventDefault();
+    const res = await fetch("https://merillbackend.herokuapp.com/loginUser", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if ("Succesfully logged in user" === res.body?.toString()) {
+      props.handleClose();
+      props.setLogin(true);
+    }
+  };
+
+  const sendSignupPostRequest = async (event: any) => {
+    event.preventDefault();
+    const res = await fetch("https://merillbackend.herokuapp.com/createUser", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(res);
+    if ("Succesfully created user" === res.body?.toString()) {
+      props.handleClose();
+      props.setLogin(true);
+    }
+  };
+
+  const handleEmailChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setPassword(e.target.value);
+  };
 
   return (
     <Modal
@@ -59,7 +110,8 @@ function Login(props: any): JSX.Element {
               id="floatingInputCustom"
               type="email"
               placeholder="name@example.com"
-              className="bg-dark"
+              className="bg-dark text-light"
+              onChange={handleEmailChange}
             />
             <label className="text-light" htmlFor="floatingInputCustom">
               Email address
@@ -70,7 +122,8 @@ function Login(props: any): JSX.Element {
               id="floatingPasswordCustom"
               type="password"
               placeholder="Password"
-              className="bg-dark"
+              className="bg-dark text-light"
+              onChange={handlePasswordChange}
             />
             <label className="text-light" htmlFor="floatingPasswordCustom">
               Password
@@ -81,7 +134,9 @@ function Login(props: any): JSX.Element {
       <Modal.Footer className="border-0 mt-2 mb-4">
         <Button
           variant="outline-light"
-          onClick={props.handleClose}
+          onClick={
+            radioValue === "0" ? sendLoginPostRequest : sendSignupPostRequest
+          }
           className="w-100 py-2"
           size="lg"
         >
