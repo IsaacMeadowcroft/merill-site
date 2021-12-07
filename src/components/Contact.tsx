@@ -8,7 +8,8 @@ function Contact(props: IWindowProps): JSX.Element {
   const [emailSender, setEmailSender] = useState("Unknown");
   const [emailBody, setEmailBody] = useState("Empty");
 
-  const sendEmailPostRequest = async () => {
+  const sendEmailPostRequest = async (event: any) => {
+    event.preventDefault();
     const res = await fetch(
       "https://merillbackend.herokuapp.com/postSendEmail",
       {
