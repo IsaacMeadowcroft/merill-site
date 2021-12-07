@@ -17,6 +17,11 @@
     cursor: pointer;
 }
 
+.nav-bag {
+    color: rgb(182, 182, 182);
+    font-size: 3vh;
+}
+
 .nav-bag:hover {
     color: white;
 }

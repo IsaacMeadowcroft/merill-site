@@ -61,10 +61,10 @@ function NavBar(props: IWindowCartProps): JSX.Element {
                       bg="warning"
                       text="dark"
                       style={{
-                        fontFamily: "Helvetica Neue",
+                        fontFamily: '"Roboto", sans-serif',
                         position: "absolute",
-                        top: "3px",
-                        left: "52%",
+                        top: "1px",
+                        left: "53%",
                       }}
                     >
                       {props.cartItems.size}
@@ -82,6 +82,7 @@ function NavBar(props: IWindowCartProps): JSX.Element {
           collapseOnSelect
           expand="lg"
           variant="dark"
+          className="nav-styles-md"
           style={{ backgroundColor: "rgb(20,20,20)" }}
         >
           <Container
@@ -115,10 +116,10 @@ function NavBar(props: IWindowCartProps): JSX.Element {
                       bg="warning"
                       text="dark"
                       style={{
-                        fontFamily: "Helvetica Neue",
+                        fontFamily: '"Roboto", sans-serif',
                         position: "absolute",
-                        top: "3px",
-                        left: "52%",
+                        top: "-6px",
+                        left: "65%",
                       }}
                     >
                       {props.cartItems.size}
@@ -133,13 +134,28 @@ function NavBar(props: IWindowCartProps): JSX.Element {
           </Container>
           <Container>
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto">
-                <Nav.Link href="#Home">H O M E</Nav.Link>
-                <Nav.Link href="#Portfolio">P O R T F O L I O</Nav.Link>
-                <Nav.Link href="#Prints">P R I N T S</Nav.Link>
-                <Nav.Link href="#Contact">C O N T A C T</Nav.Link>
-                <Nav.Link href="#About">A B O U T</Nav.Link>
-                <Nav.Link onClick={handleShow}>Login</Nav.Link>
+              <Nav
+                className="me-auto"
+                style={{ fontFamily: '"Cormorant", serif' }}
+              >
+                <Nav.Link href="#Home">
+                  <b>H O M E</b>
+                </Nav.Link>
+                <Nav.Link href="#Portfolio">
+                  <b>P O R T F O L I O</b>
+                </Nav.Link>
+                <Nav.Link href="#Prints">
+                  <b>P R I N T S</b>
+                </Nav.Link>
+                <Nav.Link href="#Contact">
+                  <b>C O N T A C T</b>
+                </Nav.Link>
+                <Nav.Link href="#About">
+                  <b>A B O U T</b>
+                </Nav.Link>
+                <Nav.Link onClick={handleShow}>
+                  <b>Login</b>
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
