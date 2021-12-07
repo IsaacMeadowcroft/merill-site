@@ -34,7 +34,11 @@ function NavBar(props: IWindowCartProps): JSX.Element {
             <Nav.Link href="#Prints">PRINTS</Nav.Link>
             <Nav.Link href="#Contact">CONTACT</Nav.Link>
             <Nav.Link href="#About">ABOUT</Nav.Link>
-            <Nav.Link onClick={handleShow}>
+            <Nav.Link
+              onClick={() => {
+                login ? setLogin(false) : handleShow();
+              }}
+            >
               {login ? "Logout" : "Login"}
             </Nav.Link>
             <Nav.Link
@@ -156,7 +160,11 @@ function NavBar(props: IWindowCartProps): JSX.Element {
                 <Nav.Link href="#About">
                   <b>A B O U T</b>
                 </Nav.Link>
-                <Nav.Link onClick={handleShow}>
+                <Nav.Link
+                  onClick={() => {
+                    login ? setLogin(false) : handleShow();
+                  }}
+                >
                   <b>{login ? "Logout" : "Login"}</b>
                 </Nav.Link>
               </Nav>
