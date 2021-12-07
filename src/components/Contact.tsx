@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Container, FloatingLabel, Form } from "react-bootstrap";
+import { Button, Container, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { IWindowProps } from "./Interfaces";
 import Wave from "../assets/WaveBlack.svg";
@@ -9,16 +9,19 @@ function Contact(props: IWindowProps): JSX.Element {
   const [emailBody, setEmailBody] = useState("Empty");
 
   const sendEmailPostRequest = async () => {
-    const res = await fetch("http://127.0.0.1:8080/postSendEmail", {
-      method: "POST",
-      body: JSON.stringify({
-        email: emailSender,
-        body: emailBody,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      "https://merillbackend.herokuapp.com/postSendEmail",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          email: emailSender,
+          body: emailBody,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     console.log(res);
   };
 
